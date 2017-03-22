@@ -1,0 +1,21 @@
+.session-end h2 {
+  margin-bottom: 1rem;
+}
+
+.session-end .section {
+  text-align: center;
+}
+
+.session-end .section .section_title {
+  display: none;
+}
+
+.session-end .section .section_body {
+  padding-top: 50px;
+  padding-bottom: 30px;
+}
+
+.session-end .section .section_body p {
+  font-family: 'Roboto-Light'; /* temporary */
+  margin-bottom: 1.5rem;
+}

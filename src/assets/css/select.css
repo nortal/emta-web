@@ -1,0 +1,87 @@
+table .Select {
+  position: static;
+}
+
+table .Select.select-autocomplete {
+  position: relative;
+}
+
+.Select-control {
+  border: 2px solid #DBDFE2;
+}
+
+.Select-input {
+  line-height: 1.25;
+  overflow: hidden;
+  width: 100%;
+}
+
+.Select-input input {
+  line-height: 15px;
+  max-width: 100%;
+  width: 100% !important;
+}
+
+.Select-input input::-ms-clear {
+  display: none;
+}
+
+.has-danger .Select-control {
+  border-color: #FF7373;
+}
+
+.Select.is-searchable .Select-control {
+  background: #fff url('../img/icons/icon-search.svg') no-repeat right 10px top 50%;
+  background-size: 18px 16px;
+}
+
+.Select.is-searchable .Select-arrow {
+  display: none;
+}
+
+.Select-arrow-zone {
+  pointer-events: none;
+}
+
+.Select-placeholder {
+  padding-right: 30px;
+}
+
+.Select-control {
+  height: 26px;
+}
+
+.Select-placeholder {
+  line-height: 1.25
+}
+
+.Select-value {
+  line-height: 1.25 !important;
+  height: 26px;
+}
+
+.Select-value-label {
+  line-height: 1.25;
+}
+
+.Select-input {
+  height: 26px;
+}
+
+.Select-placeholder, .Select-value {
+  padding: 0.375rem 0.75rem;
+  font-size: 12px;
+}
+
+.Select-input input {
+  padding: 5px 0 12px;
+}
+
+.Select--multi .Select-placeholder, .Select--multi .Select-value {
+  padding: 0.175rem 0.5rem;
+  font-size: 12px;
+}
+
+.Select--multi .Select-value-icon {
+  padding: 0 0.5rem 0 0;
+}

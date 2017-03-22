@@ -1,0 +1,17 @@
+<div class="form-group row" [ngClass]="{'has-danger': !readOnly && !isValid}">
+  <div class="col-xs-8 col-md-8 col-lg-8 col-xl-8">
+    <label class="col-form-label col-form-label ">{{ labelText | translate }}</label></div>
+    <div class="col-xs-12 col-md-12 col-lg-12 col-xl-12">
+      <span *ngIf="readOnly" class="text">{{value}}</span>
+      <div *ngIf="!readOnly">
+        <input type="text"
+               [name]="name"
+               [ngModel]="value"
+               (ngModelChange)="onChange($event)"
+               [placeholder]="placeHolder"
+               autocomplete="off"
+               class="form-control">
+        <div *ngIf="!isValid" class="form-control-feedback">Liiga pikk tekst (lubatud kuni {{maxLength}} sümbolit)</div>
+      </div>
+  </div>
+</div>
