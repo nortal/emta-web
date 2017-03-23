@@ -46,7 +46,7 @@ export class EmtaTextInputComponent implements /*ControlValueAccessor, */ OnInit
     }
   }
 
-  private validateNewValue(valueToCheck): boolean {
+  private validateNewValue(valueToCheck) {
     if (valueToCheck && valueToCheck.length > this.maxLength) {
       this.isValid = false;
     } else {
