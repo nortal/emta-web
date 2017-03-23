@@ -1,35 +1,287 @@
-<div class="header" id="workarea_header">
-  <nav role="navigation" class="header_menu navbar">
-    <div class="container-fluid">
-      <div class="row">
-        <ul class="col-sm-20 col-md-20 col-lg-20 col-xl-20 nav navbar-nav">
-          <div class="mx-1">
-            <li class="nav-item"><a>TOTS2</a></li>
-            <li class="nav-item"><a href="/tots2-official/inspections">Kontrollülesanded</a></li>
-            <li class="nav-item"><a href="/tots2-official/documents">Dokumendid</a></li>
-            <li class="nav-item"><a href="/tots2-official/monitoring/rules">Seirereeglid</a></li>
-            <li class="nav-item"><a href="/tots2-official/work-schedule/shifts">Töökorraldus</a></li>
-            <li class="nav-item"><a href="/tots2-official/calendar/monthly">Kalender</a></li>
-            <li class="nav-item"><a href="/tots2-official/preliminary/dashboard">Esmased
-              kontrollitoimingud</a></li>
-            <li class="nav-item" style="font-weight: bold;"><a
-              href="/tots2-official/notification/official-notification">Teavitused</a></li>
+<nav class="navbar navbar-toggleable-xl navbar-light">
+    <div class="navbar-header">
+      <button class="navbar-toggler" type="button" aria-controls="global-menu" aria-expanded="false" aria-label="Ava/sulge menüü">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link nav-search nav-search-desktop" href="javascript:void(0);" data-toggle="popover" popover-trigger="manual" popover-placement="bottom" popover-content="#search-popover" popover-class="popover-search no-autofocus" data-original-title="" title="">
+          <input type="text" class="navbar-search" placeholder="Sisestage märksõna">
+          <span class="search-placeholder">Otsing</span>
+        </a>
+        <a class="nav-link nav-search nav-search-mobile" data-toggle="popover" popover-trigger="click" popover-placement="bottom" popover-content="#search-popover" popover-class="popover-search" data-original-title="" title=""></a>
+      </li>
+    </ul>
+
+
+    <ul class="navbar-nav navbar-right">
+      <li class="nav-item nav-item-desktop-only">
+        <a class="nav-link nav-language link-gray" href="javascript:void(0);">На русском</a>
+      </li>
+
+      <li class="nav-item nav-item-desktop-only">
+        <a class="nav-link nav-language link-gray" href="javascript:void(0);">In English</a>
+      </li>
+
+      <li class="nav-item nav-item-desktop-only">
+        <a class="nav-link nav-messages" href="javascript:void(0);" data-toggle="popover tooltip" popover-trigger="click" popover-placement="bottom" popover-content="#messages-popover" popover-class="popover-messages" tooltip-trigger="hover focus" tooltip-placement="bottom" title="" data-original-title="Vestlused">
+          <span class="unread">3</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link nav-notifications" href="javascript:void(0);" data-toggle="popover tooltip" popover-trigger="click" popover-placement="bottom" popover-content="#notifications-popover" popover-class="popover-messages" tooltip-trigger="hover focus" tooltip-placement="bottom" title="" data-original-title="Teated">
+          <span class="unread">5</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nav-favourites" href="javascript:void(0);" data-toggle="popover tooltip" popover-trigger="click" popover-placement="bottom" popover-content="#favourites-popover" popover-class="popover-favorites" tooltip-trigger="hover focus" tooltip-placement="bottom" title="" data-original-title="Kiirviited"></a>
+      </li>
+
+      <li class="nav-item nav-item-desktop-only">
+        <a class="nav-link nav-help-center" href="javascript:void(0);" data-toggle="tooltip" tooltip-trigger="hover focus" tooltip-placement="bottom" title="" tabindex="0" data-animation="false" data-original-title="Abikeskus"></a>
+      </li>
+
+      <li class="nav-item nav-item-shrink-desktop">
+        <a class="nav-link nav-user" href="javascript:void(0);" data-toggle="popover" popover-trigger="click" popover-placement="bottom" popover-content="#user-popover" popover-class="popover-header-user" data-original-title="" title="">
+          <div class="avatar">MT</div>
+          <div class="nav-user-name nav-item-desktop-only">
+            <span class="nav-user-first-name">Maris-Anna</span>
+            <span class="nav-user-last-name">Tormatsheva</span>
           </div>
-          <ul class="float-xs-right nav nav-inline"><a class="nav-item user get_popover nav-link">
-            <div class="user_avatar">MD</div>
-            <div class="user_name hidden-sm-down">Merike Danelson</div>
-          </a>
-            <li class="nav-item">
-              <div style="display: inline;">
-                <button class="btn_logout hidden-md-down" label="Button" type="button">Väljun</button>
-              </div>
-            </li>
-          </ul>
-        </ul>
+        </a>
+      </li>
+
+      <li class="nav-item nav-logout">
+        <a class="btn btn-logout" href="javascript:void(0);" data-toggle="popover" popover-trigger="click" popover-placement="bottom" popover-content="#exit-popover" popover-class="popover-exit" data-original-title="" title="">Väljun</a>
+      </li>
+    </ul>
+
+
+    <div id="search-popover">
+      <div class="popover-header no-border">
+        <div class="header-search form-group">
+          <form>
+            <input class="form-control search-control clearable" id="header-search-mobile" type="text" placeholder="Sisestage märksõna">
+          </form>
+        </div>
+      </div>
+      <div class="popover-scroll-content">
+        <div class="search-result">
+          <a href="javascript:void(0);">Alkoholiaktsiisi deklaratsioon</a>
+          <div>Maksud / <span>Muud ma</span>ksud / Aktsiisid</div>
+        </div>
+        <div class="search-result">
+          <a href="javascript:void(0);">Ühekordsed alkoholiaktsiisi <span>muud ma</span>ksud</a>
+          <div>Maksud / <span>Muud ma</span>ksud / Aktsiisid</div>
+        </div>
+        <div class="search-result">
+          <a href="javascript:void(0);">Elektri ja kütuseaktsiisi deklaratsioon</a>
+          <div>Maksud / <span>Muud ma</span>ksud / Aktsiisid</div>
+        </div>
+        <div class="search-result">
+          <a href="javascript:void(0);">Ühekordne kütuseaktsiisi deklaratsioon</a>
+          <div>Maksud / <span>Muud ma</span>ksud / Aktsiisid</div>
+        </div>
+        <div class="search-result">
+          <a href="javascript:void(0);">Tubakaaktsiisi <span>muud ma</span>ksud</a>
+          <div>Maksud / <span>Muud ma</span>ksud / Aktsiisid</div>
+        </div>
+      </div>
+      <div class="popover-footer">
+        <div class="text-center"><a class="link-blue text-center" href="">Kõik otsingutulemused (12)</a></div>
+        <div class="text-center d-md-none"><a class="link-blue close" href="javascript:void(0);">Sulgen</a>
+        </div>
       </div>
     </div>
+
+
+
+    <div id="messages-popover">
+      <div class="popover-header"><span class="title">Viimased vestlused</span><span class="float-right"><a href="">Märgin kõik loetuks</a><a href="">Uus vestlus</a></span></div>
+      <div class="message new">
+        <div class="message-title">TSD Estitamine / Astronaut Mööbel AS <span class="message-date float-right">11.02.2016</span>
+        </div>
+        <div class="message-body">
+          Töötajate registri leiate oma ettevötte töölaualt, menüüpunkti <a href="" class="link-orange">töötajad</a> alt.
+          Kõige lihtsam on lihtsalt klikkida sellel lingil <a href="" class="link-orange">siin</a>.
+        </div>
+      </div>
+      <div class="message">
+        <div class="message-title">Maksuvõla ajatamine / KÜ Kümnes Läte <span class="message-date float-right">11.02.2016</span>
+        </div>
+        <div class="message-body">
+          Maksuvõla ajatamiseks on tarvis esitada avaldus. Kui vajate abi, siis mina olenalati siin, kuid tasub kiigada ka
+          Abikeskusse...
+        </div>
+      </div>
+      <div class="message">
+        <div class="message-title">TSD Estitamine / Astronaut Mööbel AS <span class="message-date float-right">11.02.2016</span>
+        </div>
+        <div class="message-body">
+          Teie käsil olevas vormis on salvestamata andmeid, mis süsteemist lahkudes <a class="link-gray" href="">kaovad</a> ning neid ei ole
+          võimalik taastada.
+        </div>
+      </div>
+      <div class="message new">
+        <div class="message-title">TSD Estitamine / Astronaut Mööbel AS <span class="message-date float-right">11.02.2016</span>
+        </div>
+        <div class="message-body">
+          Teie käsil olevas vormis on salvestamata andmeid, mis süsteemist lahkudes <a class="link-gray" href="">kaovad</a> ning neid ei ole
+          võimalik taastada.
+        </div>
+      </div>
+      <div class="message">
+        <div class="message-title">TSD Estitamine / Astronaut Mööbel AS <span class="message-date float-right">11.02.2016</span>
+        </div>
+        <div class="message-body">
+          Teie käsil olevas vormis on salvestamata andmeid, mis süsteemist lahkudes <a class="link-gray" href="">kaovad</a> ning neid ei ole
+          võimalik taastada.
+        </div>
+      </div>
+      <div class="popover-footer">
+        <div class="text-center"><a class="link-blue link-small text-center" href="">Kõik vestlused (32)</a></div>
+      </div>
+    </div>
+
+
+
+    <div id="notifications-popover">
+      <div class="popover-header">
+        <span class="title">Viimased teaded</span>
+        <span class="float-right mark-all-read-link"><a href="">Märgin kõik loetuks</a></span>
+      </div>
+      <div class="popover-scroll-content">
+        <div class="message new">
+          <span class="message-avatar status_short_blue"></span>
+          <div class="message-title">Astronaut Mööbel AS <span class="message-date float-right">11.02.2016</span>
+          </div>
+          <div class="message-body">
+            Teie käsil olevas vormis on salvestamata <a href="" class="link-orange">andmeid</a>, mis süsteemist lahkudes
+            kaovad ning neid ei ole võimalik taastada.
+          </div>
+        </div>
+        <div class="message">
+          <div class="message-title">Astronaut Mööbel AS <span class="message-date float-right">11.02.2016</span>
+          </div>
+          <div class="message-body">
+            Teie käsil olevas vormis on salvestamata andmeid, mis süsteemist lahkudes <a class="link-gray" href="">kaovad</a> ning neid ei
+            ole võimalik taastada.
+          </div>
+        </div>
+        <div class="message">
+          <div class="message-title">Astronaut Mööbel AS <span class="message-date float-right">11.02.2016</span>
+          </div>
+          <div class="message-body">
+            Teie käsil olevas vormis on salvestamata andmeid, mis süsteemist lahkudes <a class="link-gray" href="">kaovad</a> ning neid ei
+            ole võimalik taastada.
+          </div>
+        </div>
+        <div class="message new">
+          <div class="message-title">Astronaut Mööbel AS <span class="message-date float-right">11.02.2016</span>
+          </div>
+          <div class="message-body">
+            Teie käsil olevas vormis on salvestamata andmeid, mis süsteemist lahkudes <a class="link-gray" href="">kaovad</a> ning neid ei
+            ole võimalik taastada.
+          </div>
+        </div>
+        <div class="message new">
+          <div class="message-title">Astronaut Mööbel AS <span class="message-date float-right">11.02.2016</span>
+          </div>
+          <div class="message-body">
+            Teie käsil olevas vormis on salvestamata andmeid, mis süsteemist lahkudes <a class="link-gray" href="">kaovad</a> ning neid ei
+            ole võimalik taastada.
+          </div>
+        </div>
+        <div class="message">
+          <div class="message-title">Astronaut Mööbel AS <span class="message-date float-right">11.02.2016</span>
+          </div>
+          <div class="message-body">
+            Teie käsil olevas vormis on salvestamata andmeid, mis süsteemist lahkudes <a class="link-gray" href="">kaovad</a> ning neid ei
+            ole võimalik taastada.
+          </div>
+        </div>
+        <div class="message new">
+          <div class="message-title">Astronaut Mööbel AS <span class="message-date float-right">11.02.2016</span>
+          </div>
+          <div class="message-body">
+            Teie käsil olevas vormis on salvestamata andmeid, mis süsteemist lahkudes <a class="link-gray" href="">kaovad</a> ning neid ei
+            ole võimalik taastada.
+          </div>
+        </div>
+      </div>
+      <div class="popover-footer">
+        <div class="text-center"><a class="link-blue link-small text-center" href="">Kõik teated (3245)</a></div>
+        <div class="text-center d-md-none"><a class="link-blue close" href="javascript:void(0);">Sulgen</a></div>
+      </div>
+    </div>
+
+
+
+    <div id="favourites-popover">
+      <div class="popover-header">
+        <span class="title d-md-none">Kiirlingid</span>
+        <a class="link-gray link-favourites" href="">Lisan kiirlingiks</a>
+        <span class="float-right d-md-none"><a href="" class="link-blue">Seaded</a></span>
+      </div>
+      <div class="popover-scroll-content">
+        <div class="popover-section">
+          <ul>
+            <li class="d-md-none"><a class="link-gray link-favourites" href="">Lisan kiirlingiks</a></li>
+            <li><a href="" class="link-gray">Uus TSD</a></li>
+            <li><a href="" class="link-gray">Tollideklaratsioonid</a></li>
+            <li><a href="" class="link-gray">Lisa uus töötaja</a></li>
+            <li><a href="" class="link-gray">Miks Mitte Täna AS / Aksisiid</a></li>
+            <li><a href="" class="link-gray">Huvide deklaratsioon</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="popover-footer">
+        <a href="" class="link-gray d-none d-md-inline">Kiirlinkide seaded</a>
+        <div class="text-center d-md-none"><a class="link-blue close" href="javascript:void(0);">Sulgen</a></div>
+      </div>
+    </div>
+
+
+
+    <div id="user-popover">
+      <div class="popover-scroll-content">
+        <div class="popover-section">
+          <ul>
+            <li class="text-center d-md-none"><h2>Maris-Anna Tormatsheva</h2></li>
+            <li class="text-center text-md-left"><a href="" class="link-gray">Minu seaded</a></li>
+            <li class="text-center text-md-left"><a href="" class="link-gray">Kuidas mul läheb?</a></li>
+          </ul>
+          <div class="text-center my-3 d-md-none">
+            <button class="btn btn-danger btn-mobile-big">Väljun</button>
+          </div>
+        </div>
+      </div>
+      <div class="popover-footer d-md-none">
+        <div class="text-center"><a class="link-blue close" href="javascript:void(0);">Sulgen</a>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div id="exit-popover">
+      <h4>Kas olete kindel, et soovite süsteemist väljuda?</h4>
+      <p>Teie käsil olevas vormis on salvestamata andmeid, mis süsteemist lahkudes kaovad ning neid ei ole võimalik
+        taastada.</p>
+      <div class="text-right mt-4">
+        <button class="btn btn-light float-left close">Ei</button>
+        <button class="btn btn-danger">Jah</button>
+      </div>
+    </div>
+
+
   </nav>
-</div>
 
 
 <!--nav>

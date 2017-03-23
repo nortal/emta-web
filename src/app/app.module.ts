@@ -1,3 +1,4 @@
+import {SidebarComponent} from "./layout/sidebar/sidebar.component";
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, Http } from '@angular/http';
@@ -65,6 +66,7 @@ export function createTranslateLoader(http: Http) {
     AppComponent,
     AboutComponent,
     SearchComponent,
+    SidebarComponent,
     NoContentComponent,
     XLargeDirective
       ],

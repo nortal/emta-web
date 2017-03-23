@@ -1,17 +1,10 @@
-<div id="root">
-  <div data-reactroot="" class="page_wrapper">
-    <div class="workarea container-fluid offcanvas">
-      <div class="row">
-        <div class="col-xs-2"></div>
-        <div class="workarea_body col-xl-20 col-lg-20 col-md-20 col-sm-20 col-xs-20">
-
-          <navigation></navigation>
-
-          <router-outlet></router-outlet>
-
-          <emta-footer></emta-footer>
-        </div>
-      </div>
+<div class="page_wrapper">
+  <navigation></navigation>
+  <div class="content-wrapper">
+    <sidebar></sidebar>
+    <div class="workarea container-fluid">
+      <router-outlet></router-outlet>
     </div>
   </div>
+  <emta-footer></emta-footer>
 </div>
