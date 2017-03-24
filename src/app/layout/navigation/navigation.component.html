@@ -21,11 +21,11 @@
 
     <ul class="navbar-nav navbar-right">
       <li class="nav-item nav-item-desktop-only">
-        <a class="nav-link nav-language link-gray" href="javascript:void(0);">На русском</a>
+        <a class="nav-link nav-language link-gray" (click)="selectLanguage($event, 'ru')">На русском</a>
       </li>
 
       <li class="nav-item nav-item-desktop-only">
-        <a class="nav-link nav-language link-gray" href="javascript:void(0);">In English</a>
+        <a class="nav-link nav-language link-gray" (click)="selectLanguage($event, 'et')">In English</a>
       </li>
 
       <li class="nav-item nav-item-desktop-only">

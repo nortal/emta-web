@@ -2,6 +2,7 @@ import {
   Component,
   OnInit
 } from '@angular/core';
+import { TranslateService } from 'ng2-translate';
 
 @Component({
   selector: 'navigation',  // <navigation></navigation>
@@ -12,6 +13,9 @@ export class NavigationComponent implements OnInit {
   // Set our default values
   public localState = { value: '' };
 
+  constructor(private translate: TranslateService) {
+  }
+
   public ngOnInit() {
     console.log('näidisvormike');
     // this.title.getData().subscribe(data => this.data = data);
@@ -19,5 +23,9 @@ export class NavigationComponent implements OnInit {
 
   public submitState(value: string) {
     console.log('submitState', value);
+  }
+
+  public selectLanguage(event, languageCode) {
+    this.translate.use(languageCode);
   }
 }
