@@ -23,6 +23,18 @@ export class SearchComponent implements OnInit {
   // Set our default values
   public localState = { value: '' };
   public firstNameValue: string = 'Vello';
+
+  private objectTypes = [
+    "Isik",
+    "Sõiduk"
+  ];
+
+  private countries = [
+    "Narnia",
+    "Erathia",
+    "Dummy data here for nows"
+  ]
+
   // TypeScript public modifiers
   constructor(
     public appState: AppState,

@@ -1,0 +1,41 @@
+.clear {
+    -webkit-appearance: none;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    position: absolute;
+    right: 56px;
+    top: 0.2rem;
+    z-index: 3
+}
+
+@media (min-width: 600px) {
+    .clear {
+        right:25px;
+    }
+
+    .clear::before {
+        font-size: 1rem
+    }
+}
+
+@media (min-width: 900px) {
+    .clear {
+        right:25px;
+    }
+}
+
+.clear::before {
+    color: #5d6071;
+    content: "";
+    font-family: 'iconfont';
+    font-size: 1.1rem
+}
+
+.clear:hover::before {
+    color: #0083ba
+}
+
+.clear:active {
+    outline: 0
+}

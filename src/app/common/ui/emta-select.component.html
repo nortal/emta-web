@@ -1,0 +1,31 @@
+<div class="btn-group bootstrap-select form-control searchable clearable" [class.show]="show">
+  <button
+    type="button"
+    class="btn dropdown-toggle btn-default"
+    data-toggle="dropdown"
+    data-id="select6"
+    title="2016"
+    aria-expanded="false"
+    (mouseup)="trigger()"
+    (keyup.enter)="trigger()"
+    #parentButton>
+    <span class="filter-option pull-left">{{selected || 'Leia sobiv...'}}</span>&nbsp;<span class="caret"></span>
+  </button>
+  <div class="dropdown-menu show" style="max-height: 345.172px; overflow: hidden; min-height: 110px;"
+    (keyup)="onKey($event)">
+    <div class="bs-searchbox">
+      <input type="text" class="form-control" autocomplete="off" #searchInput
+        (keyup)="onInput($event.target.value)"/>
+    </div>
+    <ul class="dropdown-menu inner" role="menu" style="max-height: 302.172px; overflow-y: auto; min-height: 67px;">
+      <li *ngFor="let el of adata | async; let i = index"
+        [class.selected]="isSelected(el)"
+        [class.active]="i == currentIndex">
+        <a tabindex="0" class="opt" (mouseup)="select(i)">
+          <span class="text">{{el}}</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <button class="clear" tabindex="0" data-toggle="tooltip" tooltip-placement="top" tooltip-title="Tühjendan" data-original-title="" title="" (mouseup)="clear()" [hidden]="!selected"></button>
+</div>
