@@ -33,7 +33,11 @@ export class SearchComponent implements OnInit {
     "Narnia",
     "Erathia",
     "Dummy data here for nows"
-  ]
+  ];
+
+  private searchParams: any = {
+
+  };
 
   // TypeScript public modifiers
   constructor(
@@ -50,5 +54,6 @@ export class SearchComponent implements OnInit {
     console.log('submitState', value);
     this.appState.set('value', value);
     this.localState.value = '';
+    console.log('searchParams', this.searchParams);
   }
 }

@@ -28,7 +28,7 @@
           <div class="form-group row">
             <label class="col-xs-20 col-md-8 col-form-label">Objekti tüüp</label>
             <div class="col-xs-20 col-md-12 col-lg-12 col-xl-12">
-              <emta-select [data]="objectTypes"></emta-select>
+              <emta-select [data]="objectTypes" [(ngModel)]="searchParams.objectType" name="objectType"></emta-select>
             </div>
           </div>
         </div>
@@ -36,7 +36,7 @@
           <div class="form-group row">
             <label class="col-xs-20 col-md-8 col-form-label">Riik</label>
             <div class="col-xs-12 col-md-12 col-lg-12 col-xl-12">
-              <emta-select [data]="countries"></emta-select>
+              <emta-select [data]="countries" [(ngModel)]="searchParams.country" name="country"></emta-select>
             </div>
           </div>
         </div>
@@ -85,7 +85,7 @@
             <button label="Tühjendan" type="reset" class="btn btn-light">Tühjendan</button>
           </div>
           <div style="display: inline;">
-            <button class="btn btn-success" type="submit" label="Otsin">Otsin</button>
+            <button class="btn btn-success" type="submit" label="Otsin" (click)="submitState()">Otsin</button>
           </div>
         </div>
       </div>

@@ -1,20 +1,29 @@
 import {Observable} from "rxjs/Observable";
 import {Subject} from "rxjs/Subject";
-import { Component, Input, Output, EventEmitter, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit, ViewChild, forwardRef } from '@angular/core';
 import { NgClass } from '@angular/common';
-import { ControlValueAccessor } from '@angular/forms';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component ({
   selector: 'emta-select',
-  providers: [],
-  templateUrl: './emta-select.component.html'
+  templateUrl: './emta-select.component.html',
+  providers: [
+      {
+          provide: NG_VALUE_ACCESSOR,
+          useExisting: forwardRef(() => EmtaSelectComponent),
+          multi: true
+      }
+  ]
 })
-export class EmtaSelectComponent implements /*ControlValueAccessor, */ OnInit {
+export class EmtaSelectComponent implements ControlValueAccessor, OnInit {
 
   @ViewChild("searchInput") searchInput: any;
   @ViewChild("parentButton") parentButton: any;
 
   @Input() data: any[] = [];
+  @Input() displayFunc = x => x;
+  @Input() placeholder = "Leia sobiv...";
+  @Input() notFoundText = "Puudub valik"
 
   private show = false;
 
@@ -29,6 +38,8 @@ export class EmtaSelectComponent implements /*ControlValueAccessor, */ OnInit {
   private itemsLength = 1;
   private currentItems = [];
 
+  private onChange = x => x;
+
   public ngOnInit() {
     let searched = this.searchTerms
       //.debounceTime(300)        // wait for 300ms pause in events
@@ -39,16 +50,21 @@ export class EmtaSelectComponent implements /*ControlValueAccessor, */ OnInit {
       .catch(error => {
         return Observable.of([]);
       });
-    this.adata = Observable.merge(this.initialData, searched);
-    this.adata.subscribe(x => this.recalcCurrentIndex(x))
+    let merged = Observable.merge(this.initialData, searched);
+    merged.subscribe(x => this.recalcCurrentIndex(x));
+    this.adata = merged.map(y => y.map(x => ({
+      text: this.displayFunc(x),
+      value: x
+    })));
 }
 
   private initData() {
     this.initialData.next(this.data);
   }
 
-  private search(term) {
-    return Observable.of(this.data.filter(x => x.toString().indexOf(term) >= 0));
+  private search(term: string) {
+    let t = term.toLowerCase();
+    return Observable.of(this.data.filter(x => x.toString().toLowerCase().indexOf(t) >= 0));
   }
 
   private onInput(term) {
@@ -72,11 +88,13 @@ export class EmtaSelectComponent implements /*ControlValueAccessor, */ OnInit {
 
   private select(index) {
     this.selected = this.currentItems[index];
+    this.onChange(this.selected);
     this.trigger();
   }
 
   private clear() {
     this.selected = null;
+    this.onChange(this.selected);
   }
 
   private isSelected(el) {
@@ -108,6 +126,23 @@ export class EmtaSelectComponent implements /*ControlValueAccessor, */ OnInit {
       this.trigger();
     }
   }
+
+  /**
+   * Write a new value to the element.
+   */
+  writeValue(obj: any) {
+    this.selected = obj || null;
+  }
+  /**
+   * Set the function to be called when the control receives a change event.
+   */
+  registerOnChange(fn: any) {
+    this.onChange = fn;
+  }
+  /**
+   * Set the function to be called when the control receives a touch event.
+   */
+  registerOnTouched(fn: any) {};
 }
 
 function mod(x,y) {
