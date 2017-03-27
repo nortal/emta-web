@@ -1,5 +1,9 @@
 {
-  "EESNIMI": "Tõlgitud eesnimi",
-  "PERENIMI": "Tõlgitud perenimi",
-  "ÜKSUS": "Üksus (ro, =eesnimi)"
+  "FIRSTNAME": "Tõlgitud eesnimi",
+  "LASTNAME": "Tõlgitud perenimi",
+  "DEPARTMENT": "Üksus (ro, =eesnimi)",
+  "COUNTRY": "Riik",
+  "CODE": "Kood",
+  "EMPLOYEE":"Ametnik",
+  "BIRTHDATE": "Sünniaeg"
 }
