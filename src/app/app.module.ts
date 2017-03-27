@@ -1,3 +1,4 @@
+import {CountryModule} from "./country/country.module";
 import {SidebarComponent} from "./layout/sidebar/sidebar.component";
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
@@ -72,6 +73,7 @@ export function createTranslateLoader(http: Http) {
       ],
   imports: [ // import Angular's modules
     UiModule,
+    CountryModule,
     BrowserModule,
     FormsModule,
     HttpModule,

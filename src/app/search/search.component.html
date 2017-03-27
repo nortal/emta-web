@@ -29,7 +29,13 @@
           <div class="form-group row">
             <label class="col-xs-20 col-md-8 col-form-label">Riik</label>
             <div class="col-xs-12 col-md-12 col-lg-12 col-xl-12">
-              <emta-select [data]="countries" [(ngModel)]="searchParams.country" name="country"></emta-select>
+              <emta-select
+                [foundData]="foundCountries"
+                (onSearch)="searchCountries($event)"
+                [(ngModel)]="searchParams.country"
+                [clearLast]="false"
+                name="country">
+              </emta-select>
             </div>
           </div>
         </div>
