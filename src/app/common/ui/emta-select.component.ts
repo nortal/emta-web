@@ -127,6 +127,14 @@ export class EmtaSelectComponent implements ControlValueAccessor, OnInit {
     }
   }
 
+  onBlur() {
+    setTimeout(()=>{
+      if (this.show) {
+        this.trigger();
+      }
+    }, 100);
+  }
+
   /**
    * Write a new value to the element.
    */

@@ -15,7 +15,7 @@
     (keyup)="onKey($event)">
     <div class="bs-searchbox">
       <input type="text" class="form-control" autocomplete="off" #searchInput
-        (keyup)="onInput($event.target.value)"/>
+        (keyup)="onInput($event.target.value)" (blur)="onBlur()"/>
     </div>
     <ul class="dropdown-menu inner" role="menu" style="max-height: 302.172px; overflow-y: auto;">
       <li *ngFor="let el of adata | async; let i = index"
