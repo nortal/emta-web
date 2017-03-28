@@ -1,3 +1,7 @@
+.sidebar ul li.active {
+  text-decoration: underline;
+}
+
 .clear {
     -webkit-appearance: none;
     background: none;
