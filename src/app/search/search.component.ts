@@ -1,9 +1,13 @@
-import {CountryService} from "../country/country.service";
-import {Subject} from "rxjs/Subject";
+import { CountryService } from '../country/country.service';
+import { Subject } from 'rxjs/Subject';
 import {
   Component,
   OnInit
 } from '@angular/core';
+import {
+  Router
+} from '@angular/router';
+
 
 import { AppState } from '../app.service';
 import { Title } from '../common/ui/title';
@@ -41,7 +45,8 @@ export class SearchComponent implements OnInit {
   constructor(
     public appState: AppState,
     public title: Title,
-    private countryService: CountryService
+    private countryService: CountryService,
+    private router: Router
   ) {}
 
   public ngOnInit() {
@@ -58,5 +63,9 @@ export class SearchComponent implements OnInit {
 
   searchCountries(term) {
     this.countryService.searchCountries(term).subscribe(x => this.foundCountries.next(x));
+  }
+
+  addNew() {
+    this.router.navigate(['/detail']);
   }
 }

@@ -2,6 +2,9 @@ import {
   Component,
   OnInit
 } from '@angular/core';
+import {
+  Router
+} from '@angular/router';
 
 
 @Component({
@@ -12,7 +15,9 @@ import {
 })
 export class ObjectDetailComponent {
 
-  constructor(
-  ) {}
+  constructor(private router: Router) {}
 
+  goBack() {
+    this.router.navigate(['../']);
+  }
 }

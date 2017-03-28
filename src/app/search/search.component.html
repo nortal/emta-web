@@ -19,7 +19,7 @@
       <div class="row">
         <div class="col-xs-20 col-md-10 col-lg-10 col-xl-10">
           <div class="form-group row">
-            <label class="col-xs-20 col-md-8 col-form-label">Objekti tüüp</label>
+            <label class="col-xs-20 col-md-5 col-form-label">Objekti tüüp</label>
             <div class="col-xs-20 col-md-12 col-lg-12 col-xl-12">
               <emta-select [data]="objectTypes" [(ngModel)]="searchParams.objectType" name="objectType"></emta-select>
             </div>
@@ -27,7 +27,7 @@
         </div>
         <div class="col-xs-20 col-md-10 col-lg-10 col-xl-10">
           <div class="form-group row">
-            <label class="col-xs-20 col-md-8 col-form-label">Riik</label>
+            <label class="col-xs-20 col-md-5 col-form-label">Riik</label>
             <div class="col-xs-12 col-md-12 col-lg-12 col-xl-12">
               <emta-select
                 [foundData]="foundCountries"
@@ -50,7 +50,8 @@
       </div>
       <div class="row">
         <div class="col-xs-20 col-md-10 col-lg-10 col-xl-10">
-          <emta-textinput labelText="FIRSTNAME" [(value)]="firstNameValue" placeHolder="mai pleiss hõulder" name="firstName" maxLength="6"></emta-textinput>
+          <emta-textinput labelText="FIRSTNAME" [(value)]="firstNameValue" placeHolder="mai pleiss hõulder"
+                          name="firstName" maxLength="6"></emta-textinput>
         </div>
         <div class="col-xs-20 col-md-10 col-lg-10 col-xl-10">
           <emta-textinput labelText="LASTNAME" name="lastName"></emta-textinput>
@@ -79,7 +80,7 @@
     </div>
     <br/>
     <div class="form-footer">
-      <button class="btn btn-info btn-with-plus float-right" label="Button" type="button"
+      <button class="btn btn-info btn-with-plus float-right" label="Button" type="button" (click)="addNew()"
               id="add-new-object-of-interest-btn">Uus objekt
       </button>
     </div>
