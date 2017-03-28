@@ -1,8 +1,10 @@
 import {CountryModule} from "./country/country.module";
+import {OperationalInterestModule} from "./operational-interest/operational.interest.module";
 import {SidebarComponent} from "./layout/sidebar/sidebar.component";
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, Http } from '@angular/http';
+import {Ng2PaginationModule} from 'ng2-pagination';
 import { TranslateModule,
   TranslateService,
   TranslatePipe,
@@ -32,7 +34,7 @@ import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
-import { SearchComponent } from './search';
+import { SearchComponent, SearchResultComponent } from './search';
 import { AboutComponent } from './about';
 import { NoContentComponent } from './no-content';
 import { XLargeDirective } from './home/x-large';
@@ -68,6 +70,7 @@ export function createTranslateLoader(http: Http) {
     AppComponent,
     AboutComponent,
     SearchComponent,
+    SearchResultComponent,
     SidebarComponent,
     NoContentComponent,
     XLargeDirective,
@@ -77,6 +80,8 @@ export function createTranslateLoader(http: Http) {
       ],
   imports: [ // import Angular's modules
     UiModule,
+    Ng2PaginationModule,
+    OperationalInterestModule,
     CountryModule,
     BrowserModule,
     FormsModule,
