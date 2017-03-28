@@ -75,7 +75,7 @@
             </label>
           </div>
           <div style="display: inline;">
-            <button label="Tühjendan" type="reset" class="btn btn-light">Tühjendan</button>
+            <button label="Tühjendan" type="reset" class="btn btn-light" (click)="resetResult()">Tühjendan</button>
           </div>
           <div style="display: inline;">
             <button class="btn btn-success" type="submit" label="Otsin" (click)="submitState()">Otsin</button>
@@ -92,4 +92,4 @@
   </form>
 </div>
 <br/>
-<search-result [items]="resultList"></search-result>
+<search-result [items]="resultList" *ngIf="resultList"></search-result>

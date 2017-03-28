@@ -66,10 +66,9 @@
       </table>
     </div>
 
-    <pagination-template #p="paginationApi" [id]="config.id" (pageChange)="config.currentPage = $event"
-                         *ngIf="items?.length > 0">
+    <pagination-template #p="paginationApi" [id]="config.id" (pageChange)="config.currentPage = $event">
       <div class="pagination-block">
-        <div class="pagination-total">
+        <div class="pagination-total" *ngIf="items?.length > 0">
           {{(config.currentPage-1)*config.itemsPerPage+1}}-{{config.currentPage*config.itemsPerPage}}/{{items?.length}}
         </div>
 

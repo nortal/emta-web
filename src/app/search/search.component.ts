@@ -30,7 +30,7 @@ export class SearchComponent implements OnInit {
   // Set our default values
   public localState = {value: ''};
   public firstNameValue: string = 'Vello';
-  public resultList: Array<Object> = [];
+  public resultList: Array<Object>;
 
   private objectTypes = [
     "Isik",
@@ -52,6 +52,10 @@ export class SearchComponent implements OnInit {
   public ngOnInit() {
     console.log('näidisvormike');
     // this.title.getData().subscribe(data => this.data = data);
+  }
+
+  public resetResult() {
+    this.resultList = undefined;
   }
 
   public submitState(value: string) {
