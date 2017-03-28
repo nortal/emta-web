@@ -39,6 +39,7 @@ import { XLargeDirective } from './home/x-large';
 import { NavigationComponent } from './layout/navigation';
 import { EmtaFooterComponent } from './layout/emta-footer';
 import { UiModule } from './common/ui/ui.module';
+import { PaymentComponent, PayerComponent, CustomerComponent } from './dollaz';
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -69,7 +70,10 @@ export function createTranslateLoader(http: Http) {
     SearchComponent,
     SidebarComponent,
     NoContentComponent,
-    XLargeDirective
+    XLargeDirective,
+    PaymentComponent,
+    PayerComponent,
+    CustomerComponent,
       ],
   imports: [ // import Angular's modules
     UiModule,

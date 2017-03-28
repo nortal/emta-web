@@ -1,0 +1,139 @@
+<h2>Klient</h2>
+
+<div class="section" *ngIf="filter && !customer">
+  <form name="object-of-interest-search" autocomplete="off">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-20 col-md-10 col-lg-10 col-xl-10">
+          <div class="form-group row">
+            <label class="col-xs-20 col-md-8 col-form-label">Kliendi kood</label>
+            <div class="col-xs-12 col-md-12 col-lg-12 col-xl-12">
+              <div><input [(ngModel)]="filter.code" type="text" name="code" class="form-control"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-20 col-md-10 col-lg-10 col-xl-10">
+          <div class="form-group row">
+            <label class="col-xs-20 col-md-8 col-form-label">Kliendi nimi</label>
+            <div class="col-xs-12 col-md-12 col-lg-12 col-xl-12">
+              <div><input [(ngModel)]="filter.name" type="text" name="name" class="form-control"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-20 col-md-10 col-lg-10 col-xl-10">
+          <div class="form-group row">
+            <label class="col-xs-20 col-md-8 col-form-label">Kliendi eesnimi</label>
+            <div class="col-xs-12 col-md-12 col-lg-12 col-xl-12">
+              <div><input [(ngModel)]="filter.forname" type="text" name="forname" autocomplete="off" class="form-control"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-20 col-md-20 col-lg-20 col-xl-20" style="text-align: right;">
+          <div style="display: inline;">
+            <button label="Tühjendan" type="reset" class="btn btn-light">Tühjendan</button>
+          </div>
+          <div style="display: inline;">
+            <button class="btn btn-success" type="submit" label="Otsin" (click)="search()">Otsin</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<br/>
+<div class="section" *ngIf="customers">
+  <div class="section_body">
+    <div class="table-responsive">
+      <div class="col-xs-20" style="height: 16px; margin-top: -16px;">
+        <div class="float-xs-right">
+          <div></div>
+        </div>
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Kliendi kood</th>
+            <th>Kliendi nimi</th>
+            <th>Kliendi eesnimi</th>
+          </tr>
+        </thead>
+        <tbody class="with-details">
+          <tr *ngFor="let customer of customers" (click)="onSelect(customer)">
+            <td style="width: 50px;"><a aria-expanded="false" class="collapse_toggle collapsed"></a></td>
+            <td><span class="text">{{customer.code}}</span></td>
+            <td><span class="text">{{customer.name}}</span></td>
+            <td><span class="text">{{customer.forname}}</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<div class="section" *ngIf="customer">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-20 col-md-10 col-lg-10 col-xl-10">
+        <div class="form-group row">
+          <label class="col-xs-20 col-md-8 col-form-label">Kliendi kood</label>
+          <div class="col-xs-12 col-md-12 col-lg-12 col-xl-12">
+            <div>{{customer.code}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-20 col-md-10 col-lg-10 col-xl-10">
+        <div class="form-group row">
+          <label class="col-xs-20 col-md-8 col-form-label">Kliendi nimi</label>
+          <div class="col-xs-12 col-md-12 col-lg-12 col-xl-12">
+            <div>{{customer.name}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-20 col-md-10 col-lg-10 col-xl-10">
+        <div class="form-group row">
+          <label class="col-xs-20 col-md-8 col-form-label">Aadress</label>
+          <div class="col-xs-12 col-md-12 col-lg-12 col-xl-12">
+            <div>{{customer.address}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-20 col-md-10 col-lg-10 col-xl-10">
+        <div class="form-group row">
+          <label class="col-xs-20 col-md-8 col-form-label">Viitenumber</label>
+          <div class="col-xs-12 col-md-12 col-lg-12 col-xl-12">
+            <div>{{customer.referenceNumber}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-20 col-md-10 col-lg-10 col-xl-10">
+        <div class="form-group row">
+          <label class="col-xs-20 col-md-8 col-form-label">Vaba jääk</label>
+          <div class="col-xs-12 col-md-12 col-lg-12 col-xl-12">
+            <div>{{customer.balance}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

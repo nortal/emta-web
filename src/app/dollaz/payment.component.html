@@ -1,0 +1,168 @@
+<div>
+  <payer [onFinish]="setPayer.bind(this)" ></payer>
+  <br/>
+  <customer *ngIf="!!payer" [onFinish]="setCustomer.bind(this)" [filter]="{code: payer.code}"></customer>
+  <br/>
+
+  <span *ngIf="!payment">
+    <h2>Tasumata alusdokumendid</h2>
+    <div class="section" *ngIf="debts">
+      <div class="section_body">
+        <div class="table-responsive">
+          <div class="col-xs-20" style="height: 16px; margin-top: -16px;">
+            <div class="float-xs-right">
+              <div></div>
+            </div>
+          </div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Liik</th>
+                <th>Number</th>
+                <th>Dekl.Number</th>
+                <th>Dok.Kuupäev</th>
+                <th>Olek</th>
+                <th>Sisest.Kuupäev</th>
+                <th>Tasumise tähtp.saabunud</th>
+                <th>Viitenumber</th>
+                <th>Tasumise tähtp.tulevikus</th>
+              </tr>
+            </thead>
+            <tbody class="with-details">
+              <tr *ngFor="let doc of debts" (click)="composePayment(doc)">
+                <td><span class="text">{{doc.type}}</span></td>
+                <td><span class="text">{{doc.number}}</span></td>
+                <td><span class="text">{{doc.deklNumber}}</span></td>
+                <td><span class="text">{{doc.date}}</span></td>
+                <td><span class="text">{{doc.state}}</span></td>
+                <td><span class="text">{{doc.dateCreated}}</span></td>
+                <td><span class="text">{{doc.aaa}}</span></td>
+                <td><span class="text">{{doc.referenceNumber}}</span></td>
+                <td><span class="text">{{doc.bbb}}</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </span>
+
+  <span *ngIf="payment && !payment.state">
+    <h2>Sissemakse</h2>
+
+      <div class="section">
+        <div class="row">
+          <div class="col-xs-20 col-md-10 col-lg-10 col-xl-10">
+            <div class="form-group row">
+              <label class="col-xs-20 col-md-8 col-form-label">Sissemakse alus</label>
+              <div class="col-xs-12 col-md-12 col-lg-12 col-xl-12">
+                <div>{{payment.deklNumber}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-20 col-md-10 col-lg-10 col-xl-10">
+            <div class="form-group row">
+              <label class="col-xs-20 col-md-8 col-form-label">Summa</label>
+              <div class="col-xs-12 col-md-12 col-lg-12 col-xl-12">
+                <div><input [(ngModel)]="payment.amount" type="number" name="code" class="form-control"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-20 col-md-20 col-lg-20 col-xl-20" style="text-align: right;">
+            <div style="display: inline;">
+              <button class="btn btn-success" type="submit" (click)="savePayment()">Koosta kviitung</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </span>
+
+
+  <span *ngIf="payment && payment.state === 'CREATED'">
+    <h2>Sularaha kviitung</h2>
+      <div class="section">
+        <div class="row">
+          <div class="col-xs-20 col-md-10 col-lg-10 col-xl-10">
+            <div class="form-group row">
+              <label class="col-xs-20 col-md-8 col-form-label">Sissemakse alus</label>
+              <div class="col-xs-12 col-md-12 col-lg-12 col-xl-12">
+                <div>{{payment.deklNumber}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-20 col-md-10 col-lg-10 col-xl-10">
+            <div class="form-group row">
+              <label class="col-xs-20 col-md-8 col-form-label">Summa</label>
+              <div class="col-xs-12 col-md-12 col-lg-12 col-xl-12">
+                <div>{{payment.amount}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-20 col-md-10 col-lg-10 col-xl-10">
+            <div class="form-group row">
+              <label class="col-xs-20 col-md-8 col-form-label">Saaja nimi</label>
+              <div class="col-xs-12 col-md-12 col-lg-12 col-xl-12">
+                <div>Maksu- ja Tolliamet</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-20 col-md-10 col-lg-10 col-xl-10">
+            <div class="form-group row">
+              <label class="col-xs-20 col-md-8 col-form-label">Saaja kood</label>
+              <div class="col-xs-12 col-md-12 col-lg-12 col-xl-12">
+                <div>700000349</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-20 col-md-10 col-lg-10 col-xl-10">
+            <div class="form-group row">
+              <label class="col-xs-20 col-md-8 col-form-label">Aeg</label>
+              <div class="col-xs-12 col-md-12 col-lg-12 col-xl-12">
+                <div>{{payment.date}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-20 col-md-10 col-lg-10 col-xl-10">
+            <div class="form-group row">
+              <label class="col-xs-20 col-md-8 col-form-label">Võttis vastu</label>
+              <div class="col-xs-12 col-md-12 col-lg-12 col-xl-12">
+                <div>{{payment.employee}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-20 col-md-10 col-lg-10 col-xl-10">
+            <div class="form-group row">
+              <label class="col-xs-20 col-md-8 col-form-label">Kviitungi number</label>
+              <div class="col-xs-12 col-md-12 col-lg-12 col-xl-12">
+                <div>{{payment.number}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-20 col-md-20 col-lg-20 col-xl-20" style="text-align: right;">
+            <div style="display: inline;">
+              <button class="btn btn-success" (click)="acceptPayment()">Kinnita kviitung</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </span>
+
+</div>
