@@ -13,7 +13,7 @@
                [placeholder]="placeHolder"
                autocomplete="off"
                class="form-control">
-        <div *ngIf="!isValid" class="form-control-feedback">Liiga pikk tekst (lubatud kuni {{maxLength}} sümbolit)</div>
+        <div *ngIf="!isValid" class="form-control-feedback">{{errorText}}</div>
       </div>
   </div>
 </div>

@@ -1,27 +1,29 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { NgClass } from '@angular/common';
 import { ControlValueAccessor } from '@angular/forms';
 import { EmtaBaseInputComponent } from './emta-baseinput.component';
 
 @Component ({
-  selector: 'emta-textinput',
+  selector: 'emta-numberinput',
   providers: [],
   templateUrl: './emta-textinput.component.html'
 })
-export class EmtaTextInputComponent extends EmtaBaseInputComponent /* implements ControlValueAccessor, */ {
+export class EmtaNumberInputComponent extends EmtaBaseInputComponent {
 
   @Input()
-  public value: string;
+  public value: number;
 
   @Input()
   public maxLength: number;
 
   initialize() {
-    this.errorText = 'Liiga pikk tekst (lubatud kuni ' + this.maxLength + ' sümbolit)';
+    this.errorText = 'Lubatud on ainult arvuline väärtus';
+    if (this.placeHolder === '') {
+      this.placeHolder = 'Arvuline väärtus';
+    }
   }
-
   validateNewValue(valueToCheck) {
-    if (valueToCheck && valueToCheck.length > this.maxLength) {
+    if (valueToCheck && isNaN(valueToCheck)) {
       this.isValid = false;
     } else {
       this.isValid = true;
