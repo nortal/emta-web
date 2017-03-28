@@ -1,3 +1,4 @@
+import {AuthService} from "../../auth/auth.service";
 import {
   Component,
   OnInit
@@ -13,7 +14,7 @@ export class NavigationComponent implements OnInit {
   // Set our default values
   public localState = { value: '' };
 
-  constructor(private translate: TranslateService) {
+  constructor(private translate: TranslateService, public authService: AuthService) {
   }
 
   public ngOnInit() {

@@ -1,13 +1,14 @@
 import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { NgClass } from '@angular/common';
 import { ControlValueAccessor } from '@angular/forms';
+import {EmtaBaseInputComponent} from "./emta-baseinput.component";
 
 @Component ({
   selector: 'emta-textinput',
   providers: [],
   templateUrl: './emta-textinput.component.html'
 })
-export class EmtaTextInputComponent implements /*ControlValueAccessor, */ OnInit {
+export class EmtaTextInputComponent extends EmtaBaseInputComponent implements /*ControlValueAccessor, */ OnInit {
 
   @Input()
   public labelText: string;
@@ -15,22 +16,8 @@ export class EmtaTextInputComponent implements /*ControlValueAccessor, */ OnInit
   @Input()
   public value: string;
 
-  @Output()
-  public valueChange: EventEmitter<String> = new EventEmitter<String>();
-
-  @Input()
-  public name: string;
-
-  @Input()
-  public placeHolder: string;
-
-  @Input()
-  public readOnly: boolean;
-
   @Input()
   public maxLength: number;
-
-  public isValid: boolean = true;
 
   public ngOnInit() {
     console.log('Label: ' + this.labelText);
@@ -39,14 +26,7 @@ export class EmtaTextInputComponent implements /*ControlValueAccessor, */ OnInit
     }
   }
 
-  public onChange(newValue) {
-    this.validateNewValue(newValue);
-    if (this.isValid) {
-      this.valueChange.emit(newValue);
-    }
-  }
-
-  private validateNewValue(valueToCheck) {
+  protected validateNewValue(valueToCheck) {
     if (valueToCheck && valueToCheck.length > this.maxLength) {
       this.isValid = false;
     } else {
