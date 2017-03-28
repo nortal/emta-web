@@ -1,5 +1,9 @@
 {
-  "EESNIMI": "Imia",
-  "PERENIMI": "Familia",
-  "ÜKSUS": "Vjso po russki"
+  "FIRSTNAME": "Имя",
+  "LASTNAME": "Фамилия",
+  "DEPARTMENT": "Отделение/Роль",
+  "COUNTRY": "Страна",
+  "CODE": "Код",
+  "EMPLOYEE":"Служащий",
+  "BIRTHDATE": "Дата рождения"
 }

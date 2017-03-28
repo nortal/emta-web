@@ -1,3 +1,5 @@
+import {CountryService} from "../country/country.service";
+import {Subject} from "rxjs/Subject";
 import {
   Component,
   OnInit
@@ -29,20 +31,17 @@ export class SearchComponent implements OnInit {
     "Sõiduk"
   ];
 
-  private countries = [
-    "Narnia",
-    "Erathia",
-    "Dummy data here for nows"
-  ];
-
   private searchParams: any = {
 
   };
 
+  private foundCountries = new Subject<any[]>();
+
   // TypeScript public modifiers
   constructor(
     public appState: AppState,
-    public title: Title
+    public title: Title,
+    private countryService: CountryService
   ) {}
 
   public ngOnInit() {
@@ -55,5 +54,9 @@ export class SearchComponent implements OnInit {
     this.appState.set('value', value);
     this.localState.value = '';
     console.log('searchParams', this.searchParams);
+  }
+
+  searchCountries(term) {
+    this.countryService.searchCountries(term).subscribe(x => this.foundCountries.next(x));
   }
 }

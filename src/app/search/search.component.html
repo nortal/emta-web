@@ -10,17 +10,10 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-xs-20 col-md-10 col-lg-10 col-xl-10">
-          <emta-textinput labelText="ÜKSUS" readOnly="true" [(value)]="firstNameValue"></emta-textinput>
+          <emta-textinput labelText="DEPARTMENT" readOnly="true" [value]="firstNameValue"></emta-textinput>
         </div>
         <div class="col-xs-20 col-md-10 col-lg-10 col-xl-10">
-          <div class="form-group row">
-            <label class="col-xs-20 col-md-8 col-form-label">Ametnik</label>
-            <div class="col-xs-12 col-md-12 col-lg-12 col-xl-12">
-              <span class="form-text">
-                Merike Danelson
-              </span>
-            </div>
-          </div>
+          <emta-textinput labelText="EMPLOYEE" readOnly="true" value="Merike Danelson"></emta-textinput>
         </div>
       </div>
       <div class="row">
@@ -36,38 +29,32 @@
           <div class="form-group row">
             <label class="col-xs-20 col-md-8 col-form-label">Riik</label>
             <div class="col-xs-12 col-md-12 col-lg-12 col-xl-12">
-              <emta-select [data]="countries" [(ngModel)]="searchParams.country" name="country"></emta-select>
+              <emta-select
+                [foundData]="foundCountries"
+                (onSearch)="searchCountries($event)"
+                [(ngModel)]="searchParams.country"
+                [clearLast]="false"
+                name="country">
+              </emta-select>
             </div>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-xs-20 col-md-10 col-lg-10 col-xl-10">
-          <div class="form-group row">
-            <label class="col-xs-20 col-md-8 col-form-label">Kood</label>
-            <div class="col-xs-12 col-md-12 col-lg-12 col-xl-12">
-              <div><input type="text" name="code" value="" placeholder="" label="" autocomplete="off"
-                          class="form-control"></div>
-            </div>
-          </div>
+          <emta-textinput labelText="CODE" ([value])="code"></emta-textinput>
         </div>
         <div class="col-xs-20 col-md-10 col-lg-10 col-xl-10">
-          <div class="form-group row">
-            <label class="col-xs-20 col-md-8 col-form-label">Sünniaeg</label>
-            <div class="col-xs-12 col-md-12 col-lg-12 col-xl-12">
-              <input type="text" class="form-control" />
-            </div>
-          </div>
+          <emta-textinput labelText="BIRTHDATE" ([value])="birthdate"></emta-textinput>
         </div>
       </div>
       <div class="row">
         <div class="col-xs-20 col-md-10 col-lg-10 col-xl-10">
-          <emta-textinput labelText="EESNIMI" [(value)]="firstNameValue" placeHolder="mai pleiss hõulder" name="firstName" maxLength="6"></emta-textinput>
+          <emta-textinput labelText="FIRSTNAME" [(value)]="firstNameValue" placeHolder="mai pleiss hõulder" name="firstName" maxLength="6"></emta-textinput>
         </div>
         <div class="col-xs-20 col-md-10 col-lg-10 col-xl-10">
-          <emta-textinput labelText="PERENIMI" name="lastName"></emta-textinput>
-        </div>
-      </div>
+          <emta-textinput labelText="LASTNAME" name="lastName"></emta-textinput>
+        </div></div>
       <div class="row">
         <div class="col-xs-20 col-md-20 col-lg-20 col-xl-20" style="text-align: right;">
           <div style="display: inline-block; margin-right: 1rem;">

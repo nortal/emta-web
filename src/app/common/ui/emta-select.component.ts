@@ -24,10 +24,17 @@ export class EmtaSelectComponent implements ControlValueAccessor, OnInit {
   @Input() displayFunc = x => x;
   @Input() placeholder = "Leia sobiv...";
   @Input() notFoundText = "Puudub valik"
+  @Input() clearLast = true;
 
   private show = false;
 
   private searchTerms = new Subject<string>();
+
+  @Output()
+  onSearch: Observable<string> = this.searchTerms.debounceTime(300).distinctUntilChanged();
+  @Input()
+  foundData: Observable<any[]>;
+
   private initialData = new Subject<any[]>();
 
   private selected = null;
@@ -41,6 +48,17 @@ export class EmtaSelectComponent implements ControlValueAccessor, OnInit {
   private onChange = x => x;
 
   public ngOnInit() {
+    if (!this.foundData) {
+      this.foundData = this.defaultFoundData();
+    }
+    let merged = Observable.merge(this.initialData, this.foundData);
+    merged.subscribe(x => this.recalcCurrentIndex(x));
+    this.adata = merged.map(y => y.map(x => ({
+      text: this.displayFunc(x),
+      value: x
+    })));
+}
+  private defaultFoundData() {
     let searched = this.searchTerms
       //.debounceTime(300)        // wait for 300ms pause in events
       .distinctUntilChanged()   // ignore if next search term is same as previous
@@ -50,13 +68,8 @@ export class EmtaSelectComponent implements ControlValueAccessor, OnInit {
       .catch(error => {
         return Observable.of([]);
       });
-    let merged = Observable.merge(this.initialData, searched);
-    merged.subscribe(x => this.recalcCurrentIndex(x));
-    this.adata = merged.map(y => y.map(x => ({
-      text: this.displayFunc(x),
-      value: x
-    })));
-}
+    return searched;
+  }
 
   private initData() {
     this.initialData.next(this.data);
@@ -67,17 +80,21 @@ export class EmtaSelectComponent implements ControlValueAccessor, OnInit {
     return Observable.of(this.data.filter(x => x.toString().toLowerCase().indexOf(t) >= 0));
   }
 
-  private onInput(term) {
+  private onInput(term: string) {
     this.searchTerms.next(term);
   }
 
   trigger() {
     this.show = !this.show;
     if (this.show) {
-      this.initData();
+      if (this.clearLast) {
+        this.initData();
+      }
       setTimeout(() => this.focus(), 10);
     } else {
-      this.searchInput.nativeElement.value = '';
+      if (this.clearLast) {
+        this.searchInput.nativeElement.value = '';
+      }
       this.parentButton.nativeElement.focus();
     }
   }
@@ -125,6 +142,14 @@ export class EmtaSelectComponent implements ControlValueAccessor, OnInit {
     } else if (event.key === "Escape") {
       this.trigger();
     }
+  }
+
+  onBlur() {
+    setTimeout(()=>{
+      if (this.show) {
+        this.trigger();
+      }
+    }, 100);
   }
 
   /**
