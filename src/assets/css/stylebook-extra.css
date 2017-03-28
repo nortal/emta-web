@@ -1,3 +1,27 @@
+datepicker-inner .btn {
+  color: black;
+}
+
+datepicker-inner .pull-right {
+  float: right;
+}
+
+/*.glyphicon-chevron-left::before {
+  content: "";
+}*/
+
+.glyphicon-chevron-left::before {
+  content: "<";
+}
+
+.glyphicon-chevron-right::before {
+  content: ">";
+}
+
+.sidebar ul li.active {
+  text-decoration: underline;
+}
+
 .clear {
     -webkit-appearance: none;
     background: none;

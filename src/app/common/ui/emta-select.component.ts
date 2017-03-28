@@ -144,12 +144,16 @@ export class EmtaSelectComponent implements ControlValueAccessor, OnInit {
     }
   }
 
-  onBlur() {
+  onBlur(event) {
+    if (event.relatedTarget && event.relatedTarget.className === "opt") {
+      //Most probably this is a selection in our own dropdown.
+      return;
+    }
     setTimeout(()=>{
       if (this.show) {
         this.trigger();
       }
-    }, 100);
+    }, 200);
   }
 
   /**

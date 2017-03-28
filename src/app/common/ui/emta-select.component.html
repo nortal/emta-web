@@ -15,13 +15,13 @@
     (keyup)="onKey($event)">
     <div class="bs-searchbox">
       <input type="text" class="form-control" autocomplete="off" #searchInput
-        (keyup)="onInput($event.target.value)" (blur)="onBlur()"/>
+        (keyup)="onInput($event.target.value)" (blur)="onBlur($event)"/>
     </div>
     <ul class="dropdown-menu inner" role="menu" style="max-height: 302.172px; overflow-y: auto;">
       <li *ngFor="let el of adata | async; let i = index"
         [class.selected]="isSelected(el.value)"
-        [class.active]="i == currentIndex">
-        <a tabindex="0" class="opt" (mouseup)="select(i)">
+        [class.active]="i == currentIndex" (mouseup)="select(i)">
+        <a tabindex="0" class="opt">
           <span class="text">{{el.text}}</span>
         </a>
       </li>

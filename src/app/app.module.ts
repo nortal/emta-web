@@ -1,8 +1,13 @@
+import {LoginComponent} from "./auth/login.component";
+import {AuthService} from "./auth/auth.service";
+import {AuthGuard} from "./auth/auth-guard.service";
 import {CountryModule} from "./country/country.module";
+import {OperationalInterestModule} from "./operational-interest/operational.interest.module";
 import {SidebarComponent} from "./layout/sidebar/sidebar.component";
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, Http } from '@angular/http';
+import {Ng2PaginationModule} from 'ng2-pagination';
 import { TranslateModule,
   TranslateService,
   TranslatePipe,
@@ -32,7 +37,8 @@ import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
-import { SearchComponent } from './search';
+import { SearchComponent, SearchResultComponent } from './search';
+import { ObjectDetailComponent } from './object-detail';
 import { AboutComponent } from './about';
 import { NoContentComponent } from './no-content';
 import { XLargeDirective } from './home/x-large';
@@ -67,16 +73,21 @@ export function createTranslateLoader(http: Http) {
     EmtaFooterComponent,
     AppComponent,
     AboutComponent,
+    LoginComponent,
     SearchComponent,
+    SearchResultComponent,
     SidebarComponent,
     NoContentComponent,
     XLargeDirective,
     PaymentComponent,
     PayerComponent,
     CustomerComponent,
+    ObjectDetailComponent
       ],
   imports: [ // import Angular's modules
     UiModule,
+    Ng2PaginationModule,
+    OperationalInterestModule,
     CountryModule,
     BrowserModule,
     FormsModule,
@@ -91,6 +102,8 @@ export function createTranslateLoader(http: Http) {
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,
     APP_PROVIDERS,
+    AuthGuard,
+    AuthService
   ]
 })
 export class AppModule {
