@@ -33,6 +33,7 @@ import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 import { SearchComponent } from './search';
+import { ObjectDetailComponent } from './object-detail';
 import { AboutComponent } from './about';
 import { NoContentComponent } from './no-content';
 import { XLargeDirective } from './home/x-large';
@@ -74,6 +75,7 @@ export function createTranslateLoader(http: Http) {
     PaymentComponent,
     PayerComponent,
     CustomerComponent,
+    ObjectDetailComponent
       ],
   imports: [ // import Angular's modules
     UiModule,
