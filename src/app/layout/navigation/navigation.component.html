@@ -28,13 +28,13 @@
         <a class="nav-link nav-language link-gray" (click)="selectLanguage($event, 'et')">In English</a>
       </li>
 
-      <li class="nav-item nav-item-desktop-only">
+      <li class="nav-item nav-item-desktop-only" *ngIf="authService.isLoggedIn">
         <a class="nav-link nav-messages" href="javascript:void(0);" data-toggle="popover tooltip" popover-trigger="click" popover-placement="bottom" popover-content="#messages-popover" popover-class="popover-messages" tooltip-trigger="hover focus" tooltip-placement="bottom" title="" data-original-title="Vestlused">
           <span class="unread">3</span>
         </a>
       </li>
 
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="authService.isLoggedIn">
         <a class="nav-link nav-notifications" href="javascript:void(0);" data-toggle="popover tooltip" popover-trigger="click" popover-placement="bottom" popover-content="#notifications-popover" popover-class="popover-messages" tooltip-trigger="hover focus" tooltip-placement="bottom" title="" data-original-title="Teated">
           <span class="unread">5</span>
         </a>
@@ -47,7 +47,7 @@
         <a class="nav-link nav-help-center" href="javascript:void(0);" data-toggle="tooltip" tooltip-trigger="hover focus" tooltip-placement="bottom" title="" tabindex="0" data-animation="false" data-original-title="Abikeskus"></a>
       </li>
 
-      <li class="nav-item nav-item-shrink-desktop">
+      <li class="nav-item nav-item-shrink-desktop" *ngIf="authService.isLoggedIn">
         <a class="nav-link nav-user" href="javascript:void(0);" data-toggle="popover" popover-trigger="click" popover-placement="bottom" popover-content="#user-popover" popover-class="popover-header-user" data-original-title="" title="">
           <div class="avatar">MT</div>
           <div class="nav-user-name nav-item-desktop-only">
@@ -58,7 +58,9 @@
       </li>
 
       <li class="nav-item nav-logout">
-        <a class="btn btn-logout" href="javascript:void(0);" data-toggle="popover" popover-trigger="click" popover-placement="bottom" popover-content="#exit-popover" popover-class="popover-exit" data-original-title="" title="">Väljun</a>
+        <!-- <a class="btn btn-logout" href="javascript:void(0);" data-toggle="popover" popover-trigger="click" popover-placement="bottom" popover-content="#exit-popover" popover-class="popover-exit" data-original-title="" title="">Väljun</a> -->
+        <a class="btn btn-logout" (click)="authService.logout()" *ngIf="authService.isLoggedIn">Väljun</a>
+        <a class="btn btn-square btn-success" style="line-height: inherit" routerLink="login" *ngIf="!authService.isLoggedIn">Sisene</a>
       </li>
     </ul>
 

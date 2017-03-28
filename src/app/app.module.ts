@@ -1,3 +1,6 @@
+import {LoginComponent} from "./auth/login.component";
+import {AuthService} from "./auth/auth.service";
+import {AuthGuard} from "./auth/auth-guard.service";
 import {CountryModule} from "./country/country.module";
 import {SidebarComponent} from "./layout/sidebar/sidebar.component";
 import { BrowserModule } from '@angular/platform-browser';
@@ -68,6 +71,7 @@ export function createTranslateLoader(http: Http) {
     EmtaFooterComponent,
     AppComponent,
     AboutComponent,
+    LoginComponent,
     SearchComponent,
     SidebarComponent,
     NoContentComponent,
@@ -93,6 +97,8 @@ export function createTranslateLoader(http: Http) {
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,
     APP_PROVIDERS,
+    AuthGuard,
+    AuthService
   ]
 })
 export class AppModule {
