@@ -45,7 +45,12 @@
           <emta-textinput labelText="CODE" ([value])="code"></emta-textinput>
         </div>
         <div class="col-xs-20 col-md-10 col-lg-10 col-xl-10">
-          <emta-textinput labelText="BIRTHDATE" ([value])="birthdate"></emta-textinput>
+          <div class="form-group row">
+            <label class="col-xs-20 col-md-5 col-form-label">{{'BIRTHDATE' | translate}}</label>
+            <div class="col-xs-12 col-md-12 col-lg-12 col-xl-12">
+              <emta-datepicker [(ngModel)]="searchParams.birthdate" name="birthdate"></emta-datepicker>
+            </div>
+          </div>
         </div>
       </div>
       <div class="row">
