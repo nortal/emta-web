@@ -19,6 +19,9 @@ export abstract class EmtaBaseInputComponent implements OnInit /* implements Con
   @Input()
   public placeHolder: string;
 
+  @Input()
+  public value: string;
+
   @Output()
   public valueChange: EventEmitter<String> = new EventEmitter<String>();
 

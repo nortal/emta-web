@@ -10,10 +10,10 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-xs-20 col-md-10 col-lg-10 col-xl-10">
-          <emta-textinput labelText="DEPARTMENT" readOnly="true" [value]="firstNameValue"></emta-textinput>
+          <emta-textinput labelText="DEPARTMENT" readOnly="true" [value]="firstNameValue" name="department"></emta-textinput>
         </div>
         <div class="col-xs-20 col-md-10 col-lg-10 col-xl-10">
-          <emta-textinput labelText="EMPLOYEE" readOnly="true" value="Merike Danelson"></emta-textinput>
+          <emta-textinput labelText="EMPLOYEE" readOnly="true" value="Merike Danelson" name="employee"></emta-textinput>
         </div>
       </div>
       <div class="row">
@@ -42,7 +42,7 @@
       </div>
       <div class="row">
         <div class="col-xs-20 col-md-10 col-lg-10 col-xl-10">
-          <emta-numberinput labelText="CODE" ([value])="code"></emta-numberinput>
+          <emta-numberinput labelText="CODE" [(value)]="codeValue" name="code"></emta-numberinput>
         </div>
         <div class="col-xs-20 col-md-10 col-lg-10 col-xl-10">
           <div class="form-group row">
@@ -55,7 +55,7 @@
       </div>
       <div class="row">
         <div class="col-xs-20 col-md-10 col-lg-10 col-xl-10">
-          <emta-textinput labelText="FIRSTNAME" [(value)]="firstNameValue" placeHolder="mai pleiss hõulder"
+          <emta-textinput labelText="FIRSTNAME" [(value)]="firstNameValue" placeHolder="Siia käib eesnimi"
                           name="firstName" maxLength="6"></emta-textinput>
         </div>
         <div class="col-xs-20 col-md-10 col-lg-10 col-xl-10">

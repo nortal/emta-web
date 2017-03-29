@@ -10,11 +10,7 @@ import { EmtaBaseInputComponent } from './emta-baseinput.component';
 })
 export class EmtaNumberInputComponent extends EmtaBaseInputComponent {
 
-  @Input()
-  public value: number;
 
-  @Input()
-  public maxLength: number;
 
   initialize() {
     this.errorText = 'Lubatud on ainult arvuline väärtus';

@@ -11,9 +11,6 @@ import { EmtaBaseInputComponent } from './emta-baseinput.component';
 export class EmtaTextInputComponent extends EmtaBaseInputComponent /* implements ControlValueAccessor, */ {
 
   @Input()
-  public value: string;
-
-  @Input()
   public maxLength: number;
 
   initialize() {
