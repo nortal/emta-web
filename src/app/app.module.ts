@@ -4,6 +4,7 @@ import {AuthGuard} from "./auth/auth-guard.service";
 import {CountryModule} from "./country/country.module";
 import {OperationalInterestModule} from "./operational-interest/operational.interest.module";
 import {SidebarComponent} from "./layout/sidebar/sidebar.component";
+import {TrailComponent} from "./layout/trail/trail.component";
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, Http } from '@angular/http';
@@ -46,6 +47,7 @@ import { NavigationComponent } from './layout/navigation';
 import { EmtaFooterComponent } from './layout/emta-footer';
 import { UiModule } from './common/ui/ui.module';
 import { PaymentComponent, PayerComponent, CustomerComponent } from './dollaz';
+import { UigComponent } from './uig/uig.component';
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -77,12 +79,14 @@ export function createTranslateLoader(http: Http) {
     SearchComponent,
     SearchResultComponent,
     SidebarComponent,
+    TrailComponent,
     NoContentComponent,
     XLargeDirective,
     PaymentComponent,
     PayerComponent,
     CustomerComponent,
-    ObjectDetailComponent
+    ObjectDetailComponent,
+    UigComponent,
       ],
   imports: [ // import Angular's modules
     UiModule,

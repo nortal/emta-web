@@ -1,0 +1,47 @@
+
+<div class="container">
+  <div class="stylebook-section">
+    <h1 class="stylebook-section-title" id="forms">8. Vormid</h1>
+    <h2 id="form-elements" class="stylebook-section-title">8.1 Vormiväljad</h2>
+
+
+    <form name="random" class="row">
+      <div class="col-xs-20 col-xl-10">
+
+        <div class="form-group row">
+          <emta-input type="checkbox" name="checkbox1" label="Märkeruut" [(ngModel)] ="lego.checkbox1"></emta-input>
+        </div>
+
+        <div class="form-group row">
+          <emta-input type="text" name="text1" label="Tekstiväli" [(ngModel)] ="lego.text1" placeholder="write here"></emta-input>
+        </div>
+
+        <div class="form-group row">
+          <emta-input type="text" name="text2" label="Readonly" [(ngModel)] ="lego.text2" placeholder="shold be disabled" readonly="readonly"></emta-input>
+        </div>
+
+        <div class="form-group row">
+          <emta-input type="textarea" name="textarea1" label="textarea" [(ngModel)] ="lego.textarea" placeholder="lorum polorum"></emta-input>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-md-10 custom-controls-stacked">
+          <emta-input 
+            type="radio"
+            name="radio1"
+            [label]="monkey"
+            [value]="monkey"
+            *ngFor="let monkey of ['Leonardo', 'Donatello', 'Michelangelo', 'Raphael']"
+            [(ngModel)]="lego.radio1"
+            ></emta-input>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-20 col-xl-10">
+        <pre>{{lego | json}}</pre>
+      </div>
+    </form>
+  </div>
+</div>
+

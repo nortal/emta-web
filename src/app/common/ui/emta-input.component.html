@@ -1,0 +1,59 @@
+
+
+<span *ngIf="type === 'checkbox'" class="form-group row">
+  <label class="custom-control custom-checkbox">
+    <input type="checkbox" class="custom-control-input" [name]="name"  [(ngModel)]="val" (change)="onChange(val)">
+    <span class="custom-control-indicator"></span>
+    <span class="custom-control-description">{{label}}</span>
+  </label>
+</span>
+
+<span *ngIf="type === 'text'" class="form-group row">
+  <label for="{{name}}" class="col-xs-20 col-md-8 col-form-label">
+    {{label}}
+    <div class="label-comment">Vormivälja kommentaar</div>
+  </label>
+  <div class="col-xs-20 col-md-12">
+    <input type="text"
+    class="form-control"
+    id="{{name}}"
+    [name]="name"
+    [(ngModel)]="val"
+    (change)="onChange(val)"
+    [placeholder]="placeholder"
+    [readonly]="readonly">
+  </div>
+</span>
+
+
+<span *ngIf="type === 'textarea'" class="form-group row">
+  <label for="{{name}}" class="col-xs-20 col-md-8 col-form-label">
+    {{label}}
+  </label>
+  <div class="col-xs-20 col-md-12">
+    <textarea type="text"
+      class="form-control textarea"
+      id="{{name}}"
+      [name]="name"
+      [(ngModel)]="val"
+      (change)="onChange(val)"
+      [placeholder]="placeholder"
+      [readonly]="readonly">
+    </textarea>
+  </div>
+</span>
+
+
+<span *ngIf="type === 'radio'" >
+  <label class="custom-control custom-radio">
+    <input type="radio"
+    class="custom-control-input"
+    id="{{name}}"
+    [name]="name"
+    [(ngModel)]="val"
+    (change)="onChange(val)"
+    [value]="value">
+    <span class="custom-control-indicator"></span>
+    <span class="custom-control-description">{{label}}</span>
+  </label>
+</span>

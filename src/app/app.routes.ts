@@ -9,9 +9,12 @@ import { SearchComponent } from './search/search.component';
 
 import { PaymentComponent } from './dollaz/payment.component';
 import { ObjectDetailComponent } from './object-detail/object-detail.component';
+import { TrailComponent } from './layout/trail/trail.component';
+import { UigComponent } from './uig/uig.component';
 
 export const ROUTES: Routes = [
-  { path: '',      component: SearchComponent },
+  { path: 'uig', component: UigComponent },
+  { path: '',      component: TrailComponent },
   { path: 'search',  component: SearchComponent },
   { path: 'about', component: AboutComponent },
   { path: 'detail', component: ObjectDetailComponent },
