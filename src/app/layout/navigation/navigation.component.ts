@@ -3,7 +3,7 @@ import {
   Component,
   OnInit
 } from '@angular/core';
-import { TranslateService } from 'ng2-translate';
+import {TranslateService} from 'ng2-translate';
 
 @Component({
   selector: 'navigation',  // <navigation></navigation>
@@ -12,7 +12,7 @@ import { TranslateService } from 'ng2-translate';
 
 export class NavigationComponent implements OnInit {
   // Set our default values
-  public localState = { value: '' };
+  public localState = {value: ''};
 
   constructor(private translate: TranslateService, public authService: AuthService) {
   }

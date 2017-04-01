@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { AppState } from '../app.service';
+import {Component, Input} from '@angular/core';
+import {AppState} from '../app.service';
 
 @Component({
   selector: 'payer',
@@ -12,9 +12,8 @@ export class PayerComponent {
 
   public filter: any = {};
 
-  constructor(
-    public appState: AppState,
-  ) {}
+  constructor(public appState: AppState,) {
+  }
 
   public search() {
     console.log(this.filter);

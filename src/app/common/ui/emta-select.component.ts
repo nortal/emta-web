@@ -1,18 +1,18 @@
 import {Observable} from "rxjs/Observable";
 import {Subject} from "rxjs/Subject";
-import { Component, Input, Output, EventEmitter, OnInit, ViewChild, forwardRef } from '@angular/core';
-import { NgClass } from '@angular/common';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import {Component, Input, Output, EventEmitter, OnInit, ViewChild, forwardRef} from '@angular/core';
+import {NgClass} from '@angular/common';
+import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 
-@Component ({
+@Component({
   selector: 'emta-select',
   templateUrl: './emta-select.component.html',
   providers: [
-      {
-          provide: NG_VALUE_ACCESSOR,
-          useExisting: forwardRef(() => EmtaSelectComponent),
-          multi: true
-      }
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => EmtaSelectComponent),
+      multi: true
+    }
   ]
 })
 export class EmtaSelectComponent implements ControlValueAccessor, OnInit {
@@ -57,10 +57,11 @@ export class EmtaSelectComponent implements ControlValueAccessor, OnInit {
       text: this.displayFunc(x),
       value: x
     })));
-}
+  }
+
   private defaultFoundData() {
     let searched = this.searchTerms
-      //.debounceTime(300)        // wait for 300ms pause in events
+    //.debounceTime(300)        // wait for 300ms pause in events
       .distinctUntilChanged()   // ignore if next search term is same as previous
       .switchMap(term => term   // switch to new observable each time
         ? this.search(term)
@@ -149,7 +150,7 @@ export class EmtaSelectComponent implements ControlValueAccessor, OnInit {
       //Most probably this is a selection in our own dropdown.
       return;
     }
-    setTimeout(()=>{
+    setTimeout(() => {
       if (this.show) {
         this.trigger();
       }
@@ -162,18 +163,21 @@ export class EmtaSelectComponent implements ControlValueAccessor, OnInit {
   writeValue(obj: any) {
     this.selected = obj || null;
   }
+
   /**
    * Set the function to be called when the control receives a change event.
    */
   registerOnChange(fn: any) {
     this.onChange = fn;
   }
+
   /**
    * Set the function to be called when the control receives a touch event.
    */
-  registerOnTouched(fn: any) {};
+  registerOnTouched(fn: any) {
+  };
 }
 
-function mod(x,y) {
-  return (x+y) % y;
+function mod(x, y) {
+  return (x + y) % y;
 }

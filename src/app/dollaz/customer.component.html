@@ -28,7 +28,8 @@
           <div class="form-group row">
             <label class="col-xs-20 col-md-8 col-form-label">Kliendi eesnimi</label>
             <div class="col-xs-12 col-md-12 col-lg-12 col-xl-12">
-              <div><input [(ngModel)]="filter.forname" type="text" name="forname" autocomplete="off" class="form-control"></div>
+              <div><input [(ngModel)]="filter.forname" type="text" name="forname" autocomplete="off"
+                          class="form-control"></div>
             </div>
           </div>
         </div>
@@ -57,20 +58,20 @@
       </div>
       <table class="table">
         <thead>
-          <tr>
-            <th></th>
-            <th>Kliendi kood</th>
-            <th>Kliendi nimi</th>
-            <th>Kliendi eesnimi</th>
-          </tr>
+        <tr>
+          <th></th>
+          <th>Kliendi kood</th>
+          <th>Kliendi nimi</th>
+          <th>Kliendi eesnimi</th>
+        </tr>
         </thead>
         <tbody class="with-details">
-          <tr *ngFor="let customer of customers" (click)="onSelect(customer)">
-            <td style="width: 50px;"><a aria-expanded="false" class="collapse_toggle collapsed"></a></td>
-            <td><span class="text">{{customer.code}}</span></td>
-            <td><span class="text">{{customer.name}}</span></td>
-            <td><span class="text">{{customer.forname}}</span></td>
-          </tr>
+        <tr *ngFor="let customer of customers" (click)="onSelect(customer)">
+          <td style="width: 50px;"><a aria-expanded="false" class="collapse_toggle collapsed"></a></td>
+          <td><span class="text">{{customer.code}}</span></td>
+          <td><span class="text">{{customer.name}}</span></td>
+          <td><span class="text">{{customer.forname}}</span></td>
+        </tr>
         </tbody>
       </table>
     </div>

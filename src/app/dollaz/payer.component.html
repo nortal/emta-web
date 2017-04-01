@@ -28,7 +28,8 @@
           <div class="form-group row">
             <label class="col-xs-20 col-md-8 col-form-label">Maksja eesnimi</label>
             <div class="col-xs-12 col-md-12 col-lg-12 col-xl-12">
-              <div><input [(ngModel)]="filter.forname" type="text" name="forname" autocomplete="off" class="form-control"></div>
+              <div><input [(ngModel)]="filter.forname" type="text" name="forname" autocomplete="off"
+                          class="form-control"></div>
             </div>
           </div>
         </div>
@@ -57,20 +58,20 @@
       </div>
       <table class="table">
         <thead>
-          <tr>
-            <th></th>
-            <th>Maksja kood</th>
-            <th>Maksja nimi</th>
-            <th>Maksja eesnimi</th>
-          </tr>
+        <tr>
+          <th></th>
+          <th>Maksja kood</th>
+          <th>Maksja nimi</th>
+          <th>Maksja eesnimi</th>
+        </tr>
         </thead>
         <tbody class="with-details">
-          <tr *ngFor="let payer of payers" (click)="onSelect(payer)">
-            <td style="width: 50px;"><a aria-expanded="false" class="collapse_toggle collapsed"></a></td>
-            <td><span class="text">{{payer.code}}</span></td>
-            <td><span class="text">{{payer.name}}</span></td>
-            <td><span class="text">{{payer.forname}}</span></td>
-          </tr>
+        <tr *ngFor="let payer of payers" (click)="onSelect(payer)">
+          <td style="width: 50px;"><a aria-expanded="false" class="collapse_toggle collapsed"></a></td>
+          <td><span class="text">{{payer.code}}</span></td>
+          <td><span class="text">{{payer.name}}</span></td>
+          <td><span class="text">{{payer.forname}}</span></td>
+        </tr>
         </tbody>
       </table>
     </div>

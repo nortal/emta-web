@@ -9,13 +9,13 @@ import {
 
 @Component({
   selector: 'object-detail',
-  providers: [
-  ],
+  providers: [],
   templateUrl: './object-detail.component.html'
 })
 export class ObjectDetailComponent {
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+  }
 
   goBack() {
     this.router.navigate(['../']);

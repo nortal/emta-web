@@ -10,7 +10,7 @@ import {
 
 export class SidebarComponent implements OnInit {
   // Set our default values
-  public localState = { value: '' };
+  public localState = {value: ''};
 
   public ngOnInit() {
     console.log('näidisvormike');

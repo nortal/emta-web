@@ -5,8 +5,8 @@ import {
   Input
 } from '@angular/core';
 
-import { AppState } from '../app.service';
-import { Title } from '../common/ui/title';
+import {AppState} from '../app.service';
+import {Title} from '../common/ui/title';
 
 @Component({
   selector: 'search-result',
@@ -22,10 +22,9 @@ export class SearchResultComponent implements OnInit {
     currentPage: 1
   };
 
-  constructor(
-    public appState: AppState,
-    public title: Title,
-  ) {}
+  constructor(public appState: AppState,
+              public title: Title,) {
+  }
 
   public ngOnInit() {
     console.log('search result');

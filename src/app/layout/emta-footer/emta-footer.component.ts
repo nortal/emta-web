@@ -9,7 +9,7 @@ import {
 })
 export class EmtaFooterComponent implements OnInit {
   // Set our default values
-  public localState = { value: '' };
+  public localState = {value: ''};
   // TypeScript public modifiers
   // constructor();
 

@@ -1,6 +1,6 @@
 import {Subject} from "rxjs/Subject";
 import {Observable} from "rxjs/Observable";
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {countries} from './mock-countries';
 
 @Injectable()

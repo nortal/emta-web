@@ -2,7 +2,7 @@ import {
   Component,
   OnInit
 } from '@angular/core';
-import { Router, Routes } from '@angular/router';
+import {Router, Routes} from '@angular/router';
 
 @Component({
   selector: 'trail',
@@ -12,7 +12,7 @@ import { Router, Routes } from '@angular/router';
 export class TrailComponent implements OnInit {
   public trails: Routes;
 
-  constructor(private router:Router) {
+  constructor(private router: Router) {
   }
 
   public ngOnInit() {

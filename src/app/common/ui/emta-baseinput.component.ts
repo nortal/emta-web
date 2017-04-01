@@ -1,6 +1,6 @@
-import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
-import { NgClass } from '@angular/common';
-import { ControlValueAccessor } from '@angular/forms';
+import {Component, Input, Output, EventEmitter, OnInit} from '@angular/core';
+import {NgClass} from '@angular/common';
+import {ControlValueAccessor} from '@angular/forms';
 
 export abstract class EmtaBaseInputComponent implements OnInit /* implements ControlValueAccessor, */ {
 
@@ -27,7 +27,7 @@ export abstract class EmtaBaseInputComponent implements OnInit /* implements Con
 
   public isValid: boolean = true;
 
-  protected errorText : string;
+  protected errorText: string;
 
   public onChange(newValue) {
     this.validateNewValue(newValue);

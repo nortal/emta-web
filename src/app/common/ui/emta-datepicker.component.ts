@@ -1,4 +1,4 @@
-import {ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
+import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
 import {Component, Input, forwardRef} from '@angular/core';
 
 @Component({
@@ -20,7 +20,9 @@ export class EmtaDatepickerComponent implements ControlValueAccessor {
   @Input() public maxDate: Date;
 
   onSelectionDone(event: any, pop: any) {
-    setTimeout(() => {pop.hide()}, 10);
+    setTimeout(() => {
+      pop.hide()
+    }, 10);
     this.onChange(event);
   }
 
@@ -31,6 +33,7 @@ export class EmtaDatepickerComponent implements ControlValueAccessor {
       day: 'numeric'
     }) : '';
   }
+
   /**
    * Write a new value to the element.
    */
@@ -39,14 +42,17 @@ export class EmtaDatepickerComponent implements ControlValueAccessor {
       this.value = obj;
     }
   }
+
   /**
    * Set the function to be called when the control receives a change event.
    */
   registerOnChange(fn: any) {
     this.onChange = fn;
   }
+
   /**
    * Set the function to be called when the control receives a touch event.
    */
-  registerOnTouched(fn: any) {}
+  registerOnTouched(fn: any) {
+  }
 }

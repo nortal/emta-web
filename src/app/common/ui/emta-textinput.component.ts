@@ -1,9 +1,9 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { NgClass } from '@angular/common';
-import { ControlValueAccessor } from '@angular/forms';
-import { EmtaBaseInputComponent } from './emta-baseinput.component';
+import {Component, Input, Output, EventEmitter} from '@angular/core';
+import {NgClass} from '@angular/common';
+import {ControlValueAccessor} from '@angular/forms';
+import {EmtaBaseInputComponent} from './emta-baseinput.component';
 
-@Component ({
+@Component({
   selector: 'emta-textinput',
   providers: [],
   templateUrl: './emta-textinput.component.html'

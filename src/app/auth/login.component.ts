@@ -1,6 +1,6 @@
-import { Component }   from '@angular/core';
-import { Router }      from '@angular/router';
-import { AuthService } from './auth.service';
+import {Component}   from '@angular/core';
+import {Router}      from '@angular/router';
+import {AuthService} from './auth.service';
 @Component({
   template: `
     <h2>Sisselogimine</h2>
@@ -12,12 +12,15 @@ import { AuthService } from './auth.service';
 })
 export class LoginComponent {
   message: string;
+
   constructor(public authService: AuthService, public router: Router) {
     this.setMessage();
   }
+
   setMessage() {
     this.message = (this.authService.isLoggedIn ? 'Sisselogitud' : 'Väljalogitud');
   }
+
   login() {
     this.message = 'Login sisse...';
     this.authService.login().subscribe(() => {
@@ -30,6 +33,7 @@ export class LoginComponent {
       }
     });
   }
+
   logout() {
     this.authService.logout();
     this.setMessage();

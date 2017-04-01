@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {RADIO_GROUP_DIRECTIVES} from "ng2-radio-group/ng2-radio-group";
 
 @Component({
@@ -8,7 +8,8 @@ import {RADIO_GROUP_DIRECTIVES} from "ng2-radio-group/ng2-radio-group";
 export class UigComponent implements OnInit {
   public lego: any = {};
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

@@ -3,9 +3,9 @@ import {
   OnInit
 } from '@angular/core';
 
-import { AppState } from '../app.service';
-import { Title } from './title';
-import { XLargeDirective } from './x-large';
+import {AppState} from '../app.service';
+import {Title} from './title';
+import {XLargeDirective} from './x-large';
 
 @Component({
   // The selector is what angular internally uses
@@ -17,18 +17,17 @@ import { XLargeDirective } from './x-large';
     Title
   ],
   // Our list of styles in our component. We may add more to compose many styles together
-  styleUrls: [ './home.component.css' ],
+  styleUrls: ['./home.component.css'],
   // Every Angular template is first compiled by the browser before Angular runs it's compiler
   templateUrl: './home.component.html'
 })
 export class HomeComponent implements OnInit {
   // Set our default values
-  public localState = { value: '' };
+  public localState = {value: ''};
   // TypeScript public modifiers
-  constructor(
-    public appState: AppState,
-    public title: Title
-  ) {}
+  constructor(public appState: AppState,
+              public title: Title) {
+  }
 
   public ngOnInit() {
     console.log('hello `Home` component');

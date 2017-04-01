@@ -64,7 +64,7 @@ export class SearchComponent implements OnInit {
     this.localState.value = '';
     console.log('searchParams', this.searchParams);
     this.resultList = this.operationalInterestService.search()
-      .filter((item:any) => {
+      .filter((item: any) => {
         return !this.searchParams.objectType || item.objectType === (this.searchParams.objectType === 'Isik' ? 'PERSON' : 'CAR')
       });
   }

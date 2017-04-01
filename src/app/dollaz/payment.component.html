@@ -1,5 +1,5 @@
 <div>
-  <payer [onFinish]="setPayer.bind(this)" ></payer>
+  <payer [onFinish]="setPayer.bind(this)"></payer>
   <br/>
   <customer *ngIf="!!payer" [onFinish]="setCustomer.bind(this)" [filter]="{code: payer.code}"></customer>
   <br/>

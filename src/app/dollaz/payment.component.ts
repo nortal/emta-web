@@ -1,10 +1,10 @@
-import { Component,OnInit } from '@angular/core';
-import { AppState } from '../app.service';
-import { Title } from '../common/ui/title';
+import {Component, OnInit} from '@angular/core';
+import {AppState} from '../app.service';
+import {Title} from '../common/ui/title';
 
 @Component({
   selector: 'payment',
-  providers: [ Title ],
+  providers: [Title],
   templateUrl: './payment.component.html'
 })
 export class PaymentComponent implements OnInit {
@@ -13,10 +13,9 @@ export class PaymentComponent implements OnInit {
   public debts: any[];
   public payment: any;
 
-  constructor(
-    public appState: AppState,
-    public title: Title
-  ) {}
+  constructor(public appState: AppState,
+              public title: Title) {
+  }
 
   public ngOnInit() {
   }
@@ -26,11 +25,11 @@ export class PaymentComponent implements OnInit {
   }
 
   public setCustomer(customer: any) {
-    this.customer= customer;
+    this.customer = customer;
     this.searchDepts();
   }
 
-  public searchDepts(){
+  public searchDepts() {
     this.debts = [
       {
         type: 'TD',
@@ -41,7 +40,7 @@ export class PaymentComponent implements OnInit {
         dateCreated: '1918',
         aaa: 111,
         referenceNumber: '1',
-        bbb: 1.1/1.1
+        bbb: 1.1 / 1.1
       }
     ];
   }
