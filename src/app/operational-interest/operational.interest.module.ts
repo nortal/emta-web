@@ -1,7 +1,7 @@
-import {OperationalInterestService} from "./operational.interest.service";
-import {FormsModule} from '@angular/forms';
-import {CommonModule} from '@angular/common';
-import {NgModule} from '@angular/core';
+import { OperationalInterestService } from './operational.interest.service';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 
 @NgModule({
   imports: [

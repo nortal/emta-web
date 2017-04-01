@@ -1,7 +1,7 @@
-import {CountryService} from "./country.service";
-import {FormsModule} from '@angular/forms';
-import {CommonModule} from '@angular/common';
-import {NgModule} from '@angular/core';
+import { CountryService } from './country.service';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 
 @NgModule({
   imports: [

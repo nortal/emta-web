@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {AppState} from '../app.service';
-import {Title} from '../common/ui/title';
+import { Component, OnInit } from '@angular/core';
+import { AppState } from '../app.service';
+import { Title } from '../common/ui/title';
 
 @Component({
   selector: 'payment',
@@ -18,6 +18,7 @@ export class PaymentComponent implements OnInit {
   }
 
   public ngOnInit() {
+    console.log('initialized');
   }
 
   public setPayer(payer: any) {

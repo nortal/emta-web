@@ -1,4 +1,4 @@
-import {NO_ERRORS_SCHEMA} from '@angular/core';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import {
   inject,
   async,
@@ -7,8 +7,8 @@ import {
 } from '@angular/core/testing';
 
 // Load the implementations that should be tested
-import {AppComponent} from './app.component';
-import {AppState} from './app.service';
+import { AppComponent } from './app.component';
+import { AppState } from './app.service';
 
 describe(`App`, () => {
   let comp: AppComponent;

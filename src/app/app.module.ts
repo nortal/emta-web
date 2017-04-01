@@ -1,15 +1,15 @@
-import {LoginComponent} from "./auth/login.component";
-import {AuthService} from "./auth/auth.service";
-import {AuthGuard} from "./auth/auth-guard.service";
-import {CountryModule} from "./country/country.module";
-import {OperationalInterestModule} from "./operational-interest/operational.interest.module";
-import {SidebarComponent} from "./layout/sidebar/sidebar.component";
-import {TrailComponent} from "./layout/trail/trail.component";
-import {BrowserModule} from '@angular/platform-browser';
-import {FormsModule} from '@angular/forms';
-import {HttpModule, Http} from '@angular/http';
-import {Ng2PaginationModule} from 'ng2-pagination';
-import {SelectModule} from 'ng2-select';
+import { LoginComponent } from './auth/login.component';
+import { AuthService } from './auth/auth.service';
+import { AuthGuard } from './auth/auth-guard.service';
+import { CountryModule } from './country/country.module';
+import { OperationalInterestModule } from './operational-interest/operational.interest.module';
+import { SidebarComponent } from './layout/sidebar/sidebar.component';
+import { TrailComponent } from './layout/trail/trail.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { HttpModule, Http } from '@angular/http';
+import { Ng2PaginationModule } from 'ng2-pagination';
+import { SelectModule } from 'ng2-select';
 import {
   TranslateModule,
   TranslateService,
@@ -35,24 +35,24 @@ import {
 /*
  * Platform and Environment providers/directives/pipes
  */
-import {ENV_PROVIDERS} from './environment';
-import {ROUTES} from './app.routes';
+import { ENV_PROVIDERS } from './environment';
+import { ROUTES } from './app.routes';
 // App is our top level component
-import {AppComponent} from './app.component';
-import {APP_RESOLVER_PROVIDERS} from './app.resolver';
-import {AppState, InternalStateType} from './app.service';
-import {SearchComponent, SearchResultComponent} from './search';
-import {ObjectDetailComponent} from './object-detail';
-import {AboutComponent} from './about';
-import {NoContentComponent} from './no-content';
-import {XLargeDirective} from './home/x-large';
-import {NavigationComponent} from './layout/navigation';
-import {EmtaFooterComponent} from './layout/emta-footer';
-import {UiModule} from './common/ui/ui.module';
-import {PaymentComponent, PayerComponent, CustomerComponent} from './dollaz';
-import {UigComponent} from './uig/uig.component';
-import {Uig08FormSelectsComponent} from './uig/uig.08.form.selects.component';
-import {Uig12MessagesComponent} from './uig/uig.12.messages.component';
+import { AppComponent } from './app.component';
+import { APP_RESOLVER_PROVIDERS } from './app.resolver';
+import { AppState, InternalStateType } from './app.service';
+import { SearchComponent, SearchResultComponent } from './search';
+import { ObjectDetailComponent } from './object-detail';
+import { AboutComponent } from './about';
+import { NoContentComponent } from './no-content';
+import { XLargeDirective } from './home/x-large';
+import { NavigationComponent } from './layout/navigation';
+import { EmtaFooterComponent } from './layout/emta-footer';
+import { UiModule } from './common/ui/ui.module';
+import { PaymentComponent, PayerComponent, CustomerComponent } from './dollaz';
+import { UigComponent } from './uig/uig.component';
+import { Uig08FormSelectsComponent } from './uig/uig.08.form.selects.component';
+import { Uig12MessagesComponent } from './uig/uig.12.messages.component';
 
 // Application wide providers
 const APP_PROVIDERS = [

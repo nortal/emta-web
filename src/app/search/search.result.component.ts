@@ -1,12 +1,12 @@
-import {PaginationInstance} from 'ng2-pagination';
+import { PaginationInstance } from 'ng2-pagination';
 import {
   Component,
   OnInit,
   Input
 } from '@angular/core';
 
-import {AppState} from '../app.service';
-import {Title} from '../common/ui/title';
+import { AppState } from '../app.service';
+import { Title } from '../common/ui/title';
 
 @Component({
   selector: 'search-result',
@@ -14,7 +14,7 @@ import {Title} from '../common/ui/title';
   templateUrl: './search.result.component.html'
 })
 export class SearchResultComponent implements OnInit {
-  @Input() items: Array<Object>;
+  @Input() public items: Object[];
 
   public config: PaginationInstance = {
     id: 'custom',
@@ -22,8 +22,7 @@ export class SearchResultComponent implements OnInit {
     currentPage: 1
   };
 
-  constructor(public appState: AppState,
-              public title: Title,) {
+  constructor(public appState: AppState, public title: Title) {
   }
 
   public ngOnInit() {

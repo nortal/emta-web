@@ -1,6 +1,6 @@
-import {Component, Input, Output, EventEmitter, OnInit, ViewChild, forwardRef} from '@angular/core';
-import {NgClass} from '@angular/common';
-import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
+import { Component, Input, Output, EventEmitter, OnInit, ViewChild, forwardRef } from '@angular/core';
+import { NgClass } from '@angular/common';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'emta-input',

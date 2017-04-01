@@ -10999,4 +10999,4 @@ export let operationalInterestObjects = [
     lastName: 'Fox',
     description: 'blandit'
   }
-]
+];

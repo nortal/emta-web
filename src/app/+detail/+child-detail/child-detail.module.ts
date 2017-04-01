@@ -1,10 +1,10 @@
-import {CommonModule} from '@angular/common';
-import {FormsModule} from '@angular/forms';
-import {NgModule} from '@angular/core';
-import {RouterModule} from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
-import {routes} from './child-detail.routes';
-import {ChildDetailComponent} from './child-detail.component';
+import { routes } from './child-detail.routes';
+import { ChildDetailComponent } from './child-detail.component';
 
 console.log('`Detail` bundle loaded asynchronously');
 

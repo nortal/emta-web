@@ -2,7 +2,7 @@ import {
   Component,
   OnInit
 } from '@angular/core';
-import {Router, Routes} from '@angular/router';
+import { Router, Routes } from '@angular/router';
 
 @Component({
   selector: 'trail',

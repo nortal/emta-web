@@ -6,8 +6,8 @@ import {
   OnInit,
   ViewEncapsulation
 } from '@angular/core';
-import {AppState} from './app.service';
-import {TranslateService, TranslatePipe} from 'ng2-translate';
+import { AppState } from './app.service';
+import { TranslateService, TranslatePipe } from 'ng2-translate';
 /*
  * App Component
  * Top Level Component

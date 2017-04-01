@@ -1,8 +1,8 @@
-import {Observable} from "rxjs/Observable";
-import {Subject} from "rxjs/Subject";
-import {Component, Input, Output, EventEmitter, OnInit, ViewChild, forwardRef} from '@angular/core';
-import {NgClass} from '@angular/common';
-import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
+import { Observable } from 'rxjs/Observable';
+import { Subject } from 'rxjs/Subject';
+import { Component, Input, Output, EventEmitter, OnInit, ViewChild, forwardRef } from '@angular/core';
+import { NgClass } from '@angular/common';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'emta-select',
@@ -17,13 +17,13 @@ import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 })
 export class EmtaSelectComponent implements ControlValueAccessor, OnInit {
 
-  @ViewChild("searchInput") searchInput: any;
-  @ViewChild("parentButton") parentButton: any;
+  @ViewChild('searchInput') searchInput: any;
+  @ViewChild('parentButton') parentButton: any;
 
   @Input() data: any[] = [];
   @Input() displayFunc = x => x;
-  @Input() placeholder = "Leia sobiv...";
-  @Input() notFoundText = "Puudub valik"
+  @Input() placeholder = 'Leia sobiv...';
+  @Input() notFoundText = 'Puudub valik'
   @Input() clearLast = true;
 
   private show = false;
@@ -132,21 +132,21 @@ export class EmtaSelectComponent implements ControlValueAccessor, OnInit {
   }
 
   private onKey(event) {
-    if (event.key === "ArrowUp") {
+    if (event.key === 'ArrowUp') {
       this.navigate(-1);
-    } else if (event.key === "ArrowDown") {
+    } else if (event.key === 'ArrowDown') {
       this.navigate(1);
-    } else if (event.key === "Enter") {
+    } else if (event.key === 'Enter') {
       if (this.show && this.currentItems.length > 0) {
         this.select(this.currentIndex);
       }
-    } else if (event.key === "Escape") {
+    } else if (event.key === 'Escape') {
       this.trigger();
     }
   }
 
   onBlur(event) {
-    if (event.relatedTarget && event.relatedTarget.className === "opt") {
+    if (event.relatedTarget && event.relatedTarget.className === 'opt') {
       //Most probably this is a selection in our own dropdown.
       return;
     }

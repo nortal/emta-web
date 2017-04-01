@@ -1,6 +1,6 @@
-import {CountryService} from "../country/country.service";
-import {OperationalInterestService} from "../operational-interest/operational.interest.service";
-import {Subject} from "rxjs/Subject";
+import { CountryService } from '../country/country.service';
+import { OperationalInterestService } from '../operational-interest/operational.interest.service';
+import { Subject } from 'rxjs/Subject';
 import {
   Component,
   OnInit
@@ -9,9 +9,8 @@ import {
   Router
 } from '@angular/router';
 
-
-import {AppState} from '../app.service';
-import {Title} from '../common/ui/title';
+import { AppState } from '../app.service';
+import { Title } from '../common/ui/title';
 
 @Component({
   // The selector is what angular internally uses
@@ -30,16 +29,14 @@ export class SearchComponent implements OnInit {
   // Set our default values
   public localState = {value: ''};
   public firstNameValue: string = 'Vello';
-  public resultList: Array<Object>;
-
-  private objectTypes = [
-    "Isik",
-    "Sõiduk"
+  public codeValue: number;
+  public resultList: Object[];
+  public searchParams: any = {};
+  public foundCountries = new Subject<any[]>();
+  public objectTypes = [
+    'Isik',
+    'Sõiduk'
   ];
-
-  private searchParams: any = {};
-
-  private foundCountries = new Subject<any[]>();
 
   // TypeScript public modifiers
   constructor(public appState: AppState,
@@ -65,15 +62,16 @@ export class SearchComponent implements OnInit {
     console.log('searchParams', this.searchParams);
     this.resultList = this.operationalInterestService.search()
       .filter((item: any) => {
-        return !this.searchParams.objectType || item.objectType === (this.searchParams.objectType === 'Isik' ? 'PERSON' : 'CAR')
+        return !this.searchParams.objectType
+          || item.objectType === (this.searchParams.objectType === 'Isik' ? 'PERSON' : 'CAR');
       });
   }
 
-  searchCountries(term) {
-    this.countryService.searchCountries(term).subscribe(x => this.foundCountries.next(x));
+  public searchCountries(term) {
+    this.countryService.searchCountries(term).subscribe((x) => this.foundCountries.next(x));
   }
 
-  addNew() {
+  public addNew() {
     this.router.navigate(['/detail']);
   }
 }

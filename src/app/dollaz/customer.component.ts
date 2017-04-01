@@ -1,5 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {AppState} from '../app.service';
+import { Component, Input, OnInit } from '@angular/core';
+import { AppState } from '../app.service';
 
 @Component({
   selector: 'customer',
@@ -11,7 +11,7 @@ export class CustomerComponent implements OnInit {
   @Input() public onFinish: (customer: any) => any;
   @Input() public filter: any;
 
-  constructor(public appState: AppState,) {
+  constructor(public appState: AppState) {
   }
 
   public ngOnInit() {

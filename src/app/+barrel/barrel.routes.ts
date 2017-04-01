@@ -1,4 +1,4 @@
-import {BarrelComponent} from './barrel.component';
+import { BarrelComponent } from './barrel.component';
 
 export const routes = [
   {

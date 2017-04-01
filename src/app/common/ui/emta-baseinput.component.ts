@@ -1,6 +1,6 @@
-import {Component, Input, Output, EventEmitter, OnInit} from '@angular/core';
-import {NgClass} from '@angular/common';
-import {ControlValueAccessor} from '@angular/forms';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { NgClass } from '@angular/common';
+import { ControlValueAccessor } from '@angular/forms';
 
 export abstract class EmtaBaseInputComponent implements OnInit /* implements ControlValueAccessor, */ {
 

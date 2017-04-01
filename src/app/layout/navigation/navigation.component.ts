@@ -1,9 +1,9 @@
-import {AuthService} from "../../auth/auth.service";
+import { AuthService } from '../../auth/auth.service';
 import {
   Component,
   OnInit
 } from '@angular/core';
-import {TranslateService} from 'ng2-translate';
+import { TranslateService } from 'ng2-translate';
 
 @Component({
   selector: 'navigation',  // <navigation></navigation>

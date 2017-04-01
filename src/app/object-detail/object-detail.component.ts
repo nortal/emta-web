@@ -6,7 +6,6 @@ import {
   Router
 } from '@angular/router';
 
-
 @Component({
   selector: 'object-detail',
   providers: [],
@@ -17,7 +16,7 @@ export class ObjectDetailComponent {
   constructor(private router: Router) {
   }
 
-  goBack() {
+  public goBack() {
     this.router.navigate(['../']);
   }
 }
