@@ -9,6 +9,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, Http } from '@angular/http';
 import {Ng2PaginationModule} from 'ng2-pagination';
+import {SelectModule} from 'ng2-select';
 import { TranslateModule,
   TranslateService,
   TranslatePipe,
@@ -48,6 +49,8 @@ import { EmtaFooterComponent } from './layout/emta-footer';
 import { UiModule } from './common/ui/ui.module';
 import { PaymentComponent, PayerComponent, CustomerComponent } from './dollaz';
 import { UigComponent } from './uig/uig.component';
+import { Uig08FormSelectsComponent } from './uig/uig.08.form.selects.component';
+import { Uig12MessagesComponent } from './uig/uig.12.messages.component';
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -87,10 +90,13 @@ export function createTranslateLoader(http: Http) {
     CustomerComponent,
     ObjectDetailComponent,
     UigComponent,
+    Uig08FormSelectsComponent,
+    Uig12MessagesComponent,
       ],
   imports: [ // import Angular's modules
     UiModule,
     Ng2PaginationModule,
+    SelectModule,
     OperationalInterestModule,
     CountryModule,
     BrowserModule,
