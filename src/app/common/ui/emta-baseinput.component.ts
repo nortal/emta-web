@@ -3,30 +3,15 @@ import { NgClass } from '@angular/common';
 import { ControlValueAccessor } from '@angular/forms';
 
 export abstract class EmtaBaseInputComponent implements OnInit /* implements ControlValueAccessor, */ {
-
-  @Input()
-  public labelText: string;
-
-  @Input()
-  public readOnly: boolean;
-
-  @Input()
-  public disabled: boolean;
-
-  @Input()
-  public name: string;
-
-  @Input()
-  public placeHolder: string;
-
-  @Input()
-  public value: string;
-
-  @Output()
-  public valueChange: EventEmitter<String> = new EventEmitter<String>();
+  @Input() public labelText: string;
+  @Input() public readOnly: boolean;
+  @Input() public disabled: boolean;
+  @Input() public name: string;
+  @Input() public placeHolder: string;
+  @Input() public value: string;
+  @Output() public valueChange: EventEmitter<String> = new EventEmitter<String>();
 
   public isValid: boolean = true;
-
   protected errorText: string;
 
   public onChange(newValue) {
@@ -43,8 +28,6 @@ export abstract class EmtaBaseInputComponent implements OnInit /* implements Con
     this.initialize();
   }
 
-  protected abstract  validateNewValue(valueToCheck);
-
+  protected abstract validateNewValue(valueToCheck);
   protected abstract initialize();
-
 }

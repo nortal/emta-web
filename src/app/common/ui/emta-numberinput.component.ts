@@ -10,20 +10,18 @@ import { EmtaBaseInputComponent } from './emta-baseinput.component';
 })
 export class EmtaNumberInputComponent extends EmtaBaseInputComponent {
 
-
-  initialize() {
+  public initialize() {
     this.errorText = 'Lubatud on ainult arvuline väärtus';
     if (this.placeHolder === '') {
       this.placeHolder = 'Arvuline väärtus';
     }
   }
 
-  validateNewValue(valueToCheck) {
+  public validateNewValue(valueToCheck) {
     if (valueToCheck && isNaN(valueToCheck)) {
       this.isValid = false;
     } else {
       this.isValid = true;
     }
   }
-
 }

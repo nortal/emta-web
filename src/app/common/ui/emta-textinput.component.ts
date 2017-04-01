@@ -9,15 +9,13 @@ import { EmtaBaseInputComponent } from './emta-baseinput.component';
   templateUrl: './emta-textinput.component.html'
 })
 export class EmtaTextInputComponent extends EmtaBaseInputComponent /* implements ControlValueAccessor, */ {
+  @Input() public maxLength: number;
 
-  @Input()
-  public maxLength: number;
-
-  initialize() {
+  public initialize() {
     this.errorText = 'Liiga pikk tekst (lubatud kuni ' + this.maxLength + ' sümbolit)';
   }
 
-  validateNewValue(valueToCheck) {
+  public validateNewValue(valueToCheck) {
     if (valueToCheck && valueToCheck.length > this.maxLength) {
       this.isValid = false;
     } else {

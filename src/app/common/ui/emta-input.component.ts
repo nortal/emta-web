@@ -24,30 +24,23 @@ export class EmtaInputComponent implements ControlValueAccessor, OnInit {
   @Input() public type: string;
 
   public val: string;
-  public onChange = x => x;
+  public onChange = (x) => x;
 
 
   public ngOnInit() {
+    // nothing on init
   }
 
-  /**
-   *    * Write a new value to the element.
-   *       */
-  writeValue(obj: any) {
+  public writeValue(obj: any) {
     this.val = obj || null;
   }
 
-  /**
-   *    * Set the function to be called when the control receives a change event.
-   *       */
-  registerOnChange(fn: any) {
+  public registerOnChange(fn: any) {
     this.onChange = fn;
   }
 
-  /**
-   *    * Set the function to be called when the control receives a touch event.
-   *       */
-  registerOnTouched(fn: any) {
+  public registerOnTouched(fn: any) {
+    // nothing
   }
 
 }

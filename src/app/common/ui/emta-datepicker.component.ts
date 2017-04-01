@@ -13,20 +13,19 @@ import { Component, Input, forwardRef } from '@angular/core';
   ]
 })
 export class EmtaDatepickerComponent implements ControlValueAccessor {
-  value: Date;
-  private onChange: (event: any) => any = x => x;
-
   @Input() public minDate: Date;
   @Input() public maxDate: Date;
+  public value: Date;
+  public onChange: (event: any) => any = (x) => x;
 
-  onSelectionDone(event: any, pop: any) {
+  public onSelectionDone(event: any, pop: any) {
     setTimeout(() => {
-      pop.hide()
+      pop.hide();
     }, 10);
     this.onChange(event);
   }
 
-  dateText() {
+  public dateText() {
     return this.value ? this.value.toLocaleString('et', {
       year: 'numeric',
       month: 'long',
@@ -37,7 +36,7 @@ export class EmtaDatepickerComponent implements ControlValueAccessor {
   /**
    * Write a new value to the element.
    */
-  writeValue(obj: any) {
+  public writeValue(obj: any) {
     if (obj && obj instanceof Date) {
       this.value = obj;
     }
@@ -46,13 +45,14 @@ export class EmtaDatepickerComponent implements ControlValueAccessor {
   /**
    * Set the function to be called when the control receives a change event.
    */
-  registerOnChange(fn: any) {
+  public registerOnChange(fn: any) {
     this.onChange = fn;
   }
 
   /**
    * Set the function to be called when the control receives a touch event.
    */
-  registerOnTouched(fn: any) {
+  public registerOnTouched(fn: any) {
+    console.log('registerOnTouched');
   }
 }
