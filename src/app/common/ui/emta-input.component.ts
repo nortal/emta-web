@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, OnInit, ViewChild, forwardRef } from '@angular/core';
+import { Component, Input, Output,HostBinding, EventEmitter, OnInit, ViewChild, forwardRef } from '@angular/core';
 import { NgClass } from '@angular/common';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
@@ -16,10 +16,12 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
     'placeholder',
     'label',
     'readonly',
-    'value'
+    'value',
+    'comment'
   ]
 })
 export class EmtaInputComponent implements ControlValueAccessor, OnInit {
+  @Input() @HostBinding('class') class = 'col-xs-20 col-md-12';
   @Input() public name: string;
   @Input() public type: string;
 

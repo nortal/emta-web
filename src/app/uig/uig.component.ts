@@ -6,5 +6,7 @@ import { RADIO_GROUP_DIRECTIVES } from 'ng2-radio-group/ng2-radio-group';
   templateUrl: './uig.component.html'
 })
 export class UigComponent {
-  public lego: any = {};
+  public lego: any = {
+    text2: 'наушники'
+  };
 }

@@ -1,0 +1,7 @@
+<div class="form-group row">
+  <label for="{{name}}" class="col-xs-20 col-md-8 col-form-label">
+    {{label}}
+    <div class="label-comment" *ngIf="!!comment">{{comment}}</div>
+  </label>
+  <ng-content></ng-content>
+</div>
