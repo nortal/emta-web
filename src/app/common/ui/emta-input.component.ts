@@ -16,21 +16,26 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
     'placeholder',
     'label',
     'readonly',
+    'disabled',
     'value',
-    'comment'
+    'comment',
+    'rows',
+    'maxlength'
   ]
 })
 export class EmtaInputComponent implements ControlValueAccessor, OnInit {
-  @Input() @HostBinding('class') class = 'col-xs-20 col-md-12';
+  @Input() public type: string = 'text';
+  @Input() @HostBinding('class') class: string;
   @Input() public name: string;
-  @Input() public type: string;
 
   public val: string;
   public onChange = (x) => x;
 
 
   public ngOnInit() {
-    // nothing on init
+    if (!this.class) {
+      this.class = this.type === 'radio' ? '' : 'col-xs-20 col-md-12'; 
+    }
   }
 
   public writeValue(obj: any) {

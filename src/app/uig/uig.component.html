@@ -12,30 +12,23 @@
         </emta-form-row>
 
         <emta-form-row label="Tekstiväli">
-          <emta-input type="text" name="text1" [(ngModel)]="lego.text1" placeholder="write here"></emta-input>
+          <emta-input name="text1" [(ngModel)]="lego.text1" placeholder="write here"></emta-input>
         </emta-form-row>
 
         <emta-form-row label="Readonly" comment="vasja said">
-          <emta-input type="text" name="text2"  [(ngModel)]="lego.text2" placeholder="shold be disabled"
-            readonly="readonly"></emta-input>
+          <emta-input name="text2" [(ngModel)]="lego.text2" placeholder="shold be disabled" readonly="readonly"></emta-input>
         </emta-form-row>
-
 
         <emta-form-row label="textarea">
-          <emta-input type="textarea" name="textarea1" label="textarea" [(ngModel)]="lego.textarea"
-            placeholder="lorum polorum"></emta-input>
+          <emta-input type="textarea" name="textarea1" label="textarea" [(ngModel)]="lego.textarea" placeholder="lorum polorum" rows="5" maxlength="200"></emta-input>
         </emta-form-row>
 
-        <emta-form-row label="Who is best?">
+        <emta-form-row label="ate all pizza">
           <div class="col-md-10 custom-controls-stacked">
-            <emta-input
-              class=""
-              type="radio"
-              name="radio1"
-              [label]="monkey"
-              [value]="monkey"
+            <emta-input type="radio" name="radio1" [(ngModel)]="lego.radio1"
               *ngFor="let monkey of ['Leonardo', 'Donatello', 'Michelangelo', 'Raphael']"
-              [(ngModel)]="lego.radio1"></emta-input>
+              [label]=   "monkey"
+              [value]=   "monkey"></emta-input>
           </div>
         </emta-form-row>
       </div>
