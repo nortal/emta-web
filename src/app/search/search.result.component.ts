@@ -1,4 +1,3 @@
-import { PaginationInstance } from 'ng2-pagination';
 import {
   Component,
   OnInit,
@@ -16,7 +15,7 @@ import { Title } from '../common/ui/title';
 export class SearchResultComponent implements OnInit {
   @Input() public items: Object[];
 
-  public config: PaginationInstance = {
+  public pager = {
     id: 'custom',
     itemsPerPage: 10,
     currentPage: 1
