@@ -19,6 +19,14 @@
           <emta-input name="text2" [(ngModel)]="lego.text2" placeholder="shold be disabled" readonly="readonly"></emta-input>
         </emta-form-row>
 
+        <emta-form-row label="mõõtühikuga">
+          <emta-input name="text3" [(ngModel)]="lego.text3" addon="tk"></emta-input>
+        </emta-form-row>
+
+        <emta-form-row label="otsing">
+          <emta-input search="search" name="search1" [(ngModel)]="lego.search1"></emta-input>
+        </emta-form-row>
+
         <emta-form-row label="textarea">
           <emta-input type="textarea" name="textarea1" label="textarea" [(ngModel)]="lego.textarea" placeholder="lorum polorum" rows="5" maxlength="200"></emta-input>
         </emta-form-row>

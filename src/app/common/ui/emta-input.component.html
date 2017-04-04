@@ -1,13 +1,16 @@
 
 <span *ngIf="type === 'text'">
-  <input type="text"
-  class="form-control"
-  id="{{name}}"
-  [name]="name"
-  [(ngModel)]="val"
-  (change)="onChange(val)"
-  [placeholder]="placeholder"
-  [readonly]="readonly">
+  <div class='input-group'>
+    <input type="text"
+    class="form-control {{!!search ? 'search-control clearable' : ''}}"
+    id="{{name}}"
+    [name]="name"
+    [(ngModel)]="val"
+    (change)="onChange(val)"
+    [placeholder]="placeholder || ''"
+    [readonly]="readonly">
+    <div class="input-group-addon" *ngIf="!!addon">{{addon}}</div>
+  </div>
 </span>
 
 <span *ngIf="type === 'textarea'">
@@ -19,7 +22,7 @@
     [maxlength]="maxlength"
     [(ngModel)]="val"
     (change)="onChange(val)"
-    [placeholder]="placeholder"
+    [placeholder]="placeholder || ''"
     [readonly]="readonly"
     [rows]="rows">
   </textarea>
