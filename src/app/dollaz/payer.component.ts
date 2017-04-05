@@ -17,7 +17,7 @@ export class PayerComponent {
 
   public search() {
     console.log(this.filter);
-    this.payers = [{code: '11', name: 'Potsataja', forname: 'Teadmata'}];
+    this.payers = [{code: '11', name: 'Krokodil', forname: 'Gena'}];
   }
 
   public onSelect(selectedPayer: any) {

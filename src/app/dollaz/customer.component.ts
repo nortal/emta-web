@@ -26,9 +26,9 @@ export class CustomerComponent implements OnInit {
     console.log(this.filter);
     this.customers = [
       {
-        code: '11',
-        name: 'Potsataja',
-        forname: 'Teadmata',
+        code: '12',
+        name: 'Teadmata',
+        forname: 'Potsataja',
         address: 'Loomaaed',
         referenceNumber: '217',
         balance: 1.000000000000000000000000000000000001
