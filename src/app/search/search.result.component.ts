@@ -20,6 +20,9 @@ export class SearchResultComponent implements OnInit {
     itemsPerPage: 10,
     currentPage: 1
   };
+  public sort = {
+    field: 'code', direction: 'asc'
+  };
 
   constructor(public appState: AppState, public title: Title) {
   }

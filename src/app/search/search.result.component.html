@@ -5,49 +5,21 @@
 </div>
 <div class="section">
   <div class="section_body">
-    <div class="table-responsive">
-      <div class="col-xs-20" style="height: 16px; margin-top: -16px;">
-        <div class="float-xs-right">
-          <div></div>
-        </div>
-      </div>
-      <table class="table">
-        <thead>
+
+
+    <emta-table>
+      <thead>
         <tr>
           <th></th>
-          <th class="sorted_asce">
-            <a>
-              <div class="sort_arrows">
-                <div class="sort_asce"></div>
-                <div class="sort_desc"></div>
-              </div><!-- react-text: 3145 -->Objekti tüüp<!-- /react-text --></a>
-          </th>
-          <th>
-            <a>
-              <div class="sort_arrows">
-                <div class="sort_asce"></div>
-                <div class="sort_desc"></div>
-              </div><!-- react-text: 3151 -->Kood<!-- /react-text --></a>
-          </th>
-          <th>
-            <a>
-              <div class="sort_arrows">
-                <div class="sort_asce"></div>
-                <div class="sort_desc"></div>
-              </div><!-- react-text: 3157 -->Märksõna<!-- /react-text --></a>
-          </th>
-          <th>
-            <a>
-              <div class="sort_arrows">
-                <div class="sort_asce"></div>
-                <div class="sort_desc"></div>
-              </div><!-- react-text: 3157 -->Riik<!-- /react-text --></a>
-          </th>
+          <th>Objekti tüüp</th>
+          <th sortable [(sort)]="sort" field="code">Kood</th>
+          <th sortable [(sort)]="sort" field="description">Märksõna</th>
+          <th sortable [(sort)]="sort" field="country">Riik</th>
           <th></th>
         </tr>
-        </thead>
-        <tbody class="with-details">
-        <tr *ngFor="let item of items | paginate: pager">
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of items | sort: sort | paginate: pager">
           <td style="width: 50px;"><a aria-expanded="false" class="collapse_toggle collapsed"></a></td>
           <td style="width: 100px;"><span class="text">{{item.objectType === 'PERSON' ? 'Isik' : 'Sõiduk'}}</span></td>
           <td><span class="text">{{item.code}}</span></td>
@@ -62,9 +34,9 @@
             </div>
           </td>
         </tr>
-        </tbody>
-      </table>
-    </div>
+      </tbody>
+    </emta-table>
+
 
     <emta-pagination [(config)]="pager" ></emta-pagination>
-</div>
+  </div>
