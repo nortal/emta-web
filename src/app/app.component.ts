@@ -13,7 +13,7 @@ import { TranslateService, TranslatePipe } from 'ng2-translate';
  * Top Level Component
  */
 @Component({
-  selector: 'app',
+  selector: '[app]',
   encapsulation: ViewEncapsulation.None,
   templateUrl: './app.component.html',
 })

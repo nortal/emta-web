@@ -4,7 +4,7 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'emta-footer',
+  selector: '[emta-footer]',
   templateUrl: './emta-footer.component.html'
 })
 export class EmtaFooterComponent implements OnInit {
