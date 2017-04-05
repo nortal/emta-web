@@ -20,7 +20,9 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
     'value',
     'comment',
     'rows',
-    'maxlength'
+    'maxlength',
+    'addon',
+    'search'
   ]
 })
 export class EmtaInputComponent implements ControlValueAccessor, OnInit {

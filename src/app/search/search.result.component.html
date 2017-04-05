@@ -47,7 +47,7 @@
         </tr>
         </thead>
         <tbody class="with-details">
-        <tr *ngFor="let item of items | paginate: config">
+        <tr *ngFor="let item of items | paginate: pager">
           <td style="width: 50px;"><a aria-expanded="false" class="collapse_toggle collapsed"></a></td>
           <td style="width: 100px;"><span class="text">{{item.objectType === 'PERSON' ? 'Isik' : 'Sõiduk'}}</span></td>
           <td><span class="text">{{item.code}}</span></td>
@@ -66,60 +66,5 @@
       </table>
     </div>
 
-    <pagination-template #p="paginationApi" [id]="config.id" (pageChange)="config.currentPage = $event">
-      <div class="pagination-block">
-        <div class="pagination-total" *ngIf="items?.length > 0">
-          {{(config.currentPage-1)*config.itemsPerPage+1}}-{{config.currentPage*config.itemsPerPage}}/{{items?.length}}
-        </div>
-
-        <div class="pagination-list" aria-label="Page navigation">
-          <ul class="pagination">
-
-            <li class="page-item hidden-sm-down">
-              <a (click)="p.setCurrent(1)" [class.disabled]="p.isFirstPage()" class="page-link arrow"
-                 aria-label="First">
-                | <span>‹‹</span>
-              </a>
-            </li>
-
-            <li class="page-item">
-              <a (click)="p.previous()" [class.disabled]="p.isFirstPage()" class="page-link arrow disabled"
-                 aria-label="Previous">
-                <span>‹</span>
-              </a>
-            </li>
-
-            <li *ngFor="let page of p.pages" class="page-item">
-              <a (click)="p.setCurrent(page.value)" class="page-link" [class.current]="p.getCurrent() === page.value">
-                <span>{{ page.label }}</span>
-              </a>
-            </li>
-
-            <li class="page-item">
-              <a (click)="p.next()" [class.disabled]="p.isLastPage()" class="page-link arrow" aria-label="Next">
-                <span>›</span>
-              </a>
-            </li>
-
-            <li class="page-item hidden-sm-down">
-              <a (click)="p.setCurrent(p.getLastPage())" [class.disabled]="p.isLastPage()" class="page-link arrow"
-                 aria-label="Last">
-                <span>››</span> |
-              </a>
-            </li>
-
-          </ul>
-        </div>
-        <div class="pagination-per-page">
-          <label for="per-page-1">Kuvan korraga</label>
-          <select id="per-page-1" [(ngModel)]="config.itemsPerPage">
-            <option value="10">10</option>
-            <option value="25">25</option>
-            <option value="50">50</option>
-            <option value="100">100</option>
-          </select>
-        </div>
-      </div>
-    </pagination-template>
-  </div>
+    <emta-pagination [(config)]="pager" ></emta-pagination>
 </div>
