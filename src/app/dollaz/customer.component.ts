@@ -27,9 +27,9 @@ export class CustomerComponent implements OnInit {
     this.customers = [
       {
         code: '11',
-        name: 'gena',
-        forname: 'krokodil',
-        address: 'ehal greka cherez reku',
+        name: 'Potsataja',
+        forname: 'Teadmata',
+        address: 'Loomaaed',
         referenceNumber: '217',
         balance: 1.000000000000000000000000000000000001
       }
