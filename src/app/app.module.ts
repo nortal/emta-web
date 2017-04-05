@@ -49,7 +49,7 @@ import { XLargeDirective } from './home/x-large';
 import { NavigationComponent } from './layout/navigation';
 import { EmtaFooterComponent } from './layout/emta-footer';
 import { UiModule } from './common/ui/ui.module';
-import { PaymentComponent, PayerComponent, CustomerComponent } from './dollaz';
+import { PaymentComponent, TerminalComponent, PayerComponent, CustomerComponent } from './dollaz';
 import { UigComponent } from './uig/uig.component';
 import { Uig08FormSelectsComponent } from './uig/uig.08.form.selects.component';
 import { Uig12MessagesComponent } from './uig/uig.12.messages.component';
@@ -88,6 +88,7 @@ export function createTranslateLoader(http: Http) {
     NoContentComponent,
     XLargeDirective,
     PaymentComponent,
+    TerminalComponent,
     PayerComponent,
     CustomerComponent,
     ObjectDetailComponent,

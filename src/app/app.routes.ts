@@ -8,6 +8,7 @@ import { DataResolver } from './app.resolver';
 import { SearchComponent } from './search/search.component';
 
 import { PaymentComponent } from './dollaz/payment.component';
+import { TerminalComponent } from './dollaz/terminal.component';
 import { ObjectDetailComponent } from './object-detail/object-detail.component';
 import { TrailComponent } from './layout/trail/trail.component';
 import { UigComponent } from './uig/uig.component';
@@ -27,6 +28,7 @@ export const ROUTES: Routes = [
     canActivate: [AuthGuard],
     component: PaymentComponent
   },
+  {path: 'terminal', component: TerminalComponent},
   {path: 'login', component: LoginComponent},
   {path: '**', component: NoContentComponent},
 ];

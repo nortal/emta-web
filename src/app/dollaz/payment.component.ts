@@ -58,8 +58,10 @@ export class PaymentComponent implements OnInit {
     this.payment.number = Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
   }
 
-  public acceptPayment() {
-    this.payment.state = 'ACCEPTED';
-    this.payment = null;
+  public acceptPayment(timeout: number) {
+    setTimeout(() => {
+      this.payment.state = 'ACCEPTED';
+      this.payment = null;
+    }, timeout*1000);
   }
 }
