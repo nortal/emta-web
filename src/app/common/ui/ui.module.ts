@@ -15,6 +15,7 @@ import { PopoverModule } from 'ng2-bootstrap/popover';
 import { Ng2PaginationModule } from 'ng2-pagination';
 import { SortPipe } from './list/sort-pipe';
 import { EmtaTableComponent } from './list/emta-table.component';
+import { EmtaButtonComponent } from './emta-button.component';
 
 @NgModule({
   imports: [
@@ -35,6 +36,7 @@ import { EmtaTableComponent } from './list/emta-table.component';
     EmtaPaginationComponent,
     EmtaThComponent,
     EmtaTableComponent,
+    EmtaButtonComponent,
     SortPipe,
     TranslateModule
   ],
@@ -48,6 +50,7 @@ import { EmtaTableComponent } from './list/emta-table.component';
     EmtaPaginationComponent,
     EmtaThComponent,
     EmtaTableComponent,
+    EmtaButtonComponent,
     SortPipe,
   ],
   providers: [],

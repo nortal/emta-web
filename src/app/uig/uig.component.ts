@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { RADIO_GROUP_DIRECTIVES } from 'ng2-radio-group/ng2-radio-group';
 
 @Component({
   selector: 'app-uig',
@@ -9,4 +8,8 @@ export class UigComponent {
   public lego: any = {
     text2: 'наушники'
   };
+
+  public alert(txt) {
+    window.alert(txt);
+  }
 }

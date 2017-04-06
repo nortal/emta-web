@@ -2,7 +2,7 @@ import { Component, OnInit, Input, HostBinding} from '@angular/core';
 import { SortInstance } from './sort-instance';
 
 @Component({
-  selector: '[sortable]',
+  selector: 'th[sortable]',
   templateUrl: './emta-th.component.html',
   host: {'[class]': 'getHostClass()'}
 })

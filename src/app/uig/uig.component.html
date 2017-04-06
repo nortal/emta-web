@@ -1,8 +1,59 @@
-<div class="container">
+<div class="section">
+
+
+  <div class="stylebook-section">
+    <h1 class="stylebook-section-title" id="forms">4. Nupud</h1>
+    <div class="buttons">
+      <div class="row">
+        <div class="col-md">
+          <emta-button success (click)="alert('grreat success')">Success</emta-button>
+        </div>
+        <div class="col-md">
+          <emta-button success disabled tooltip="see nupp ei ole aktiivne">Success</emta-button>
+        </div>
+        <div class="col-md">
+          <emta-button success square>Success</emta-button>
+        </div>
+        <div class="col-md">
+          <emta-button success square disabled tooltip="see nupp ei ole aktiivne">Success</emta-button>
+        </div>
+      </div>
+      <div class="row" *ngFor="let type of ['danger','info','dark','light']">
+        <div class="col-md" *ngFor="let i of [1,2,3,4]">
+          <p>&nbsp;</p>
+          <emta-button [type]='type' disabled="{{i % 2 == 0 ? 'disabled' : 'false'}}" style="{{i > 2 ? 'square' : 'round'}}">{{type}}</emta-button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md">
+          <p>&nbsp;</p>
+          <emta-button info icon="with-plus">add</emta-button>
+        </div>
+        <div class="col-md">
+          <p>&nbsp;</p>
+          <emta-button info icon="multiple-options">choose wisely</emta-button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md">
+          <p>&nbsp;</p>
+          <emta-button small success icon="save"></emta-button>
+        </div>
+        <div class="col-md">
+          <p>&nbsp;</p>
+          <emta-button small light icon="cancel"></emta-button>
+        </div>
+        <div class="col-md">
+          <p>&nbsp;</p>
+          <emta-button danger icon="logout">Bye bye</emta-button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="stylebook-section">
     <h1 class="stylebook-section-title" id="forms">8. Vormid</h1>
     <h2 id="form-elements" class="stylebook-section-title">8.1 Vormiväljad</h2>
-
 
     <form name="random" class="row">
       <div class="col-xs-20 col-xl-10">
