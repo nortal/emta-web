@@ -18,6 +18,7 @@ import { EmtaTableComponent } from './list/emta-table.component';
 import { EmtaButtonComponent } from './emta-button.component';
 import { EmtaLinkComponent } from './emta-link.component';
 import { EmtaTooltipComponent } from './emta-tooltip.component';
+import { EmtaBadgeComponent } from './emta-badge.component';
 
 @NgModule({
   imports: [
@@ -41,6 +42,7 @@ import { EmtaTooltipComponent } from './emta-tooltip.component';
     EmtaButtonComponent,
     EmtaLinkComponent,
     EmtaTooltipComponent,
+    EmtaBadgeComponent,
     SortPipe,
     TranslateModule
   ],
@@ -57,6 +59,7 @@ import { EmtaTooltipComponent } from './emta-tooltip.component';
     EmtaButtonComponent,
     EmtaLinkComponent,
     EmtaTooltipComponent,
+    EmtaBadgeComponent,
     SortPipe,
   ],
   providers: [],
