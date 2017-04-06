@@ -1,56 +1,100 @@
 <div class="section">
 
-
+  <br/><br/>
   <div class="stylebook-section">
     <h1 class="stylebook-section-title" id="forms">4. Nupud</h1>
     <div class="buttons">
       <div class="row">
         <div class="col-md">
-          <emta-button success (click)="alert('grreat success')">Success</emta-button>
+          <button emta success (click)="alert('grreat success')">Success</button>
         </div>
         <div class="col-md">
-          <emta-button success disabled tooltip="see nupp ei ole aktiivne">Success</emta-button>
+          <button emta success disabled tooltip="see nupp ei ole aktiivne">Success</button>
         </div>
         <div class="col-md">
-          <emta-button success square>Success</emta-button>
+          <button emta success square>Success</button>
         </div>
         <div class="col-md">
-          <emta-button success square disabled tooltip="see nupp ei ole aktiivne">Success</emta-button>
+          <button emta success square disabled tooltip="see nupp ei ole aktiivne">Success</button>
         </div>
       </div>
       <div class="row" *ngFor="let type of ['danger','info','dark','light']">
         <div class="col-md" *ngFor="let i of [1,2,3,4]">
           <p>&nbsp;</p>
-          <emta-button [type]='type' disabled="{{i % 2 == 0 ? 'disabled' : 'false'}}" style="{{i > 2 ? 'square' : 'round'}}">{{type}}</emta-button>
+          <button emta [type]='type' disabled="{{i % 2 == 0 ? 'disabled' : 'false'}}" style="{{i > 2 ? 'square' : 'round'}}">{{type}}</button>
         </div>
       </div>
       <div class="row">
         <div class="col-md">
           <p>&nbsp;</p>
-          <emta-button info icon="with-plus">add</emta-button>
+          <button emta info icon="with-plus">add</button>
         </div>
         <div class="col-md">
           <p>&nbsp;</p>
-          <emta-button info icon="multiple-options">choose wisely</emta-button>
+          <button emta info icon="multiple-options">choose wisely</button>
         </div>
       </div>
       <div class="row">
         <div class="col-md">
           <p>&nbsp;</p>
-          <emta-button small success icon="save"></emta-button>
+          <button emta small success icon="save"></button>
         </div>
         <div class="col-md">
           <p>&nbsp;</p>
-          <emta-button small light icon="cancel"></emta-button>
+          <button emta small light icon="cancel"></button>
         </div>
         <div class="col-md">
           <p>&nbsp;</p>
-          <emta-button danger icon="logout">Bye bye</emta-button>
+          <button emta danger icon="logout">Bye bye</button>
         </div>
       </div>
     </div>
   </div>
 
+
+  <br/><br/>
+  <div class="stylebook-section">
+    <h1 class="stylebook-section-title" id="forms">5. Lingid</h1>
+
+    <div class="links">
+      <div class="col-md">
+        <div class="row"><a gray>gray</a></div>
+        <div class="row"><a gray small>gray small</a></div>
+        <div class="row"><a blue>blue</a></div>
+        <div class="row"><a blue small>blue small</a></div>
+        <div class="row"><a blue>orange</a></div>
+        <div class="row"><a blue small>orange small</a></div>
+        <div class="row"><a gray href="dfs" target="_blank">gray with redirect icon</a></div>
+        <div class="row"><a orange target="_blank">gray with redirect icon</a></div>
+      </div>
+    </div>
+  </div>
+
+
+  <br/><br/>
+  <div class="stylebook-section">
+    <h1 class="stylebook-section-title" id="forms">6. Ikoonid</h1>
+    
+    <div class="row">
+      <div class="col mt-4">
+        <a gray icon="filters" tooltip="Filter"></a>
+        <a gray icon="preferences" tooltip="Seaded"></a>
+        <a gray icon="drag" tooltip="Lohistaja"></a>
+      </div>
+    </div>
+
+    <div class="icon-links">
+      <div class="col-md">
+        <div class="row" *ngFor = "let icon of ['settings', 'favourites', 'color', 'delete', 'fullscreen-on', 'download', 'upload', 'print', 'checkerrors']">
+          <a gray [icon]="icon">{{icon}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <br/><br/>
   <div class="stylebook-section">
     <h1 class="stylebook-section-title" id="forms">8. Vormid</h1>
     <h2 id="form-elements" class="stylebook-section-title">8.1 Vormiväljad</h2>

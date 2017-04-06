@@ -1,22 +1,19 @@
-import { Component, Input, Output, HostBinding, OnInit, ElementRef } from '@angular/core';
+import { Directive, Input, Output, HostBinding, OnInit, ElementRef } from '@angular/core';
 
-@Component({
-  selector: 'emta-button',
-  templateUrl: './emta-button.component.html',
-  inputs: [
-  ]
+@Directive({
+  selector: 'button[emta]',
+  //templateUrl: './emta-button.component.html',
 })
 export class EmtaButtonComponent implements OnInit {
   @Input() public type: string;
   @Input() public disabled: string;
   @Input() public style: string;
-  @Input() public tooltip: string;
   @Input() public icon: string;
 
   private types: string[] = ['success','danger','info','dark','light'];
   private icons: string[] = ['with-plus','multiple-options', 'save', 'cancel', 'logout'];
   private styles: string[] = ['round','square', 'small'];
-  public class: string = 'btn';
+  @HostBinding('class') public class: string = 'btn';
 
   constructor(private elem: ElementRef) {
     //

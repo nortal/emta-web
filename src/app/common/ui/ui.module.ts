@@ -16,6 +16,8 @@ import { Ng2PaginationModule } from 'ng2-pagination';
 import { SortPipe } from './list/sort-pipe';
 import { EmtaTableComponent } from './list/emta-table.component';
 import { EmtaButtonComponent } from './emta-button.component';
+import { EmtaLinkComponent } from './emta-link.component';
+import { EmtaTooltipComponent } from './emta-tooltip.component';
 
 @NgModule({
   imports: [
@@ -37,6 +39,8 @@ import { EmtaButtonComponent } from './emta-button.component';
     EmtaThComponent,
     EmtaTableComponent,
     EmtaButtonComponent,
+    EmtaLinkComponent,
+    EmtaTooltipComponent,
     SortPipe,
     TranslateModule
   ],
@@ -51,6 +55,8 @@ import { EmtaButtonComponent } from './emta-button.component';
     EmtaThComponent,
     EmtaTableComponent,
     EmtaButtonComponent,
+    EmtaLinkComponent,
+    EmtaTooltipComponent,
     SortPipe,
   ],
   providers: [],
