@@ -6,46 +6,46 @@
     <div class="buttons">
       <div class="row">
         <div class="col-md">
-          <button emta success (click)="alert('grreat success')">Success</button>
+          <button success (click)="alert('grreat success')">Success</button>
         </div>
         <div class="col-md">
-          <button emta success disabled tooltip="see nupp ei ole aktiivne">Success</button>
+          <button success disabled tooltip="see nupp ei ole aktiivne">Success</button>
         </div>
         <div class="col-md">
-          <button emta success square>Success</button>
+          <button success square>Success</button>
         </div>
         <div class="col-md">
-          <button emta success square disabled tooltip="see nupp ei ole aktiivne">Success</button>
+          <button success square disabled tooltip="see nupp ei ole aktiivne">Success</button>
         </div>
       </div>
       <div class="row" *ngFor="let type of ['danger','info','dark','light']">
         <div class="col-md" *ngFor="let i of [1,2,3,4]">
           <p>&nbsp;</p>
-          <button emta [type]='type' disabled="{{i % 2 == 0 ? 'disabled' : 'false'}}" style="{{i > 2 ? 'square' : 'round'}}">{{type}}</button>
+          <button emta-button [type]='type' disabled="{{i % 2 == 0 ? 'disabled' : 'false'}}" style="{{i > 2 ? 'square' : 'round'}}">{{type}}</button>
         </div>
       </div>
       <div class="row">
         <div class="col-md">
           <p>&nbsp;</p>
-          <button emta info icon="with-plus">add</button>
+          <button info icon="with-plus">add</button>
         </div>
         <div class="col-md">
           <p>&nbsp;</p>
-          <button emta info icon="multiple-options">choose wisely</button>
+          <button info icon="multiple-options">choose wisely</button>
         </div>
       </div>
       <div class="row">
         <div class="col-md">
           <p>&nbsp;</p>
-          <button emta small success icon="save"></button>
+          <button small success icon="save"></button>
         </div>
         <div class="col-md">
           <p>&nbsp;</p>
-          <button emta small light icon="cancel"></button>
+          <button small light icon="cancel"></button>
         </div>
         <div class="col-md">
           <p>&nbsp;</p>
-          <button emta danger icon="logout">Bye bye</button>
+          <button danger icon="logout">Bye bye</button>
         </div>
       </div>
     </div>

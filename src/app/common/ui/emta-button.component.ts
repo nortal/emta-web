@@ -1,7 +1,7 @@
 import { Directive, Input, Output, HostBinding, OnInit, ElementRef } from '@angular/core';
 
 @Directive({
-  selector: 'button[emta]',
+  selector: 'button[success],button[danger],button[info],button[dark],button[light],[emta-button]',
   //templateUrl: './emta-button.component.html',
 })
 export class EmtaButtonComponent implements OnInit {
