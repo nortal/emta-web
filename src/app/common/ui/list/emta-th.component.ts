@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, HostBinding} from '@angular/core';
-import { SortInstance } from './sort-instance';
+import { Component, OnInit, Input } from '@angular/core';
+import { SortInstance, SortType } from './sort-instance';
 
 @Component({
   selector: 'th[sortable]',
@@ -11,13 +11,18 @@ export class EmtaThComponent implements OnInit {
   @Input() public sort: SortInstance;
 
   public getHostClass() {
-    return this.sort && this.field === this.sort.field ? this.sort.direction === 'asc' ? 'sorted-ascending' : 'sorted-descending' : '';
+    return this.sort && this.field === this.sort.field ? this.sort.isAscending() ? 'sorted-ascending' : 'sorted-descending' : '';
   }
 
   public ngOnInit() {
     if (!this.sort) {
       this.sort = <SortInstance>{};
     }
+  }
+
+  public setSort(field: any){
+    this.sort.field = field;
+    this.sort.direction = (this.sort.isAscending() ? SortType.DESC : SortType.ASC);
   }
 }
 

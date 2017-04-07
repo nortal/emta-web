@@ -6,6 +6,7 @@ import {
 
 import { AppState } from '../app.service';
 import { Title } from '../common/ui/title';
+import { SortInstance, SortType } from "../common/ui/list/sort-instance";
 
 @Component({
   selector: 'search-result',
@@ -20,9 +21,8 @@ export class SearchResultComponent implements OnInit {
     itemsPerPage: 10,
     currentPage: 1
   };
-  public sort = {
-    field: 'code', direction: 'asc'
-  };
+
+  public sort = new SortInstance('country', SortType.DESC);
 
   constructor(public appState: AppState, public title: Title) {
   }
