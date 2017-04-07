@@ -49,10 +49,8 @@ import { XLargeDirective } from './home/x-large';
 import { NavigationComponent } from './layout/navigation';
 import { EmtaFooterComponent } from './layout/emta-footer';
 import { UiModule } from './common/ui/ui.module';
+import { UigModule } from './uig/uig.module';
 import { PaymentComponent, TerminalComponent, PayerComponent, CustomerComponent } from './dollaz';
-import { UigComponent } from './uig/uig.component';
-import { Uig08FormSelectsComponent } from './uig/uig.08.form.selects.component';
-import { Uig12MessagesComponent } from './uig/uig.12.messages.component';
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -91,13 +89,11 @@ export function createTranslateLoader(http: Http) {
     TerminalComponent,
     PayerComponent,
     CustomerComponent,
-    ObjectDetailComponent,
-    UigComponent,
-    Uig08FormSelectsComponent,
-    Uig12MessagesComponent,
+    ObjectDetailComponent
   ],
   imports: [ // import Angular's modules
     UiModule,
+    UigModule,
     Ng2PaginationModule,
     SelectModule,
     OperationalInterestModule,

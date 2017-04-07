@@ -1,0 +1,24 @@
+<div class="section">
+
+  <div class="stylebook-section">
+    <h1 class="stylebook-section-title" id="forms">6. Ikoonid</h1>
+
+    <div class="row">
+      <div class="col mt-4">
+        <a gray icon="filters" tooltip="Filter"></a>
+        <a gray icon="preferences" tooltip="Seaded"></a>
+        <a gray icon="drag" tooltip="Lohistaja"></a>
+      </div>
+    </div>
+
+    <div class="icon-links">
+      <div class="col-md">
+        <div class="row" *ngFor = "let icon of ['settings', 'favourites', 'color', 'delete', 'fullscreen-on', 'download', 'upload', 'print', 'checkerrors']">
+          <a gray [icon]="icon">{{icon}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>

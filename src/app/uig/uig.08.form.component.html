@@ -1,0 +1,50 @@
+<div class="section">
+
+  <div class="stylebook-section">
+    <h1 class="stylebook-section-title" id="forms">8. Vormid</h1>
+    <h2 id="form-elements" class="stylebook-section-title">8.1 Vormiväljad</h2>
+
+    <form name="random" class="row">
+      <div class="col-xs-20 col-xl-10">
+
+        <emta-form-row>
+          <emta-input type="checkbox" name="checkbox1" label="Märkeruut" [(ngModel)]="lego.checkbox1"></emta-input>
+        </emta-form-row>
+
+        <emta-form-row label="Tekstiväli" name="text1">
+          <emta-input name="text1" [(ngModel)]="lego.text1" placeholder="write here"></emta-input>
+        </emta-form-row>
+
+        <emta-form-row label="Readonly" comment="vasja said">
+          <emta-input name="text2" [(ngModel)]="lego.text2" placeholder="shold be disabled" readonly="readonly"></emta-input>
+        </emta-form-row>
+
+        <emta-form-row label="mõõtühikuga">
+          <emta-input name="text3" [(ngModel)]="lego.text3" addon="tk"></emta-input>
+        </emta-form-row>
+
+        <emta-form-row label="otsing">
+          <emta-input search="search" name="search1" [(ngModel)]="lego.search1"></emta-input>
+        </emta-form-row>
+
+        <emta-form-row label="textarea">
+          <emta-input type="textarea" name="textarea1" label="textarea" [(ngModel)]="lego.textarea" placeholder="lorum polorum" rows="5" maxlength="200"></emta-input>
+        </emta-form-row>
+
+        <emta-form-row label="ate all pizza">
+          <div class="col-md-10 custom-controls-stacked">
+            <emta-input type="radio" name="radio1" [(ngModel)]="lego.radio1"
+              *ngFor="let monkey of ['Leonardo', 'Donatello', 'Michelangelo', 'Raphael']"
+              [label]=   "monkey"
+              [value]=   "monkey"></emta-input>
+          </div>
+        </emta-form-row>
+      </div>
+
+      <div class="col-xs-20 col-xl-10">
+        <pre>{{lego | json}}</pre>
+    </div>
+  </form>
+</div>
+
+</div>

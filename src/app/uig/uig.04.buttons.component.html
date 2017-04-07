@@ -1,0 +1,54 @@
+<div class="section">
+
+  <div class="stylebook-section">
+    <h1 class="stylebook-section-title" id="forms">4. Nupud</h1>
+    <div class="buttons">
+      <div class="row">
+        <div class="col-md">
+          <button success (click)="alert('grreat success')">Success</button>
+        </div>
+        <div class="col-md">
+          <button success disabled tooltip="see nupp ei ole aktiivne">Success</button>
+        </div>
+        <div class="col-md">
+          <button success square>Success</button>
+        </div>
+        <div class="col-md">
+          <button success square disabled tooltip="see nupp ei ole aktiivne">Success</button>
+        </div>
+      </div>
+      <div class="row" *ngFor="let type of ['danger','info','dark','light']">
+        <div class="col-md" *ngFor="let i of [1,2,3,4]">
+          <p>&nbsp;</p>
+          <button emta-button [type]='type' disabled="{{i % 2 == 0 ? 'disabled' : 'false'}}" style="{{i > 2 ? 'square' : 'round'}}">{{type}}</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md">
+          <p>&nbsp;</p>
+          <button info icon="with-plus">add</button>
+        </div>
+        <div class="col-md">
+          <p>&nbsp;</p>
+          <button info icon="multiple-options">choose wisely</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md">
+          <p>&nbsp;</p>
+          <button small success icon="save"></button>
+        </div>
+        <div class="col-md">
+          <p>&nbsp;</p>
+          <button small light icon="cancel"></button>
+        </div>
+        <div class="col-md">
+          <p>&nbsp;</p>
+          <button danger icon="logout">Bye bye</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
