@@ -20,7 +20,7 @@
       <div class="row" *ngFor="let type of ['danger','info','dark','light']">
         <div class="col-md" *ngFor="let i of [1,2,3,4]">
           <p>&nbsp;</p>
-          <button emta-button [type]='type' disabled="{{i % 2 == 0 ? 'disabled' : 'false'}}" style="{{i > 2 ? 'square' : 'round'}}">{{type}}</button>
+          <button emta-button [emta-type]='type' disabled="{{i % 2 == 0 ? 'disabled' : 'false'}}" style="{{i > 2 ? 'square' : 'round'}}">{{type}}</button>
         </div>
       </div>
       <div class="row">

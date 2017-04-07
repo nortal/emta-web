@@ -1,0 +1,28 @@
+<div class="section">
+
+  <div class="stylebook-section">
+    <h1 class="stylebook-section-title" id="forms">11. Veateated ja hoiatused</h1>
+
+    <form name="invvalid" class="row" #form="ngForm" (ngSubmit)="valid = form.valid">
+      <div class="col-xs-20 col-xl-10">
+
+        <emta-form-row label="no validations">
+          <emta-input name="ttest1" [(ngModel)]="brick.test1"></emta-input>
+        </emta-form-row>
+        <emta-form-row label="required attribute">
+          <emta-input name="ttest2" [(ngModel)]="brick.test2" required></emta-input>
+        </emta-form-row>
+        <emta-form-row label="required control">
+          <emta-input name="ttest3" [(ngModel)]="brick.test3" [control]="control"></emta-input>
+        </emta-form-row>
+
+        <button success type="submit">Save</button>
+        <badge style="small" level="{{ valid ? 'success' : 'danger' }}"></badge>
+      </div>
+      <div class="col-xs-20 col-xl-10">
+        <pre>{{brick | json}}</pre>
+    </div>
+    </form>
+  </div>
+
+</div>

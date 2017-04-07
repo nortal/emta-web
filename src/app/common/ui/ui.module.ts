@@ -1,6 +1,6 @@
 import { EmtaDatepickerComponent } from './emta-datepicker.component';
 import { EmtaSelectComponent } from './emta-select.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { EmtaTextInputComponent } from './emta-textinput.component';
@@ -24,6 +24,7 @@ import { EmtaBadgeComponent } from './emta-badge.component';
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     TranslateModule,
     Ng2PaginationModule,
     DatepickerModule.forRoot(),

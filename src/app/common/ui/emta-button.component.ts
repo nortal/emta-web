@@ -1,11 +1,11 @@
 import { Directive, Input, Output, HostBinding, OnInit, ElementRef } from '@angular/core';
 
 @Directive({
-  selector: 'button[success],button[danger],button[info],button[dark],button[light],[emta-button]',
+  selector: 'button[success],button[danger],button[info],button[dark],button[light],button[emta-type]',
   //templateUrl: './emta-button.component.html',
 })
 export class EmtaButtonComponent implements OnInit {
-  @Input() public type: string;
+  @Input('emta-type') public emtaType: string;
   @Input() public disabled: string;
   @Input() public style: string;
   @Input() public icon: string;
@@ -20,10 +20,10 @@ export class EmtaButtonComponent implements OnInit {
   }
 
   public ngOnInit() {
-    if (!this.type) {
-      this.type = this.searchAttributes(this.types);
+    if (!this.emtaType) {
+      this.emtaType = this.searchAttributes(this.types);
     }
-    this.class += ' btn-' + this.type;
+    this.class += ' btn-' + this.emtaType;
 
     if (!this.style) {
       this.style = this.searchAttributes(this.styles);

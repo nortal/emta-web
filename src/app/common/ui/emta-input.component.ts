@@ -1,6 +1,7 @@
-import { Component, Input, Output,HostBinding, EventEmitter, OnInit, ViewChild, forwardRef } from '@angular/core';
+import { Component, Input, Output, HostBinding, EventEmitter, OnInit, ViewChild, forwardRef } from '@angular/core';
 import { NgClass } from '@angular/common';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'emta-input',
@@ -22,13 +23,15 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
     'rows',
     'maxlength',
     'addon',
-    'search'
+    'search',
+    'required'
   ]
 })
 export class EmtaInputComponent implements ControlValueAccessor, OnInit {
   @Input() public type: string = 'text';
   @Input() @HostBinding('class') class: string;
   @Input() public name: string;
+  @Input() public control: FormControl;
 
   public val: string;
   public onChange = (x) => x;
@@ -38,6 +41,13 @@ export class EmtaInputComponent implements ControlValueAccessor, OnInit {
     if (!this.class) {
       this.class = this.type === 'radio' ? '' : 'col-xs-20 col-md-12'; 
     }
+    if (!this.control) {
+      this.control = new FormControl();
+    }
+  }
+
+  public isValid(): boolean {
+    return !this.control || !this.control.dirty || this.control.valid;
   }
 
   public writeValue(obj: any) {
