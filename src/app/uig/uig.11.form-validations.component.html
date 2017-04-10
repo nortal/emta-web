@@ -3,7 +3,7 @@
   <div class="stylebook-section">
     <h1 class="stylebook-section-title" id="forms">11. Veateated ja hoiatused</h1>
 
-    <form name="invvalid" class="row" #form="ngForm" (ngSubmit)="valid = form.valid">
+    <form name="invvalid" class="row" #form="ngForm"  (ngSubmit)="form.valid && submitForm()">
       <div class="col-xs-20 col-xl-10">
 
         <emta-form-row label="no validations">
@@ -12,12 +12,15 @@
         <emta-form-row label="required attribute">
           <emta-input name="ttest2" [(ngModel)]="brick.test2" required></emta-input>
         </emta-form-row>
-        <emta-form-row label="required control">
-          <emta-input name="ttest3" [(ngModel)]="brick.test3" [control]="control"></emta-input>
+        <emta-form-row label="pattern a*">
+          <emta-input name="ttest3" [(ngModel)]="brick.test3" pattern="a*" required></emta-input>
         </emta-form-row>
-
-        <button success type="submit">Save</button>
-        <badge style="small" level="{{ valid ? 'success' : 'danger' }}"></badge>
+        <emta-form-row label="custom control">
+          <emta-input name="ttest4" [(ngModel)]="brick.test4" [(control)]="form.controls['ttest4']"></emta-input>
+        </emta-form-row>
+        
+        <button success type="submit" >Save</button>
+        <badge style="small" level="{{ form.valid ? 'success' : 'danger' }}"></badge>
       </div>
       <div class="col-xs-20 col-xl-10">
         <pre>{{brick | json}}</pre>

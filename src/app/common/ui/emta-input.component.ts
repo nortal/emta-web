@@ -22,9 +22,11 @@ import { FormControl } from '@angular/forms';
     'comment',
     'rows',
     'maxlength',
+    'minlength',
     'addon',
     'search',
-    'required'
+    'required',
+    'pattern'
   ]
 })
 export class EmtaInputComponent implements ControlValueAccessor, OnInit {
@@ -36,12 +38,11 @@ export class EmtaInputComponent implements ControlValueAccessor, OnInit {
   public val: string;
   public onChange = (x) => x;
 
-
   public ngOnInit() {
     if (!this.class) {
       this.class = this.type === 'radio' ? '' : 'col-xs-20 col-md-12'; 
     }
-    if (!this.control) {
+    if(!this.control) {
       this.control = new FormControl();
     }
   }

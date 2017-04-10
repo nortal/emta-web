@@ -10,6 +10,9 @@
     [placeholder]="placeholder || ''"
     [readonly]="readonly"
     [required]="required"
+    [pattern]="pattern"
+    [maxlength]="maxlength"
+    [minlength]="minlength"
     [formControl]="control"
     >
     <div class="input-group-addon" *ngIf="!!addon">{{addon}}</div>
@@ -54,8 +57,9 @@
   </label>
 </span>
 
-<div *ngIf="control && control.dirty && !control.valid" class="form-control-feedback has-danger">
+<div *ngIf="!isValid()" class="form-control-feedback has-danger">
   <p *ngIf="control.errors.required"> Field required </p>
+  <p *ngIf="control.errors.pattern"> Pattern invalid </p>
 </div>
 
 
