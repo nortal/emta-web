@@ -8,5 +8,13 @@ node {
   stage('install') {
     sh 'npm install'
   }
+  stage('build') {
+    sh 'npm run build'
+  }
+  stage('archive') {
+    sh 'tar -C dist -czf emta-web-dist.tar.gz .'
+    archiveArtifacts artifacts: 'emta-web-dist.tar.gz', onlyIfSuccessful: true
+  }
+
 
 }
