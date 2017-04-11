@@ -9,11 +9,17 @@
         <emta-form-row label="no validations">
           <emta-input name="ttest1" formControlName="ttest1"></emta-input>
         </emta-form-row>
-        <emta-form-row label="required attribute">
+        <emta-form-row label="required">
           <emta-input name="ttest2" formControlName="ttest2"></emta-input>
         </emta-form-row>
         <emta-form-row label="pattern a*">
           <emta-input name="ttest3" formControlName="ttest3"></emta-input>
+        </emta-form-row>
+        <emta-form-row label="required attribute">
+          <emta-input name="ttest4" formControlName="ttest4" required></emta-input>
+        </emta-form-row>
+        <emta-form-row label="pattern a* attribute">
+          <emta-input name="ttest5" formControlName="ttest5" required pattern="a*"></emta-input>
         </emta-form-row>
         
         <button success type="submit" (click)="markAsDirty(form)">Save</button>

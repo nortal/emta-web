@@ -14,7 +14,9 @@ export class UigFormValidationsComponent implements OnInit {
     this.form = fb.group({
       'ttest1':[''],
       'ttest2':['', Validators.required],
-      'ttest3':['', Validators.compose([Validators.required, Validators.pattern("[a]*")])]
+      'ttest3':['', Validators.compose([Validators.required, Validators.pattern("[a]*")])],
+      'ttest4':[''],
+      'ttest5':['']
     });
   }
 
