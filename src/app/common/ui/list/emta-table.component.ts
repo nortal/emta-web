@@ -1,5 +1,4 @@
-import { Component, OnInit, Input, Output} from '@angular/core';
-import { SortInstance } from './sort-instance';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'emta-table',

@@ -11,7 +11,7 @@ import { EmtaInputComponent } from './emta-input.component';
 })
 export class EmtaFormRowComponent implements OnInit {
   @Input() private name: string;
-  @ContentChild(EmtaInputComponent) private child;
+  @ContentChild(EmtaInputComponent) public child;
 
   public ngOnInit() {
     //

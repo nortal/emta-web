@@ -1,5 +1,18 @@
+export enum SortType {
+  ASC,
+  DESC
+}
 
 export class SortInstance {
-  public field: string;
-  public direction: string = 'asc';
+  field: string;
+  direction: SortType = SortType.ASC;
+
+  constructor(field: string, direction: SortType) {
+    this.field = field;
+    this.direction = direction;
+  }
+
+  isAscending() {
+    return SortType.ASC === this.direction;
+  }
 }

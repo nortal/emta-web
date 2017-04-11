@@ -8,7 +8,12 @@
     [(ngModel)]="val"
     (change)="onChange(val)"
     [placeholder]="placeholder || ''"
-    [readonly]="readonly">
+    [readonly]="readonly"
+    [required]="required"
+    [pattern]="pattern"
+    [maxlength]="maxlength"
+    [minlength]="minlength"
+    >
     <div class="input-group-addon" *ngIf="!!addon">{{addon}}</div>
   </div>
 </span>
@@ -50,3 +55,10 @@
     <span class="custom-control-description">{{label}}</span>
   </label>
 </span>
+
+<div *ngIf="!isValid()" class="form-control-feedback has-danger">
+  <p *ngIf="control.errors.required"> Field required </p>
+  <p *ngIf="control.errors.pattern"> Pattern invalid </p>
+</div>
+
+

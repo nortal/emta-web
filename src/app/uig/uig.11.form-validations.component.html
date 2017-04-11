@@ -1,0 +1,34 @@
+<div class="section">
+
+  <div class="stylebook-section">
+    <h1 class="stylebook-section-title" id="forms">11. Veateated ja hoiatused</h1>
+
+    <form name="invvalid" class="row" [formGroup]="form" (ngSubmit)="form.valid && submitForm()">
+      <div class="col-xs-20 col-xl-10">
+
+        <emta-form-row label="no validations">
+          <emta-input name="ttest1" formControlName="ttest1"></emta-input>
+        </emta-form-row>
+        <emta-form-row label="required">
+          <emta-input name="ttest2" formControlName="ttest2"></emta-input>
+        </emta-form-row>
+        <emta-form-row label="pattern a*">
+          <emta-input name="ttest3" formControlName="ttest3"></emta-input>
+        </emta-form-row>
+        <emta-form-row label="required attribute">
+          <emta-input name="ttest4" formControlName="ttest4" required></emta-input>
+        </emta-form-row>
+        <emta-form-row label="pattern a* attribute">
+          <emta-input name="ttest5" formControlName="ttest5" required pattern="a*"></emta-input>
+        </emta-form-row>
+        
+        <button success type="submit" (click)="markAsDirty(form)">Save</button>
+        <badge style="small" level="{{ form.valid ? 'success' : 'danger' }}"></badge>
+      </div>
+      <div class="col-xs-20 col-xl-10">
+        <pre>{{brick | json}}</pre>
+    </div>
+    </form>
+  </div>
+
+</div>

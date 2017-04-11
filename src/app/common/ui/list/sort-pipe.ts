@@ -1,5 +1,5 @@
-import {Pipe, PipeTransform} from '@angular/core';
-import { SortInstance } from './sort-instance';
+import { Pipe, PipeTransform } from '@angular/core';
+import { SortInstance, SortType } from './sort-instance';
 
 @Pipe({
   name: 'sort',
@@ -28,7 +28,7 @@ export class SortPipe implements PipeTransform {
       return input;
     }
     return input.sort((a:any,b:any) => {
-      return conf.direction === 'asc' 
+      return conf.direction === SortType.ASC
         ? SortPipe._orderByComparator(a[conf.field], b[conf.field])
         : -SortPipe._orderByComparator(a[conf.field], b[conf.field]);
     });
