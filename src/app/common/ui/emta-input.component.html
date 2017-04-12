@@ -19,7 +19,7 @@
 </span>
 
 <span *ngIf="type === 'textarea'">
-  <span *ngIf="!!maxlength" id="{{name}}-counter" class="textarea-char-counter"></span>
+  <span *ngIf="!!maxlength" id="{{name}}-counter" class="textarea-char-counter">{{maxlength - (val ? val.length : 0) }}</span>
   <textarea type="text"
     class="form-control textarea {{!!maxlength ? 'maxlength' : ''}}"
     id="{{name}}"
