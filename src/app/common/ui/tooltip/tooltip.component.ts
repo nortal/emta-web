@@ -1,4 +1,4 @@
-import { HostBinding,HostListener, Component,AfterContentChecked , ElementRef } from '@angular/core';
+import { HostBinding, HostListener, Component, ElementRef } from '@angular/core';
 @Component({
   templateUrl: './tooltip.component.html'
 })
@@ -61,4 +61,5 @@ export class TooltipOpts {
   target: any; //nativeElement
   content: string;
   placement: string = "top";
+  class: string;
 }

@@ -13,6 +13,7 @@ import { DOCUMENT } from '@angular/platform-browser';
 export class EmtaTooltipComponent {
   @Input('tooltip') private tooltipContent: string;
   @Input('tooltip-placement') private tooltipPlacement: string = "top";
+  @Input('tooltip-class') private tooltipClass: string;
   private tooltipRef: ComponentRef<Tooltip>;
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver, private viewContainerRef: ViewContainerRef, @Inject(DOCUMENT) private _document:any) {
@@ -26,6 +27,7 @@ export class EmtaTooltipComponent {
     this.tooltipRef.instance.opts = <TooltipOpts>{
       content: this.tooltipContent,
       placement: this.tooltipPlacement,
+      class: this.tooltipClass,
       target: event.target
     };
   }
