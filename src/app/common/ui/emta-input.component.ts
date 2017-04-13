@@ -22,7 +22,6 @@ import { FormControl } from '@angular/forms';
     'placeholder',
     'label',
     'readonly',
-    'disabled',
     'value',
     'comment',
     'rows',
@@ -35,6 +34,7 @@ import { FormControl } from '@angular/forms';
   ]
 })
 export class EmtaInputComponent implements ControlValueAccessor, OnInit, Validator {
+  @Input() public disabled: boolean;
   @Input() public type: string = 'text';
   @Input() @HostBinding('class') class: string;
   @Input() public name: string;
@@ -54,7 +54,7 @@ export class EmtaInputComponent implements ControlValueAccessor, OnInit, Validat
   }
 
   public isValid(): boolean {
-    return !this.control || !this.control.dirty || this.control.valid;
+    return this.disabled || !this.control || !this.control.dirty || this.control.valid;
   }
 
   public writeValue(obj: any) {

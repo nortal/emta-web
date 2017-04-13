@@ -1,3 +1,4 @@
+
 <div class="section">
 
   <div class="stylebook-section">
@@ -38,6 +39,19 @@
               [label]=   "monkey"
               [value]=   "monkey"></emta-input>
           </div>
+        </emta-form-row>
+
+        <emta-form-row>
+          <emta-input type="switch" name="switch1" label="Boo" [(ngModel)]="lego.switch1"></emta-input>
+        </emta-form-row>
+        <emta-form-row>
+          <emta-input type="switch" name="switch2" label="yaay" [(ngModel)]="lego.switch2" disabled="disabled"></emta-input>
+        </emta-form-row>
+        <emta-form-row>
+          <emta-input type="switch" name="switch3" [(ngModel)]="lego.switch3">
+            <span class="switch-text">yes</span>
+            <span class="switch-text">no</span>
+          </emta-input>
         </emta-form-row>
       </div>
 

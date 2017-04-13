@@ -41,6 +41,15 @@
   </label>
 </span>
 
+<span *ngIf="type === 'switch'">
+  <label class="switch">
+    <input type="checkbox" checked="checked" [name]="name" [(ngModel)]="val" (change)="onChange(val)" [disabled]="disabled">
+    <div class="slider" tabindex="0"></div>
+    <span class="switch-text" *ngIf="label">{{label}}</span>
+    <ng-content></ng-content>
+  </label>
+</span>
+
 <span *ngIf="type === 'radio'">
   <label class="custom-control custom-radio">
     <input type="radio"
