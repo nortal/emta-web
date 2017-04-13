@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { UiModule } from '../common/ui/ui.module';
 import { UigFormValidationsComponent } from './uig.11.form-validations.component';
+import { Uig13TooltipComponent } from './uig.13.tooltip.component';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import { UigFormValidationsComponent } from './uig.11.form-validations.component
     UigBadgeComponent,
     UigFormValidationsComponent,
     Uig08FormSelectsComponent,
-    Uig12MessagesComponent
+    Uig12MessagesComponent,
+    Uig13TooltipComponent
   ],
   declarations: [
     UigComponent,
@@ -34,7 +36,8 @@ import { UigFormValidationsComponent } from './uig.11.form-validations.component
     UigBadgeComponent,
     UigFormValidationsComponent,
     Uig08FormSelectsComponent,
-    Uig12MessagesComponent
+    Uig12MessagesComponent,
+    Uig13TooltipComponent
   ],
   providers: [],
 })

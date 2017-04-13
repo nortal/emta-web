@@ -17,7 +17,8 @@ import { SortPipe } from './list/sort-pipe';
 import { EmtaTableComponent } from './list/emta-table.component';
 import { EmtaButtonComponent } from './emta-button.component';
 import { EmtaLinkComponent } from './emta-link.component';
-import { EmtaTooltipComponent } from './emta-tooltip.component';
+import { EmtaTooltipComponent } from './tooltip/emta-tooltip.component';
+import { Tooltip } from './tooltip/tooltip.component';
 import { EmtaBadgeComponent } from './emta-badge.component';
 
 @NgModule({
@@ -61,8 +62,10 @@ import { EmtaBadgeComponent } from './emta-badge.component';
     EmtaLinkComponent,
     EmtaTooltipComponent,
     EmtaBadgeComponent,
+    Tooltip,
     SortPipe,
   ],
+  entryComponents: [Tooltip],
   providers: [],
 })
 export class UiModule {
