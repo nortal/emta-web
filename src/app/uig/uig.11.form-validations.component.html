@@ -3,6 +3,7 @@
   <div class="stylebook-section">
     <h1 class="stylebook-section-title" id="forms">11. Veateated ja hoiatused</h1>
 
+    <h2 class="stylebook-section-title">Using FormControl</h2>
     <form name="invvalid" class="row" [formGroup]="form" (ngSubmit)="form.valid && submitForm()">
       <div class="col-xs-20 col-xl-10">
 
@@ -21,14 +22,65 @@
         <emta-form-row label="pattern a* attribute">
           <emta-input name="ttest5" formControlName="ttest5" required pattern="a*"></emta-input>
         </emta-form-row>
-        
+
         <button success type="submit" (click)="markAsDirty(form)">Save</button>
         <badge style="small" level="{{ form.valid ? 'success' : 'danger' }}"></badge>
       </div>
       <div class="col-xs-20 col-xl-10">
         <pre>{{brick | json}}</pre>
     </div>
-    </form>
+  </form>
+
+  <br/> 
+  <h2 class="stylebook-section-title">Using NgModel</h2>
+  <form name="invvalid" class="row" #modelform="ngForm" (ngSubmit)="modelform.valid && console.log('submitted')">
+    <div class="col-xs-20 col-xl-10">
+
+      <emta-form-row label="ngModel no validations">
+        <emta-input name="ttest6" [(ngModel)]="pallet.test6"></emta-input>
+      </emta-form-row>
+      <emta-form-row label="ngModel required">
+        <emta-input name="ttest7" [(ngModel)]="pallet.ttest7" required></emta-input>
+      </emta-form-row>
+      <emta-form-row label="ngModel pattern">
+        <emta-input name="ttest8" [(ngModel)]="pallet.ttest8" required pattern="a*"></emta-input>
+      </emta-form-row>
+
+      <button success type="submit" (click)="markAsDirty(modelform.control)">Save</button>
+      <badge style="small" level="{{ modelform.valid ? 'success' : 'danger' }}"></badge>
+    </div>
+    <div class="col-xs-20 col-xl-10">
+        <pre>{{pallet | json}}</pre>
   </div>
+</form>
+  </div>
+
+
+  <h2 class="stylebook-section-title">11.2 Ikoonist avanevad veateated</h2>
+  <form-feedback danger>
+    <p>Isik ei ole kantud töötajate registrisse</p>
+    <a class="link-gray" href="javascript:void(0);">Kannan isiku töötajate registrisse</a>
+    <a class="link-gray" href="javascript:void(0);">Vajan abi</a>
+  </form-feedback>
+  <form-feedback warning>
+    <p>Isik ei ole kantud töötajate registrisse</p>
+    <a class="link-gray" href="javascript:void(0);">Kannan isiku töötajate registrisse</a>
+    <a class="link-gray" href="javascript:void(0);">Vajan abi</a>
+  </form-feedback>
+
+  <div class="form-group text-right" >
+    <form-feedback danger label="15 errors">
+      <p>Isik ei ole kantud töötajate registrisse</p>
+      <a class="link-gray" href="javascript:void(0);">Kannan isiku töötajate registrisse</a>
+      <a class="link-gray" href="javascript:void(0);">Vajan abi</a>
+    </form-feedback>
+    <form-feedback warning label="5.566 warnings">
+      <p>Isik ei ole kantud töötajate registrisse</p>
+      <a class="link-gray" href="javascript:void(0);">Kannan isiku töötajate registrisse</a>
+      <a class="link-gray" href="javascript:void(0);">Vajan abi</a>
+    </form-feedback>
+  </div>
+
+
 
 </div>

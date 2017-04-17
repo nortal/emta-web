@@ -1,0 +1,14 @@
+<div class="form-feedback-icon">
+  <a class="form-feedback-toggle link-gray 
+    {{ level === 'danger' ? 'icon-error-sq danger' :
+       level === 'warning'? 'icon-warning-sq warning' : '' }}
+    {{ expanded ? '' : 'collapsed'}}" 
+    (click)="expanded = !expanded">{{label}}</a>
+  <div class="form-feedback show
+    {{ level === 'danger' ? 'has-danger' :
+       level === 'warning' ?'has-warning' : '' }}"
+    *ngIf="expanded">
+    <ng-content></ng-content>
+  </div>
+</div>
+
