@@ -1,6 +1,8 @@
-<div class="btn-group bootstrap-select form-control clearable"
+<div class="btn-group bootstrap-select form-control"
   [class.show]="show"
   [class.disabled]="disabled"
+  [class.numeric]="numeric"
+  [class.clearable]="clearable"
   [class.searchable]="!simple">
   <button
     type="button"
@@ -40,5 +42,5 @@
     </ul>
   </div>
   <button class="clear" tabindex="0" data-toggle="tooltip" tooltip-placement="top" tooltip-title="Tühjendan"
-          data-original-title="" title="" (mouseup)="clear()" [hidden]="!selected"></button>
+          data-original-title="" title="" (mouseup)="clear()" [hidden]="!selected || !clearable"></button>
 </div>

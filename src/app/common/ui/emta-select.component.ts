@@ -38,7 +38,9 @@ export class EmtaSelectComponent implements ControlValueAccessor, OnInit {
   @Input() public clearLast = true;
   @Input() public foundData: Observable<any[]>;
   @Input() public simple = false;
+  @Input() public numeric = false;
   @Input() public disabled = false;
+  @Input() public clearable = true;
 
   @Input() public displayFunc = (x) => x;
   public onChange = (x) => x;
