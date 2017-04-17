@@ -5,5 +5,7 @@
   "COUNTRY": "Страна",
   "CODE": "Код",
   "EMPLOYEE":"Служащий",
-  "BIRTHDATE": "Дата рождения"
+  "BIRTHDATE": "Дата рождения",
+  "navbar.login": "Войти",
+  "navbar.logout": "Выйти"
 }

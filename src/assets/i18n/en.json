@@ -1,0 +1,11 @@
+{
+  "FIRSTNAME": "Firstname",
+  "LASTNAME": "Surname",
+  "DEPARTMENT": "Üksus (ro, =eesnimi)",
+  "COUNTRY": "Country",
+  "CODE": "Code",
+  "EMPLOYEE":"Ametnik",
+  "BIRTHDATE": "Birthdate",
+  "navbar.login": "Log In",
+  "navbar.logout": "Log Out"
+}

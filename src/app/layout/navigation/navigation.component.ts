@@ -13,13 +13,17 @@ import { TranslateService } from 'ng2-translate';
 export class NavigationComponent implements OnInit {
   // Set our default values
   public localState = {value: ''};
+  public langs: {code: string, name: string}[];
 
-  constructor(private translate: TranslateService, public authService: AuthService) {
+  constructor(public translate: TranslateService, public authService: AuthService) {
   }
 
   public ngOnInit() {
-    console.log('näidisvormike');
-    // this.title.getData().subscribe(data => this.data = data);
+    this.langs = [
+      {code: 'et', name: 'Eesti keeles'},
+      {code: 'en', name: 'In English'},
+      {code: 'ru', name: 'На русском'}
+    ];
   }
 
   public submitState(value: string) {

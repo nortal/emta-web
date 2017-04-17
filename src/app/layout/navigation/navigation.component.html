@@ -25,12 +25,8 @@
 
 
   <ul class="navbar-nav navbar-right">
-    <li class="nav-item nav-item-desktop-only">
-      <a class="nav-link nav-language link-gray" (click)="selectLanguage($event, 'ru')">На русском</a>
-    </li>
-
-    <li class="nav-item nav-item-desktop-only">
-      <a class="nav-link nav-language link-gray" (click)="selectLanguage($event, 'et')">In English</a>
+    <li class="nav-item nav-item-desktop-only" *ngFor="let lang of langs">
+      <a class="nav-link nav-language link-gray" (click)="selectLanguage($event, lang.code)" *ngIf="lang.code !== this.translate.currentLang">{{lang.name}}</a>
     </li>
 
 
@@ -76,9 +72,9 @@
 
     <li class="nav-item nav-logout">
       <!-- <a class="btn btn-logout" href="javascript:void(0);" data-toggle="popover" popover-trigger="click" popover-placement="bottom" popover-content="#exit-popover" popover-class="popover-exit" data-original-title="" title="">Väljun</a> -->
-      <a class="btn btn-logout" (click)="authService.logout()" *ngIf="authService.isLoggedIn">Väljun</a>
+      <a class="btn btn-logout" (click)="authService.logout()" *ngIf="authService.isLoggedIn">{{'navbar.logout' | translate}}</a>
       <a class="btn btn-square btn-success" style="line-height: inherit" routerLink="login"
-         *ngIf="!authService.isLoggedIn">Sisene</a>
+         *ngIf="!authService.isLoggedIn">{{'navbar.login' | translate}}</a>
     </li>
   </ul>
 

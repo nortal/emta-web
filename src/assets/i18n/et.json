@@ -5,5 +5,7 @@
   "COUNTRY": "Riik",
   "CODE": "Kood",
   "EMPLOYEE":"Ametnik",
-  "BIRTHDATE": "Sünniaeg"
+  "BIRTHDATE": "Sünniaeg",
+  "navbar.login": "Sisene",
+  "navbar.logout": "Väljun"
 }
