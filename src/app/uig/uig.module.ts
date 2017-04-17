@@ -8,6 +8,7 @@ import { UiModule } from '../common/ui/ui.module';
 import { UigFormValidationsComponent } from './uig.11.form-validations.component';
 import { Uig13TooltipComponent } from './uig.13.tooltip.component';
 import { UigFormComponent } from './uig.08.form.component';
+import { UigFormTypesComponent } from './uig.08.formtypes.component';
 
 @NgModule({
   imports: [
@@ -26,7 +27,8 @@ import { UigFormComponent } from './uig.08.form.component';
     UigFormValidationsComponent,
     Uig08FormSelectsComponent,
     Uig12MessagesComponent,
-    Uig13TooltipComponent
+    Uig13TooltipComponent,
+    UigFormTypesComponent 
   ],
   declarations: [
     UigComponent,
@@ -38,7 +40,8 @@ import { UigFormComponent } from './uig.08.form.component';
     UigFormValidationsComponent,
     Uig08FormSelectsComponent,
     Uig12MessagesComponent,
-    Uig13TooltipComponent
+    Uig13TooltipComponent,
+    UigFormTypesComponent 
   ],
   providers: [],
 })

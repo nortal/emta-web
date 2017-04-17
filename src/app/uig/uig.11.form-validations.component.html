@@ -7,21 +7,21 @@
     <form name="invvalid" class="row" [formGroup]="form" (ngSubmit)="form.valid && submitForm()">
       <div class="col-xs-20 col-xl-10">
 
-        <emta-form-row label="no validations">
+        <form-row label="no validations">
           <emta-input name="ttest1" formControlName="ttest1"></emta-input>
-        </emta-form-row>
-        <emta-form-row label="required">
+        </form-row>
+        <form-row label="required">
           <emta-input name="ttest2" formControlName="ttest2"></emta-input>
-        </emta-form-row>
-        <emta-form-row label="pattern a*">
+        </form-row>
+        <form-row label="pattern a*">
           <emta-input name="ttest3" formControlName="ttest3"></emta-input>
-        </emta-form-row>
-        <emta-form-row label="required attribute">
+        </form-row>
+        <form-row label="required attribute">
           <emta-input name="ttest4" formControlName="ttest4" required></emta-input>
-        </emta-form-row>
-        <emta-form-row label="pattern a* attribute">
+        </form-row>
+        <form-row label="pattern a* attribute">
           <emta-input name="ttest5" formControlName="ttest5" required pattern="a*"></emta-input>
-        </emta-form-row>
+        </form-row>
 
         <button success type="submit" (click)="markAsDirty(form)">Save</button>
         <badge style="small" level="{{ form.valid ? 'success' : 'danger' }}"></badge>
@@ -36,15 +36,15 @@
   <form name="invvalid" class="row" #modelform="ngForm" (ngSubmit)="modelform.valid && console.log('submitted')">
     <div class="col-xs-20 col-xl-10">
 
-      <emta-form-row label="ngModel no validations">
+      <form-row label="ngModel no validations">
         <emta-input name="ttest6" [(ngModel)]="pallet.test6"></emta-input>
-      </emta-form-row>
-      <emta-form-row label="ngModel required">
+      </form-row>
+      <form-row label="ngModel required">
         <emta-input name="ttest7" [(ngModel)]="pallet.ttest7" required></emta-input>
-      </emta-form-row>
-      <emta-form-row label="ngModel pattern">
+      </form-row>
+      <form-row label="ngModel pattern">
         <emta-input name="ttest8" [(ngModel)]="pallet.ttest8" required pattern="a*"></emta-input>
-      </emta-form-row>
+      </form-row>
 
       <button success type="submit" (click)="markAsDirty(modelform.control)">Save</button>
       <badge style="small" level="{{ modelform.valid ? 'success' : 'danger' }}"></badge>

@@ -1,0 +1,13 @@
+<div class="form-section">
+  <div class="section-title">
+    <a class="section-collapse" (click)="expanded=!expanded" [attr.aria-expanded]="expanded">
+      <h3>{{title}}</h3>
+    </a>
+    <div class="title-line"></div>
+  </div>
+  <div class="collapse show" aria-expanded="true" *ngIf="expanded">
+    <div class="form-section-body">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>

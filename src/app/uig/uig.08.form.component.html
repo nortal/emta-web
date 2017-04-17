@@ -8,51 +8,51 @@
     <form name="random" class="row">
       <div class="col-xs-20 col-xl-10">
 
-        <emta-form-row>
+        <form-row>
           <emta-input type="checkbox" name="checkbox1" label="Märkeruut" [(ngModel)]="lego.checkbox1"></emta-input>
-        </emta-form-row>
+        </form-row>
 
-        <emta-form-row label="Tekstiväli" name="text1">
+        <form-row label="Tekstiväli" name="text1">
           <emta-input name="text1" [(ngModel)]="lego.text1" placeholder="write here"></emta-input>
-        </emta-form-row>
+        </form-row>
 
-        <emta-form-row label="Readonly" comment="vasja said">
+        <form-row label="Readonly" comment="vasja said">
           <emta-input name="text2" [(ngModel)]="lego.text2" placeholder="shold be disabled" readonly="readonly"></emta-input>
-        </emta-form-row>
+        </form-row>
 
-        <emta-form-row label="mõõtühikuga">
+        <form-row label="mõõtühikuga">
           <emta-input name="text3" [(ngModel)]="lego.text3" addon="tk"></emta-input>
-        </emta-form-row>
+        </form-row>
 
-        <emta-form-row label="otsing">
+        <form-row label="otsing">
           <emta-input search="search" name="search1" [(ngModel)]="lego.search1"></emta-input>
-        </emta-form-row>
+        </form-row>
 
-        <emta-form-row label="textarea">
+        <form-row label="textarea">
           <emta-input type="textarea" name="textarea1" label="textarea" [(ngModel)]="lego.textarea" placeholder="lorum polorum" rows="5" maxlength="200"></emta-input>
-        </emta-form-row>
+        </form-row>
 
-        <emta-form-row label="ate all pizza">
+        <form-row label="ate all pizza">
           <div class="col-md-10 custom-controls-stacked">
             <emta-input type="radio" name="radio1" [(ngModel)]="lego.radio1"
               *ngFor="let monkey of ['Leonardo', 'Donatello', 'Michelangelo', 'Raphael']"
               [label]=   "monkey"
               [value]=   "monkey"></emta-input>
           </div>
-        </emta-form-row>
+        </form-row>
 
-        <emta-form-row>
+        <form-row>
           <emta-input type="switch" name="switch1" label="Boo" [(ngModel)]="lego.switch1"></emta-input>
-        </emta-form-row>
-        <emta-form-row>
+        </form-row>
+        <form-row>
           <emta-input type="switch" name="switch2" label="yaay" [(ngModel)]="lego.switch2" disabled="disabled"></emta-input>
-        </emta-form-row>
-        <emta-form-row>
+        </form-row>
+        <form-row>
           <emta-input type="switch" name="switch3" [(ngModel)]="lego.switch3">
             <span class="switch-text">yes</span>
             <span class="switch-text">no</span>
           </emta-input>
-        </emta-form-row>
+        </form-row>
       </div>
 
       <div class="col-xs-20 col-xl-10">

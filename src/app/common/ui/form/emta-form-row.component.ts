@@ -1,8 +1,8 @@
 import { Component, OnInit, ContentChild, Input} from '@angular/core';
-import { EmtaInputComponent } from './emta-input.component';
+import { EmtaInputComponent } from '../emta-input.component';
 
 @Component({
-  selector: 'emta-form-row',
+  selector: 'form-row',
   templateUrl: './emta-form-row.component.html',
   inputs: [
     'label',

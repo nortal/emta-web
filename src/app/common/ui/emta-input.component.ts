@@ -48,9 +48,6 @@ export class EmtaInputComponent implements ControlValueAccessor, OnInit, Validat
   }
 
   public ngOnInit() {
-    if (!this.class) {
-      this.class = this.type === 'radio' ? '' : 'col-xs-20 col-md-12'; 
-    }
   }
 
   public isValid(): boolean {
