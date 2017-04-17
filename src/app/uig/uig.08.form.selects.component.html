@@ -26,37 +26,11 @@
       <div class="form-group row">
         <label for="select2" class="col-xs-20 col-md-8 col-form-label">Rippmenüü (disabled)</label>
         <div class="col-xs-20 col-md-12">
-          <select class="form-control selectpicker clearable bs-select-hidden" id="select2" disabled="disabled">
-            <option value="" class="default-option">Vali...</option>
-            <option>2016</option>
-            <option>2015</option>
-            <option>2014</option>
-            <option>2013</option>
-            <option>2012</option>
-          </select>
-          <div class="btn-group bootstrap-select disabled form-control clearable">
-            <button type="button" class="btn dropdown-toggle disabled btn-default" data-toggle="tooltip"
-                    data-id="select2" title="" tooltip-trigger="hover focus" tooltip-placement="top" tabindex="0"
-                    data-animation="false" data-original-title="Disabled input"><span class="filter-option pull-left">Vali...</span>&nbsp;<span
-              class="caret"></span></button>
-            <div class="dropdown-menu show">
-              <ul class="dropdown-menu inner" role="menu">
-                <li data-original-index="0" class="selected"><a tabindex="0" class="default-option" style=""
-                                                                data-tokens="null"><span
-                  class="text">Vali...</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
-                <li data-original-index="1"><a tabindex="0" class="" style="" data-tokens="null"><span
-                  class="text">2016</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
-                <li data-original-index="2"><a tabindex="0" class="" style="" data-tokens="null"><span
-                  class="text">2015</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
-                <li data-original-index="3"><a tabindex="0" class="" style="" data-tokens="null"><span
-                  class="text">2014</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
-                <li data-original-index="4"><a tabindex="0" class="" style="" data-tokens="null"><span
-                  class="text">2013</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
-                <li data-original-index="5"><a tabindex="0" class="" style="" data-tokens="null"><span
-                  class="text">2012</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
-              </ul>
-            </div>
-          </div>
+          <emta-select
+            [data]="items"
+            [simple]="true"
+            disabled="true"
+            placeholder="Vali..."></emta-select>
         </div>
       </div>
       <div class="form-group row">
@@ -215,103 +189,16 @@
       <div class="form-group row">
         <label for="select6" class="col-xs-20 col-md-8 col-form-label">Klassifikaator</label>
         <div class="col-xs-20 col-md-12">
-          <select class="form-control selectpicker searchable clearable bs-select-hidden has-clear" id="select6"
-                  data-live-search="true" title="Leia sobiv...">
-            <option class="bs-title-option" value="">Leia sobiv...</option>
-            <optgroup label="Section heading 1">
-              <option>2016</option>
-              <option>2015</option>
-              <option>2014</option>
-            </optgroup>
-            <optgroup label="Section heading 2">
-              <option>2013</option>
-              <option>2012</option>
-              <option>2011</option>
-            </optgroup>
-          </select>
-          <div class="btn-group bootstrap-select form-control searchable clearable">
-            <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" data-id="select6"
-                    title="2012" aria-expanded="false"><span class="filter-option pull-left">2012</span>&nbsp;<span
-              class="caret"></span></button>
-            <div class="dropdown-menu show" style="max-height: 479.266px; overflow: hidden; min-height: 110px;">
-              <div class="bs-searchbox"><input type="text" class="form-control" autocomplete="off"></div>
-              <ul class="dropdown-menu inner" role="menu"
-                  style="max-height: 436.266px; overflow-y: auto; min-height: 67px;">
-                <li class="dropdown-header " data-optgroup="1"><span class="text">Section heading 1</span></li>
-                <li data-original-index="1" data-optgroup="1" class=""><a tabindex="0" class="opt  " style=""
-                                                                          data-tokens="null"><span
-                  class="text">2016</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
-                <li data-original-index="2" data-optgroup="1" class=""><a tabindex="0" class="opt undefined" style=""
-                                                                          data-tokens="null"><span
-                  class="text">2015</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
-                <li data-original-index="3" data-optgroup="1"><a tabindex="0" class="opt undefined" style=""
-                                                                 data-tokens="null"><span class="text">2014</span><span
-                  class="glyphicon glyphicon-ok check-mark"></span></a></li>
-                <li class="divider" data-optgroup="2div"></li>
-                <li class="dropdown-header " data-optgroup="2"><span class="text">Section heading 2</span></li>
-                <li data-original-index="4" data-optgroup="2"><a tabindex="0" class="opt  " style="" data-tokens="null"><span
-                  class="text">2013</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
-                <li data-original-index="5" data-optgroup="2" class="selected active"><a tabindex="0"
-                                                                                         class="opt undefined" style=""
-                                                                                         data-tokens="null"><span
-                  class="text">2012</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
-                <li data-original-index="6" data-optgroup="2"><a tabindex="0" class="opt undefined" style=""
-                                                                 data-tokens="null"><span class="text">2011</span><span
-                  class="glyphicon glyphicon-ok check-mark"></span></a></li>
-              </ul>
-            </div>
-          </div>
-          <button class="clear" tabindex="0" data-toggle="tooltip" tooltip-placement="top" tooltip-title="Tühjendan"
-                  data-original-title="" title=""></button>
+          <emta-select
+            [data]="items"></emta-select>
         </div>
       </div>
       <div class="form-group row">
         <label for="select7" class="col-xs-20 col-md-8 col-form-label">Klassifikaator (disabled)</label>
         <div class="col-xs-20 col-md-12">
-          <select class="form-control selectpicker searchable clearable bs-select-hidden" id="select7"
-                  data-live-search="true" title="Leia sobiv..." disabled="disabled">
-            <option class="bs-title-option" value="">Leia sobiv...</option>
-            <optgroup label="Section heading 1">
-              <option>2016</option>
-              <option>2015</option>
-              <option>2014</option>
-            </optgroup>
-            <optgroup label="Section heading 2">
-              <option>2013</option>
-              <option>2012</option>
-              <option>2011</option>
-            </optgroup>
-          </select>
-          <div class="btn-group bootstrap-select disabled form-control searchable clearable">
-            <button type="button" class="btn dropdown-toggle disabled btn-default" data-toggle="tooltip"
-                    data-id="select7" title="" tooltip-trigger="hover focus" tooltip-placement="top" tabindex="0"
-                    data-animation="false" data-original-title="Disabled input" aria-expanded="false"><span
-              class="filter-option pull-left">Leia sobiv...</span>&nbsp;<span class="caret"></span></button>
-            <div class="dropdown-menu show">
-              <div class="bs-searchbox"><input type="text" class="form-control" autocomplete="off"></div>
-              <ul class="dropdown-menu inner" role="menu">
-                <li class="dropdown-header " data-optgroup="1"><span class="text">Section heading 1</span></li>
-                <li data-original-index="1" data-optgroup="1"><a tabindex="0" class="opt  " style="" data-tokens="null"><span
-                  class="text">2016</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
-                <li data-original-index="2" data-optgroup="1"><a tabindex="0" class="opt undefined" style=""
-                                                                 data-tokens="null"><span class="text">2015</span><span
-                  class="glyphicon glyphicon-ok check-mark"></span></a></li>
-                <li data-original-index="3" data-optgroup="1"><a tabindex="0" class="opt undefined" style=""
-                                                                 data-tokens="null"><span class="text">2014</span><span
-                  class="glyphicon glyphicon-ok check-mark"></span></a></li>
-                <li class="divider" data-optgroup="2div"></li>
-                <li class="dropdown-header " data-optgroup="2"><span class="text">Section heading 2</span></li>
-                <li data-original-index="4" data-optgroup="2"><a tabindex="0" class="opt  " style="" data-tokens="null"><span
-                  class="text">2013</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
-                <li data-original-index="5" data-optgroup="2"><a tabindex="0" class="opt undefined" style=""
-                                                                 data-tokens="null"><span class="text">2012</span><span
-                  class="glyphicon glyphicon-ok check-mark"></span></a></li>
-                <li data-original-index="6" data-optgroup="2"><a tabindex="0" class="opt undefined" style=""
-                                                                 data-tokens="null"><span class="text">2011</span><span
-                  class="glyphicon glyphicon-ok check-mark"></span></a></li>
-              </ul>
-            </div>
-          </div>
+          <emta-select
+            [data]="items"
+            disabled="true"></emta-select>
         </div>
       </div>
       <div class="form-group row">

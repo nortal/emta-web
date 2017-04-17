@@ -38,6 +38,7 @@ export class EmtaSelectComponent implements ControlValueAccessor, OnInit {
   @Input() public clearLast = true;
   @Input() public foundData: Observable<any[]>;
   @Input() public simple = false;
+  @Input() public disabled = false;
 
   @Input() public displayFunc = (x) => x;
   public onChange = (x) => x;
@@ -81,6 +82,9 @@ export class EmtaSelectComponent implements ControlValueAccessor, OnInit {
   }
 
   public trigger() {
+    if (this.disabled) {
+      return;
+    }
     this.show = !this.show;
     if (this.show) {
       if (this.clearLast) {
@@ -141,6 +145,12 @@ export class EmtaSelectComponent implements ControlValueAccessor, OnInit {
       }
     } else if (event.key === 'Escape') {
       this.trigger();
+    }
+  }
+
+  public handleKeydown(event) {
+    if (this.simple) {
+      event.preventDefault();
     }
   }
 

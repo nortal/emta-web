@@ -1,7 +1,12 @@
-<div class="btn-group bootstrap-select form-control clearable" [class.show]="show" [class.searchable]="!simple">
+<div class="btn-group bootstrap-select form-control clearable"
+  [class.show]="show"
+  [class.disabled]="disabled"
+  [class.searchable]="!simple">
   <button
     type="button"
     class="btn dropdown-toggle btn-default"
+    [class.bs-placeholder]="!selected"
+    [class.disabled]="disabled"
     data-toggle="dropdown"
     data-id="select6"
     title="2016"
@@ -14,7 +19,7 @@
   </button>
   <div class="dropdown-menu show" style="max-height: 345.172px; overflow: hidden;"
        (keyup)="onKey($event)"
-       (keydown)="false"
+       (keydown)="handleKeydown($event)"
        (blur)="onBlur($event)"
        #dropdownMenu [attr.tabindex]="simple ? 0 : -1" style="outline: none;">
     <div class="bs-searchbox" [hidden]="simple">
