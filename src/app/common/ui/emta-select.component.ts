@@ -28,6 +28,7 @@ export class EmtaSelectComponent implements ControlValueAccessor, OnInit {
   public currentItems = [];
 
   @ViewChild('searchInput') public searchInput: any;
+  @ViewChild('dropdownMenu') public dropdownMenu: any;
   @ViewChild('parentButton') public parentButton: any;
 
   @Output() public onSearch: Observable<string> = this.searchTerms.debounceTime(300).distinctUntilChanged();
@@ -36,6 +37,7 @@ export class EmtaSelectComponent implements ControlValueAccessor, OnInit {
   @Input() public notFoundText = 'Puudub valik';
   @Input() public clearLast = true;
   @Input() public foundData: Observable<any[]>;
+  @Input() public simple = false;
 
   @Input() public displayFunc = (x) => x;
   public onChange = (x) => x;
@@ -94,7 +96,11 @@ export class EmtaSelectComponent implements ControlValueAccessor, OnInit {
   }
 
   public focus() {
-    this.searchInput.nativeElement.focus();
+    if (this.simple) {
+      this.dropdownMenu.nativeElement.focus();
+    } else {
+      this.searchInput.nativeElement.focus();
+    }
   }
 
   public select(index) {

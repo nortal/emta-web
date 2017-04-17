@@ -1,11 +1,11 @@
-<div class="btn-group bootstrap-select form-control searchable clearable" [class.show]="show">
+<div class="btn-group bootstrap-select form-control clearable" [class.show]="show" [class.searchable]="!simple">
   <button
     type="button"
     class="btn dropdown-toggle btn-default"
     data-toggle="dropdown"
     data-id="select6"
     title="2016"
-    aria-expanded="false"
+    [attr.aria-expanded]="show"
     (mouseup)="trigger()"
     (keyup.enter)="trigger()"
     #parentButton>
@@ -13,10 +13,13 @@
     class="caret"></span>
   </button>
   <div class="dropdown-menu show" style="max-height: 345.172px; overflow: hidden;"
-       (keyup)="onKey($event)">
-    <div class="bs-searchbox">
+       (keyup)="onKey($event)"
+       (keydown)="false"
+       (blur)="onBlur($event)"
+       #dropdownMenu [attr.tabindex]="simple ? 0 : -1" style="outline: none;">
+    <div class="bs-searchbox" [hidden]="simple">
       <input type="text" class="form-control" autocomplete="off" #searchInput
-             (keyup)="onInput($event.target.value)" (blur)="onBlur($event)"/>
+             (keyup)="onInput($event.target.value)" (blur)="onBlur($event)" />
     </div>
     <ul class="dropdown-menu inner" role="menu" style="max-height: 302.172px; overflow-y: auto;">
       <li *ngFor="let el of adata | async; let i = index"
