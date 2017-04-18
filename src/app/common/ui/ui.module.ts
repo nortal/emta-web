@@ -20,7 +20,8 @@ import { EmtaTooltipComponent } from './tooltip/emta-tooltip.component';
 import { Tooltip } from './tooltip/tooltip.component';
 import { EmtaBadgeComponent } from './emta-badge.component';
 import { EmtaFormRowComponent, EmtaFormSectionComponent, EmtaFormFeedbackComponent } from './form';
-import { TabsComponent } from './tabs/tabs.component';
+import { TabsComponent } from './layout/tabs.component';
+import { AccordionBlockComponent } from './layout/accordion.component';
 
 @NgModule({
   imports: [
@@ -49,6 +50,7 @@ import { TabsComponent } from './tabs/tabs.component';
     EmtaFormFeedbackComponent,
     EmtaFormSectionComponent,
     TabsComponent,
+    AccordionBlockComponent,
     SortPipe,
     TranslateModule
   ],
@@ -69,6 +71,7 @@ import { TabsComponent } from './tabs/tabs.component';
     EmtaFormFeedbackComponent,
     EmtaFormSectionComponent,
     TabsComponent,
+    AccordionBlockComponent,
     Tooltip,
     SortPipe,
   ],

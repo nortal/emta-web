@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Tab } from '../common/ui/tabs/tab';
+import { Tab } from '../common/ui/layout/tab';
 
 @Component({
   selector: 'app-uig-08-2',
