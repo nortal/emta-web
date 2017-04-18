@@ -20,6 +20,7 @@ import { EmtaTooltipComponent } from './tooltip/emta-tooltip.component';
 import { Tooltip } from './tooltip/tooltip.component';
 import { EmtaBadgeComponent } from './emta-badge.component';
 import { EmtaFormRowComponent, EmtaFormSectionComponent, EmtaFormFeedbackComponent } from './form';
+import { TabsComponent } from './tabs/tabs.component';
 
 @NgModule({
   imports: [
@@ -47,6 +48,7 @@ import { EmtaFormRowComponent, EmtaFormSectionComponent, EmtaFormFeedbackCompone
     EmtaBadgeComponent,
     EmtaFormFeedbackComponent,
     EmtaFormSectionComponent,
+    TabsComponent,
     SortPipe,
     TranslateModule
   ],
@@ -66,6 +68,7 @@ import { EmtaFormRowComponent, EmtaFormSectionComponent, EmtaFormFeedbackCompone
     EmtaBadgeComponent,
     EmtaFormFeedbackComponent,
     EmtaFormSectionComponent,
+    TabsComponent,
     Tooltip,
     SortPipe,
   ],

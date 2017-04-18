@@ -1,0 +1,30 @@
+<div class="form-header">
+  <div class="form-process-nav">
+
+    <ul class="nav form-nav 
+              {{layout === 'vertical' ? 'nav-vertical' : 
+                layout === 'steps' ? 'nav-tabs form-steps' : 
+                'nav-tabs'}}"
+         role="tablist">
+        <li class="nav-item {{tab.icon}}" *ngFor="let tab of tabs">
+        <a class="nav-link {{tab.icon}} {{tab.selected ? 'active' : ''}}" role="tab" (click)="onTabSelect(tab, $event)">{{tab.name}}</a>
+      </li>
+    </ul>
+
+    <emta-select [data]="getTabNames()" [simple]="true" name="tabselect" class="dropdown form-mobile-nav"></emta-select>
+
+  </div>
+</div>
+
+
+<div class="tab-content">
+  <ng-content></ng-content>
+  <div class="form-breadcrumb" *ngIf="showBreadcrumb">
+    <ol class="breadcrumb" role="tablist">
+      <li class="breadcrumb-item {{tab.icon === 'locked' ? 'locked' : ''}}" *ngFor="let tab of tabs">
+        <a role="tab" *ngIf="!tab.selected" (click)="onTabSelect(tab, $event)">{{tab.name}}</a>
+        <span *ngIf="tab.selected">{{tab.name}}</span>
+      </li>
+    </ol>
+  </div>
+</div>

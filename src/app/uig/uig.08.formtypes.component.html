@@ -24,48 +24,30 @@
   <div class="stylebook-section">
     <h1 class="stylebook-section-title">Võrdsetel sammudel baseeruv vorm (horisontaalne)</h1>
     <form>
-
-      <div class="form-header">
-        <div class="form-process-nav">
-          <ul class="nav nav-tabs form-nav" role="tablist">
-            <li class="nav-item" *ngFor="let step of steps">
-              <a class="nav-link {{step.level}}" role="tab">{{step.name}}</a>
-            </li>
-          </ul>
-
-          <div class="dropdown form-mobile-nav">
-            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Samm 3</button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <ul class="nav" role="tablist">
-                <li class="nav-item" *ngFor="let step of steps">
-                  <a class="nav-link {{step.level}}" data-toggle="tab" href="#tab-1" role="tab">{{step.name}}</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+      <tabs [tabs]="tabs" (tabSwitch)="switchTab($event)">
+        {{tabcontent}}
+      </tabs>
+      <div class="form-footer">
+        <button success type="submit">Registreeri</button>
+        <button light type="reset">Loobun</button>
       </div>
-
-
-      <div>
-        tab content
-        <div class="form-breadcrumb">
-          <ol class="breadcrumb" role="tablist">
-            <li class="breadcrumb-item" *ngFor="let step of steps">
-              <a role="tab">{{step.name}}</a>
-            </li>
-          </ol>
-        </div>
-
-        <div class="form-footer">
-          <button success type="submit">Registreeri</button>
-          <button light type="reset">Loobun</button>
-        </div>
-
-      </div>
-
     </form>
+  </div>
+</div>
 
+<br/>
+<div class="section">
+  <div class="stylebook-section">
+    <h1 class="stylebook-section-title">Võrdsetel sammudel baseeruv vorm (vertikaalne)</h1>
+    <form>
+      <tabs layout="vertical" [tabs]="tabs" (tabSwitch)="switchTab($event)">
+        {{tabcontent}}
+      </tabs>
+      <div class="form-footer">
+        <button success type="submit">Registreeri</button>
+        <button light type="reset">Loobun</button>
+      </div>
+    </form>
   </div>
 </div>
 
@@ -74,6 +56,15 @@
 <div class="section">
   <div class="stylebook-section">
     <h1 class="stylebook-section-title">Protsessipõhine vorm</h1>
+    <form>
+      <tabs layout="steps" [tabs]="tabs" (tabSwitch)="switchTab($event)">
+        {{tabcontent}}
+      </tabs>
+      <div class="form-footer">
+        <button success type="submit">Registreeri</button>
+        <button light type="reset">Loobun</button>
+      </div>
+    </form>
   </div>
 </div>
 
