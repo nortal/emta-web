@@ -1,5 +1,6 @@
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Component, Input, forwardRef } from '@angular/core';
+import { TranslateService } from "ng2-translate";
 
 @Component({
   selector: 'emta-datepicker',
@@ -18,6 +19,9 @@ export class EmtaDatepickerComponent implements ControlValueAccessor {
   public value: Date;
   public onChange: (event: any) => any = (x) => x;
 
+  public constructor(public translate: TranslateService) {
+  }
+
   public onSelectionDone(event: any, pop: any) {
     setTimeout(() => {
       pop.hide();
@@ -26,11 +30,12 @@ export class EmtaDatepickerComponent implements ControlValueAccessor {
   }
 
   public dateText() {
-    return this.value ? this.value.toLocaleString('et', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    }) : '';
+    return this.value ? this.value.toLocaleString(
+      this.translate.currentLang, {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      }) : '';
   }
 
   /**
