@@ -10,16 +10,18 @@ import { SearchComponent } from './search/search.component';
 import { PaymentComponent } from './dollaz/payment.component';
 import { TerminalComponent } from './dollaz/terminal.component';
 import { ObjectDetailComponent } from './object-detail/object-detail.component';
-import { TrailComponent } from './layout/trail/trail.component';
+import { TrailComponent } from './trail/trail.component';
 import { UigComponent } from './uig/uig.component';
 import { Uig08FormSelectsComponent } from './uig/uig.08.form.selects.component';
 import { Uig12MessagesComponent } from './uig/uig.12.messages.component';
 
 export const ROUTES: Routes = [
+  {path: '', component: TrailComponent},
+  {path: 'trail', component: TrailComponent},
+
   {path: 'uig', component: UigComponent},
   {path: 'uig08-selects', component: Uig08FormSelectsComponent},
   {path: 'uig12', component: Uig12MessagesComponent},
-  {path: '', component: TrailComponent},
   {path: 'search', component: SearchComponent},
   {path: 'about', component: AboutComponent},
   {path: 'detail', component: ObjectDetailComponent},

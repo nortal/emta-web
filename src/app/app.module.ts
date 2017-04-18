@@ -3,8 +3,6 @@ import { AuthService } from './auth/auth.service';
 import { AuthGuard } from './auth/auth-guard.service';
 import { CountryModule } from './country/country.module';
 import { OperationalInterestModule } from './operational-interest/operational.interest.module';
-import { SidebarComponent } from './layout/sidebar/sidebar.component';
-import { TrailComponent } from './layout/trail/trail.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, Http } from '@angular/http';
@@ -46,11 +44,11 @@ import { ObjectDetailComponent } from './object-detail';
 import { AboutComponent } from './about';
 import { NoContentComponent } from './no-content';
 import { XLargeDirective } from './home/x-large';
-import { NavigationComponent } from './layout/navigation';
-import { EmtaFooterComponent } from './layout/emta-footer';
+import { LayoutModule } from './layout/layout.module';
 import { UiModule } from './common/ui/ui.module';
 import { UigModule } from './uig/uig.module';
 import { PaymentComponent, TerminalComponent, PayerComponent, CustomerComponent } from './dollaz';
+import { TrailComponent } from './trail'
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -74,14 +72,11 @@ export function createTranslateLoader(http: Http) {
 @NgModule({
   bootstrap: [AppComponent],
   declarations: [
-    NavigationComponent,
-    EmtaFooterComponent,
     AppComponent,
     AboutComponent,
     LoginComponent,
     SearchComponent,
     SearchResultComponent,
-    SidebarComponent,
     TrailComponent,
     NoContentComponent,
     XLargeDirective,
@@ -93,6 +88,7 @@ export function createTranslateLoader(http: Http) {
   ],
   imports: [ // import Angular's modules
     UiModule,
+    LayoutModule,
     UigModule,
     Ng2PaginationModule,
     SelectModule,

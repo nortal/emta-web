@@ -1,0 +1,22 @@
+<ul class="global-menu mta-ametnik" [ngClass]="{'open': navigationCtx.isOpen()}">
+  <li class="global-menu-languages" [hidden]="!showLanguages">
+    <a *ngFor="let lang of languages" (click)="setLanguage(lang.code)">{{lang.name}}</a>
+  </li>
+  <li class="global-menu-client-select" [hidden]="!showClientSelect">
+    <a href="javascript:void(0);" data-toggle="popover"
+       data-popover-trigger="click"
+       data-popover-placement="bottom"
+       data-popover-content="#popover-client-select"
+       data-popover-class="popover-client-select"
+       data-original-title="" title="" class="">
+      Valige esindatav
+    </a>
+  </li>
+  <li *ngFor="let menuItem of menuItems">
+    <a [ngClass]="menuItem.className"
+       routerLink="{{menuItem.path}}"
+       (click)="navigationCtx.select(menuItem)">
+      <span>{{menuItem.name}}</span>
+    </a>
+  </li>
+</ul>

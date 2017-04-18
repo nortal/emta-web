@@ -1,17 +1,17 @@
-<div class="collapse sidebar" id="sidebar-collapse">
+<div class="sidebar mta-ametnik collapse" id="sidebar-collapse" aria-expanded="false">
   <div class="sidebar-section">
-    <a class="sidebar-section-toggle" data-toggle="collapse" href="#collapse-sidebar-section-1" aria-expanded="true"
-       aria-controls="collapse-sidebar-section-1">Menüü</a>
-    <i class="icon-drag"></i>
     <div class="collapse show sidebar-section-collapse" id="collapse-sidebar-section-1">
       <ul>
-        <li routerLinkActive="active"><a routerLink="login">Sisselogimine</a></li>
-        <li><a href="">Minu andmed</a></li>
-        <li routerLinkActive="active"><a routerLink="search">Operatiivhuviga objektid</a></li>
-        <li><a href="">Erakorraline teavitus</a></li>
-        <li><a href="">Üksuse andmed</a></li>
-        <li routerLinkActive="active"><a routerLink="payment">Kassa</a></li>
-        <li><a href="https//emta.nortal.com/tkt/tasumine.html">Teekasutustasu</a></li>
+        <li *ngFor="let item of getMenuItems()">
+          <a [ngClass]="{'sidebar-subsection-toggle': item.children.length > 0, 'collapsed': !item.opened}"
+             (click)="item.opened = !item.opened">{{item.name}}</a>
+          <div *ngIf="item.children.length > 0" [ngClass]="{'show': item.opened}"
+               class="sidebar-section-collapse collapse">
+            <ul>
+              <li *ngFor="let child of item.children"><a>{{child.name}}</a></li>
+            </ul>
+          </div>
+        </li>
       </ul>
     </div>
   </div>
