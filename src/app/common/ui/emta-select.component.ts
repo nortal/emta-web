@@ -147,6 +147,19 @@ export class EmtaSelectComponent implements ControlValueAccessor, OnInit {
       }
     } else if (event.key === 'Escape') {
       this.trigger();
+    } else if (this.simple) {
+      this.navigateByFirstChar(event.key);
+    }
+  }
+
+  private navigateByFirstChar(key: string) {
+    if (/^(\w|\d)$/.test(key)) {
+      const i = findOrCycleIndex(this.currentItems,
+                                 this.currentIndex,
+                                 x => (x + '').indexOf(key) === 0);
+      if (i >= 0) {
+        this.currentIndex = i;
+      }
     }
   }
 
@@ -192,4 +205,15 @@ export class EmtaSelectComponent implements ControlValueAccessor, OnInit {
 
 function mod(x, y) {
   return (x + y) % y;
+}
+
+function findOrCycleIndex(a: any[],
+                          currentIndex: number,
+                          predicate: (value: any, index: number) => boolean): number {
+  const i = a.findIndex((x, index)=> index > currentIndex && predicate(x, index));
+  if (i < 0) {
+    return a.findIndex((x, index)=> index <= currentIndex && predicate(x, index));
+  } else {
+    return i;
+  }
 }
