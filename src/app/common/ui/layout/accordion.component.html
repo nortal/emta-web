@@ -1,8 +1,8 @@
 <div class="form-block">
   <div class="form-block-header {{expanded ? 'open' : ''}}" (click)="expanded=!expanded">
-      <div class="accordion-header flex-row" [style.width.px]="30">
-          <a class="form-collapse collapsed" [attr.aria-expanded]="expanded"></a>
-        </div>
+    <div class="accordion-header flex-row" [style.width.px]="30">
+      <a class="form-collapse collapsed" [attr.aria-expanded]="expanded"></a>
+    </div>
     <ng-content select=".accordion-header"></ng-content>
   </div>
   <div class="{{ expanded ? 'show' : 'collapse'}}" [attr.aria-expanded]="expanded">
