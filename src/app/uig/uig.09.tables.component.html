@@ -1,0 +1,166 @@
+
+<div class="section">
+  <div class="stylebook-section">
+    <h1 class="stylebook-section-title">Tabelid</h1>
+    <h2 class="stylebook-section-title">9.1 Tabeli lihtnäidised</h2>
+
+    <div class="row">
+      <div class="col-md-10 mb-4">
+        <h4>9.1.1. Lihttabel</h4>
+
+        <emta-table>
+          <thead>
+            <tr>
+              <th sortable [(sort)]="sort" field="i1">1.pealkiri</th>
+              <th sortable [(sort)]="sort" field="i2">2.pealkiri</th>
+              <th sortable [(sort)]="sort" field="i3">3.pealkiri</th>
+              <th sortable [(sort)]="sort" field="i4">4.pealkiri</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let row of loremipsums | sort: sort">
+              <td>{{row.i1}}</td>
+              <td>{{row.i2 | number: '1.0-0'}}</td>
+              <td>{{row.i3 | date: 'dd.MM.yyyy'}}</td>
+              <td>{{row.i4 | currency: 'eur': true: '1.2-2'}}</td>
+            </tr>
+          </tbody>
+        </emta-table>
+
+      </div>
+      <div class="col-md-10 mb-4">
+        <h4>9.1.2. Jalusega lihttabel</h4>
+
+        <emta-table>
+          <thead>
+            <tr>
+              <th sortable [(sort)]="sort" field="i1">1.pealkiri</th>
+              <th sortable [(sort)]="sort" field="i2">2.pealkiri</th>
+              <th sortable [(sort)]="sort" field="i3">3.pealkiri</th>
+              <th sortable [(sort)]="sort" field="i4">4.pealkiri</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let row of loremipsums | sort: sort">
+              <td>{{row.i1}}</td>
+              <td>{{row.i2 | number: '1.0-0'}}</td>
+              <td>{{row.i3 | date: 'dd.MM.yyyy'}}</td>
+              <td>{{row.i4 | currency: 'eur': true: '1.2-2'}}</td>
+            </tr>
+          </tbody>
+
+          <tfoot>
+            <tr>
+              <td>footer</td>
+              <td>-1</td>
+              <td>too late anyway</td>
+              <td>1/0€</td>
+            </tr> 
+          </tfoot>
+        </emta-table>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-10 mb-4">
+        <h4>9.1.1. Lihttabel</h4>
+
+        <emta-table>
+          <thead>
+            <tr>
+              <th></th>
+              <th sortable [(sort)]="sort" field="i2">1.pealkiri</th>
+              <th sortable [(sort)]="sort" field="i3">2.pealkiri</th>
+              <th sortable [(sort)]="sort" field="i4">3.pealkiri</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let row of loremipsums | sort: sort">
+              <th>{{row.i1}}</th>
+              <td>{{row.i2 | number: '1.0-0'}}</td>
+              <td>{{row.i3 | date: 'dd.MM.yyyy'}}</td>
+              <td>{{row.i4 | currency: 'eur': true: '1.2-2'}}</td>
+            </tr>
+          </tbody>
+
+          <tfoot>
+            <tr>
+              <th>footer</th>
+              <td>-1</td>
+              <td>too late anyway</td>
+              <td>1/0€</td>
+            </tr> 
+          </tfoot>
+        </emta-table>
+
+      </div>
+
+      <div class="col-md-10 mb-4">
+        <h4>9.1.1. Lihttabel</h4>
+
+        <emta-table class="table-cells">
+          <thead>
+            <th sortable [(sort)]="sort" field="i1">1.pealkiri</th>
+            <th sortable [(sort)]="sort" field="i2">2.pealkiri</th>
+            <th sortable [(sort)]="sort" field="i3">3.pealkiri</th>
+            <th sortable [(sort)]="sort" field="i4">4.pealkiri</th>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let row of loremipsums | sort: sort ; let i=index ">
+              <th>{{row.i1}}</th>
+              <td>{{row.i2 | number: '1.0-0'}}</td>
+              <td>{{row.i3 | date: 'dd.MM.yyyy'}}</td>
+              <td>
+                <badge level="{{ i == 0 ? 'danger' : i == 1 ? 'warning' : 'success' }}" style="with-icon">{{ i == 0 ? 'Kontrollis' : i == 1 ? 'Maksmata' : 'Esitatud' }}</badge>
+              </td>
+            </tr>
+          </tbody>
+        </emta-table>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-20 mb-4">
+      <h4>9.1.5. Võrdsete veergudega tabel (fixed layout)</h4>
+
+      <emta-table class="table-cells table-fixed min-width-900">
+        <thead>
+          <th sortable [(sort)]="sort" field="i1">1.pealkiri</th>
+          <th sortable [(sort)]="sort" field="i2">2.pealkiri</th>
+          <th sortable [(sort)]="sort" field="i3">3.pealkiri</th>
+          <th sortable [(sort)]="sort" field="i4">4.pealkiri</th>
+          <th>5.pealkiri</th>
+          <th>6.pealkiri</th>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let row of loremipsums | sort: sort ; let i=index ">
+            <th>{{row.i1}}</th>
+            <td>{{row.i2 | number: '1.0-0'}}</td>
+            <td>{{row.i3 | date: 'dd.MM.yyyy'}}</td>
+            <td>{{row.i4 | currency: 'eur': true: '1.2-2'}}</td>
+            <td>Tallinn</td>
+            <td>Maris-Anna Tormatsheva</td>
+          </tr>
+        </tbody>
+      </emta-table>
+
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-lg-20 mb-4">
+      <h4>9.2 Mobiilivaate vähendatud tabeli näidis</h4>
+
+
+    </div>
+  </div>
+
+</div>

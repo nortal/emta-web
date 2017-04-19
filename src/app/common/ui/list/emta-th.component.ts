@@ -16,7 +16,7 @@ export class EmtaThComponent implements OnInit {
 
   public ngOnInit() {
     if (!this.sort) {
-      this.sort = <SortInstance>{};
+      this.sort = new SortInstance(null,null);
     }
   }
 
