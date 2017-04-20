@@ -6,17 +6,17 @@ import { NgClass } from '@angular/common';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
-  selector: 'emta-select',
-  templateUrl: './emta-select.component.html',
+  selector: 'emta-multi-select',
+  templateUrl: './emta-multi-select.component.html',
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => EmtaSelectComponent),
+      useExisting: forwardRef(() => EmtaMultiSelectComponent),
       multi: true
     }
   ]
 })
-export class EmtaSelectComponent implements ControlValueAccessor, OnInit {
+export class EmtaMultiSelectComponent implements ControlValueAccessor, OnInit {
   public show = false;
   public searchTerms = new Subject<string>();
 
@@ -116,6 +116,7 @@ export class EmtaSelectComponent implements ControlValueAccessor, OnInit {
   }
 
   public select(item) {
+    console.log("selected");
     this.selected = item;
     this.onChange(this.selected);
     this.close();

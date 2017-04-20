@@ -63,3 +63,7 @@ datepicker-inner .pull-right {
 .clear:active {
     outline: 0
 }
+
+.show .dropdown-menu {
+  display: block
+}

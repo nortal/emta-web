@@ -1,0 +1,32 @@
+<div class="dropdown-menu show"
+     style="max-height: 345.172px; overflow: hidden;"
+     (keyup)="onKey($event)"
+     (keydown)="handleKeydown($event)"
+     (blur)="onBlur($event)"
+     #dropdownMenu
+     [attr.tabindex]="searchable ? -1 : 0"
+     style="outline: none;">
+  <div class="bs-searchbox" [hidden]="!searchable">
+    <input type="text"
+           class="form-control"
+           autocomplete="off"
+           #searchInput
+           (keyup)="input($event.target.value)"
+           (blur)="onBlur($event)" />
+  </div>
+  <ul class="dropdown-menu inner"
+      role="menu"
+      style="max-height: 302.172px; overflow-y: auto;">
+    <li *ngFor="let el of items; let i = index"
+        [class.selected]="isSelected(el.value)"
+        [class.active]="i == currentIndex"
+        (mouseup)="select(i)">
+      <a tabindex="0" class="opt">
+        <span class="text">{{el.text}}</span>
+      </a>
+    </li>
+    <li class="no-results" *ngIf="!items || items.length === 0">
+      {{notFoundText}} {{searchInput.value}}
+    </li>
+  </ul>
+</div>

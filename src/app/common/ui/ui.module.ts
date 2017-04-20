@@ -1,3 +1,5 @@
+import {EmtaSelectInnerComponent} from "./emta-select-inner.component";
+import {EmtaMultiSelectComponent} from "./emta-multi-select.component";
 import { EmtaDatepickerComponent } from './emta-datepicker.component';
 import { EmtaSelectComponent } from './emta-select.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -39,6 +41,7 @@ import { AccordionBlockComponent } from './layout/accordion.component';
     EmtaFormRowComponent,
     EmtaNumberInputComponent,
     EmtaSelectComponent,
+    EmtaMultiSelectComponent,
     EmtaDatepickerComponent,
     EmtaPaginationComponent,
     EmtaThComponent,
@@ -60,6 +63,8 @@ import { AccordionBlockComponent } from './layout/accordion.component';
     EmtaFormRowComponent,
     EmtaNumberInputComponent,
     EmtaSelectComponent,
+    EmtaMultiSelectComponent,
+    EmtaSelectInnerComponent,
     EmtaDatepickerComponent,
     EmtaPaginationComponent,
     EmtaThComponent,

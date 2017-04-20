@@ -22,7 +22,11 @@
           <div class="form-group row">
             <label class="col-xs-20 col-md-5 col-form-label">Objekti tüüp</label>
             <div class="col-xs-20 col-md-12 col-lg-12 col-xl-12">
-              <emta-select [data]="objectTypes" [(ngModel)]="searchParams.objectType" name="objectType"></emta-select>
+              <emta-select
+                [data]="objectTypes"
+                [(ngModel)]="searchParams.objectType"
+                [searchable]="true"
+                name="objectType"></emta-select>
             </div>
           </div>
         </div>
@@ -30,13 +34,14 @@
           <div class="form-group row">
             <label class="col-xs-20 col-md-5 col-form-label">Riik</label>
             <div class="col-xs-12 col-md-12 col-lg-12 col-xl-12">
-              <emta-select
+              <emta-multi-select
                 [foundData]="foundCountries"
                 (onSearch)="searchCountries($event)"
                 [(ngModel)]="searchParams.country"
                 [clearLast]="false"
+                [searchable]="true"
                 name="country">
-              </emta-select>
+              </emta-multi-select>
             </div>
           </div>
         </div>

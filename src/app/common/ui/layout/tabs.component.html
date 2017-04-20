@@ -1,9 +1,9 @@
 <div class="form-header">
   <div class="form-process-nav">
 
-    <ul class="nav form-nav 
-              {{layout === 'vertical' ? 'nav-vertical' : 
-                layout === 'steps' ? 'nav-tabs form-steps' : 
+    <ul class="nav form-nav
+              {{layout === 'vertical' ? 'nav-vertical' :
+                layout === 'steps' ? 'nav-tabs form-steps' :
                 'nav-tabs'}}"
          role="tablist">
         <li class="nav-item {{tab.icon}}" *ngFor="let tab of tabs">
@@ -11,7 +11,7 @@
       </li>
     </ul>
 
-    <emta-select [data]="getTabNames()" [simple]="true" name="tabselect" class="dropdown form-mobile-nav"></emta-select>
+    <emta-select [data]="getTabNames()" name="tabselect" class="dropdown form-mobile-nav"></emta-select>
 
   </div>
 </div>
