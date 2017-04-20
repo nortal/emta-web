@@ -106,6 +106,7 @@ export class EmtaMultiSelectComponent implements ControlValueAccessor, OnInit {
     }
     this.selected = a;
     this.onChange(this.selected);
+    this.focus();
   }
 
   private showError(error: string) {
