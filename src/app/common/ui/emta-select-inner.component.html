@@ -1,4 +1,4 @@
-<div class="dropdown-menu show"
+<div class="dropdown-menu show dontBlur"
      style="max-height: 345.172px; overflow: hidden;"
      (keyup)="onKey($event)"
      (keydown)="handleKeydown($event)"
@@ -21,7 +21,7 @@
         [class.selected]="isSelected(el.value)"
         [class.active]="i == currentIndex"
         (mouseup)="select(i)">
-      <a tabindex="0" class="opt">
+      <a tabindex="0" class="dontBlur">
         <span class="text">{{el.text}}</span>
       </a>
     </li>
@@ -29,4 +29,9 @@
       {{notFoundText}} {{searchInput.value}}
     </li>
   </ul>
+  <div class="notify" [hidden]="!error">
+    <div>
+      {{error}}
+    </div>
+  </div>
 </div>

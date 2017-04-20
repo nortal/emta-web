@@ -1,9 +1,8 @@
-<div class="btn-group bootstrap-select form-control"
+<div class="btn-group bootstrap-select form-control show-tick"
   [class.show]="show"
   [class.disabled]="disabled"
   [class.numeric]="numeric"
-  [class.clearable]="clearable"
-  [class.searchable]="searchable">
+  [class.clearable]="clearable">
   <button
     type="button"
     class="btn dropdown-toggle btn-default"
@@ -16,15 +15,13 @@
     (mouseup)="trigger()"
     (keyup.enter)="trigger()"
     #parentButton>
-    <span class="filter-option pull-left">{{selected ? displayFunc(selected) : placeholder}}</span>&nbsp;<span
+    <span class="filter-option pull-left">{{selected ? getSelectedText() : placeholder}}</span>&nbsp;<span
     class="caret"></span>
   </button>
   <emta-select-inner
-    [searchable]="searchable"
-    [items]="adata | async"
-    [selected]="selected ? [selected] : []"
+    [items]="adata"
+    [selected]="selected || []"
     [notFoundText]="notFoundText"
-    (onInput)="onInput($event)"
     (onSelect)="select($event)"
     (onCancel)="close()"
     #inner

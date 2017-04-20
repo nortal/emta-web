@@ -16,6 +16,7 @@ export class EmtaSelectInnerComponent implements OnInit {
   @Input() selected: any[] = [];
   @Input() currentIndex = 0;
   @Input() public notFoundText = 'Puudub valik';
+  @Input() public error = null;
 
   @Output() onInput = new Subject();
   @Output() onSelect = new Subject();
@@ -45,6 +46,7 @@ export class EmtaSelectInnerComponent implements OnInit {
   }
 
   public select(index) {
+    this.currentIndex = index;
     this.onSelect.next(this.items[index].value);
   }
 
@@ -63,7 +65,7 @@ export class EmtaSelectInnerComponent implements OnInit {
       this.navigate(-1);
     } else if (event.key === 'ArrowDown') {
       this.navigate(1);
-    } else if (event.key === 'Enter') {
+    } else if (event.key === 'Enter' || event.code === 'Space') {
       if (this.items.length > 0) {
         this.select(this.currentIndex);
       }
@@ -92,7 +94,10 @@ export class EmtaSelectInnerComponent implements OnInit {
   }
 
   public onBlur(event) {
-    if (event.relatedTarget && event.relatedTarget.className === 'opt') {
+    console.log(event);
+    if (event.relatedTarget &&
+      event.relatedTarget.className &&
+      event.relatedTarget.className.indexOf('dontBlur') > -1) {
       // Most probably this is a selection in our own dropdown.
       return;
     }

@@ -18,70 +18,44 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 })
 export class EmtaMultiSelectComponent implements ControlValueAccessor, OnInit {
   public show = false;
-  public searchTerms = new Subject<string>();
 
-  public initialData = new Subject<any[]>();
-  public selected = null;
-  public adata: Observable<any>;
+  public selected: any[] =  null;
 
   public currentIndex = 0;
-  public itemsLength = 1;
-  public currentItems = [];
 
-  @ViewChild('searchInput') public searchInput: any;
+  public adata: any[] = [];
+
   @ViewChild('inner') public inner: any;
   @ViewChild('parentButton') public parentButton: any;
 
-  @Output() public onSearch: Observable<string> = this.searchTerms.debounceTime(300).distinctUntilChanged();
   @Input() public data: any[] = [];
-  @Input() public placeholder = 'Leia sobiv...';
+  @Input() public placeholder = 'Vali mitu...';
   @Input() public notFoundText = 'Puudub valik';
-  @Input() public clearLast = true;
-  @Input() public foundData: Observable<any[]>;
-  @Input() public searchable = false;
   @Input() public numeric = false;
   @Input() public disabled = false;
   @Input() public clearable = true;
+  @Input() public selectionChecker: (selection: any[]) => string = null;
+  @Input() public maxSelection = null;
 
   @Input() public displayFunc = (x) => x;
   public onChange = (x) => x;
 
   public ngOnInit() {
-    if (!this.foundData) {
-      this.foundData = this.defaultFoundData();
-    }
-    let merged = Observable.merge(this.initialData, this.foundData);
-    merged.subscribe((x) => this.recalcCurrentIndex(x));
-    this.adata = merged.map((y) => y.map((x) => ({
+    this.adata = this.data.map((x) => ({
       text: this.displayFunc(x),
       value: x
-    })));
+    }));
+    if (this.maxSelection) {
+      this.selectionChecker = maxSelectionChecker(this.maxSelection);
+    }
   }
 
-  public defaultFoundData() {
-    let searched = this.searchTerms
-    // .debounceTime(300)        // wait for 300ms pause in events
-      .distinctUntilChanged()   // ignore if next search term is same as previous
-      .switchMap((term) => term   // switch to new observable each time
-        ? this.search(term)
-        : Observable.of(this.data))
-      .catch((error) => {
-        return Observable.of([]);
-      });
-    return searched;
-  }
-
-  public initData() {
-    this.initialData.next(this.data);
-  }
-
-  public search(term: string) {
-    let t = term.toLowerCase();
-    return Observable.of(this.data.filter((x) => x.toString().toLowerCase().indexOf(t) >= 0));
-  }
-
-  public onInput(term: string) {
-    this.searchTerms.next(term);
+  public getSelectedText() {
+    if (this.selected) {
+      return this.selected.map(x => this.displayFunc(x)).join(',');
+    } else {
+      return '';
+    }
   }
 
   public open() {
@@ -89,17 +63,11 @@ export class EmtaMultiSelectComponent implements ControlValueAccessor, OnInit {
       return;
     }
     this.show = true;
-    if (this.clearLast) {
-      this.initData();
-    }
     setTimeout(() => this.focus(), 10);
   }
 
   public close() {
     this.show = false;
-    if (this.clearLast) {
-      this.inner.clearInput();
-    }
     this.parentButton.nativeElement.focus();
   }
 
@@ -116,22 +84,38 @@ export class EmtaMultiSelectComponent implements ControlValueAccessor, OnInit {
   }
 
   public select(item) {
-    console.log("selected");
-    this.selected = item;
+    let a = this.selected ? this.selected.slice() : null;
+    if (!a) {
+      a = [];
+    }
+    const i = a.indexOf(item);
+    if (i === -1) {
+      a.push(item);
+    } else {
+      a.splice(i,1);
+    }
+    if (this.selectionChecker) {
+      const error = this.selectionChecker(a);
+      if (error) {
+        this.showError(error);
+        return;
+      }
+    }
+    if (a.length === 0) {
+      a = null;
+    }
+    this.selected = a;
     this.onChange(this.selected);
-    this.close();
+  }
+
+  private showError(error: string) {
+    this.inner.error = error;
+    setTimeout(()=>this.inner.error = null, 1000);
   }
 
   public clear() {
     this.selected = null;
     this.onChange(this.selected);
-  }
-
-  public recalcCurrentIndex(items) {
-    this.itemsLength = items.length;
-    this.currentItems = items;
-    let i = items.findIndex((x) => x === this.selected);
-    this.currentIndex = i >= 0 ? i : 0;
   }
 
   /**
@@ -153,5 +137,13 @@ export class EmtaMultiSelectComponent implements ControlValueAccessor, OnInit {
    */
   public registerOnTouched(fn: any) {
     // console.log('registerOnTouched');
+  };
+}
+
+function maxSelectionChecker(x: number) {
+  return selection => {
+    if (selection && selection.length > x) {
+      return `Maksimaalselt ${x} valikut`;
+    }
   };
 }

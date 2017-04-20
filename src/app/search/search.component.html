@@ -35,14 +35,14 @@
             <span class="form-text">Merike Danelson</span>
           </form-row>
           <form-row label="Riik">
-            <emta-multi-select
+            <emta-select
               [foundData]="foundCountries"
               (onSearch)="searchCountries($event)"
               [(ngModel)]="searchParams.country"
               [clearLast]="false"
               [searchable]="true"
               name="country">
-            </emta-multi-select>
+            </emta-select>
           </form-row>
           <form-row label="BIRTHDATE">
             <emta-datepicker [(ngModel)]="searchParams.birthdate" name="birthdate"></emta-datepicker>
