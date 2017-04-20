@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { PaginationInstance } from 'ng2-pagination';
 
 @Component({
   selector: 'emta-table',
@@ -8,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class EmtaTableComponent implements OnInit {
+  @Input('pagination') pager: PaginationInstance;
 
   public ngOnInit() {
     //

@@ -10,13 +10,16 @@ import { Uig13TooltipComponent } from './uig.13.tooltip.component';
 import { UigFormComponent } from './uig.08.form.component';
 import { UigFormTypesComponent } from './uig.08.formtypes.component';
 import { UigTablesComponent } from './uig.09.tables.component';
+import { UigComplexTablesComponent } from './uig.09.complxtables.component';
+import { Ng2PaginationModule } from 'ng2-pagination';
 
 @NgModule({
   imports: [
     CommonModule,
     UiModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    Ng2PaginationModule
   ],
   exports: [
     UigComponent,
@@ -30,7 +33,8 @@ import { UigTablesComponent } from './uig.09.tables.component';
     Uig12MessagesComponent,
     Uig13TooltipComponent,
     UigFormTypesComponent,
-    UigTablesComponent
+    UigTablesComponent,
+    UigComplexTablesComponent
   ],
   declarations: [
     UigComponent,
@@ -44,7 +48,8 @@ import { UigTablesComponent } from './uig.09.tables.component';
     Uig12MessagesComponent,
     Uig13TooltipComponent,
     UigFormTypesComponent,
-    UigTablesComponent
+    UigTablesComponent,
+    UigComplexTablesComponent
   ],
   providers: [],
 })

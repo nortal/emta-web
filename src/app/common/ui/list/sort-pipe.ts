@@ -8,16 +8,16 @@ import { SortInstance, SortType } from './sort-instance';
 export class SortPipe implements PipeTransform {
 
   static _orderByComparator(a:any, b:any):number{
-    if((isNaN(parseFloat(a)) || !isFinite(a)) || (isNaN(parseFloat(b)) || !isFinite(b))){
+    if (typeof a === 'string' && typeof b === 'string') {
       if(a.toLowerCase() < b.toLowerCase()) return -1;
       if(a.toLowerCase() > b.toLowerCase()) return 1;
     }
-    else{
-      if(parseFloat(a) < parseFloat(b)) return -1;
-      if(parseFloat(a) > parseFloat(b)) return 1;
+    else {
+      if(a < b) return -1;
+      if(a > b) return 1;
     }
 
-    return 0; //equal each other
+    return 0;
   }
 
   transform(input:any, conf: SortInstance) : any {

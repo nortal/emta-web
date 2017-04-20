@@ -6,75 +6,64 @@
 <h2>Operatiivhuviga objektid</h2>
 
 <div class="section">
-  <form name="object-of-interest-search" autocomplete="off">
+  <form name="object-of-interest-search">
     <div class="container-fluid">
       <div class="row">
+
         <div class="col-xs-20 col-md-10 col-lg-10 col-xl-10">
-          <emta-textinput labelText="DEPARTMENT" readOnly="true" [value]="firstNameValue"
-                          name="department"></emta-textinput>
+          <form-row label="DEPARTMENT">
+            <emta-input readonly="true" [(ngModel)]="firstNameValue" name="department"></emta-input>
+          </form-row>
+          <form-row label="Objekti tüüp">
+            <emta-select
+              [data]="objectTypes"
+              [(ngModel)]="searchParams.objectType"
+              [searchable]="true"
+              name="objectType"></emta-select>
+          </form-row>
+          <form-row label="CODE">
+            <emta-input [(ngModel)]="codeValue" name="code" pattern="[0-9]*"></emta-input>
+          </form-row>
+          <form-row label="FIRSTNAME">
+            <emta-input [(ngModel)]="searchParams.firstName" placeholder="Siia käib eesnimi" name="firstName" maxlength="6"></emta-input>
+          </form-row>
         </div>
+
+
         <div class="col-xs-20 col-md-10 col-lg-10 col-xl-10">
-          <emta-textinput labelText="EMPLOYEE" readOnly="true" value="Merike Danelson" name="employee"></emta-textinput>
+          <form-row label="EMPLOYEE">
+            <span class="form-text">Merike Danelson</span>
+          </form-row>
+          <form-row label="Riik">
+            <emta-multi-select
+              [foundData]="foundCountries"
+              (onSearch)="searchCountries($event)"
+              [(ngModel)]="searchParams.country"
+              [clearLast]="false"
+              [searchable]="true"
+              name="country">
+            </emta-multi-select>
+          </form-row>
+          <form-row label="BIRTHDATE">
+            <emta-datepicker [(ngModel)]="searchParams.birthdate" name="birthdate"></emta-datepicker>
+          </form-row>
+          <form-row label="LASTNAME">
+            <emta-input [(ngModel)]="searchParams.lastName" name="firstName" maxlength="6"></emta-input>
+          </form-row>
         </div>
+
+
       </div>
-      <div class="row">
-        <div class="col-xs-20 col-md-10 col-lg-10 col-xl-10">
-          <div class="form-group row">
-            <label class="col-xs-20 col-md-5 col-form-label">Objekti tüüp</label>
-            <div class="col-xs-20 col-md-12 col-lg-12 col-xl-12">
-              <emta-select
-                [data]="objectTypes"
-                [(ngModel)]="searchParams.objectType"
-                [searchable]="true"
-                name="objectType"></emta-select>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-20 col-md-10 col-lg-10 col-xl-10">
-          <div class="form-group row">
-            <label class="col-xs-20 col-md-5 col-form-label">Riik</label>
-            <div class="col-xs-12 col-md-12 col-lg-12 col-xl-12">
-              <emta-multi-select
-                [foundData]="foundCountries"
-                (onSearch)="searchCountries($event)"
-                [(ngModel)]="searchParams.country"
-                [clearLast]="false"
-                [searchable]="true"
-                name="country">
-              </emta-multi-select>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-20 col-md-10 col-lg-10 col-xl-10">
-          <emta-numberinput labelText="CODE" [(value)]="codeValue" name="code"></emta-numberinput>
-        </div>
-        <div class="col-xs-20 col-md-10 col-lg-10 col-xl-10">
-          <div class="form-group row">
-            <label class="col-xs-20 col-md-5 col-form-label">{{'BIRTHDATE' | translate}}</label>
-            <div class="col-xs-12 col-md-12 col-lg-12 col-xl-12">
-              <emta-datepicker [(ngModel)]="searchParams.birthdate" name="birthdate"></emta-datepicker>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-20 col-md-10 col-lg-10 col-xl-10">
-          <emta-textinput labelText="FIRSTNAME" [(value)]="searchParams.firstName" placeHolder="Siia käib eesnimi"
-                          name="firstName" maxLength="6"></emta-textinput>
-        </div>
-        <div class="col-xs-20 col-md-10 col-lg-10 col-xl-10">
-          <emta-textinput labelText="LASTNAME" name="lastName"></emta-textinput>
-        </div>
-      </div>
+
+
+
       <div class="row">
         <div class="col-xs-20 col-md-20 col-lg-20 col-xl-20" style="text-align: right;">
           <div style="display: inline-block; margin-right: 1rem;">
             <label class="custom-control custom-checkbox">
               <input type="checkbox" name="showEnded" value=""
-                     label="Näita lõppenuid"
-                     class="custom-control-input">
+              label="Näita lõppenuid"
+              class="custom-control-input">
               <span class="custom-control-indicator"></span>
               <span class="custom-control-description">
                 Näita lõppenuid
@@ -93,7 +82,7 @@
     <br/>
     <div class="form-footer">
       <button class="btn btn-info btn-with-plus float-right" label="Button" type="button" (click)="addNew()"
-              id="add-new-object-of-interest-btn">Uus objekt
+        id="add-new-object-of-interest-btn">Uus objekt
       </button>
     </div>
   </form>

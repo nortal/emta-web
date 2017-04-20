@@ -4,5 +4,6 @@
     <ng-content select="tbody"></ng-content>
     <ng-content select="tfoot"></ng-content>
   </table>
+  <emta-pagination [(config)]="pager" *ngIf="pager"></emta-pagination>
 </div>
 

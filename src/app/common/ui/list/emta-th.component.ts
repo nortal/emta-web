@@ -7,7 +7,7 @@ import { SortInstance, SortType } from './sort-instance';
   host: {'[class]': 'getHostClass()'}
 })
 export class EmtaThComponent implements OnInit {
-  @Input() public field: any;
+  @Input('sortable') public field: any;
   @Input() public sort: SortInstance;
 
   public getHostClass() {

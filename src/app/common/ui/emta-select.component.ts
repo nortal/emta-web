@@ -21,7 +21,7 @@ export class EmtaSelectComponent implements ControlValueAccessor, OnInit {
   public searchTerms = new Subject<string>();
 
   public initialData = new Subject<any[]>();
-  public selected = null;
+  public selected;
   public adata: Observable<any>;
 
   public currentIndex = 0;

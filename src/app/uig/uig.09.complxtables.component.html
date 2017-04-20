@@ -1,0 +1,39 @@
+
+<div class="section">
+  <div class="stylebook-section">
+    <h1 class="stylebook-section-title">Tabeli kompleksnäidis</h1>
+
+    <div class="row">
+      <div class="col-lg-20 mb-4">
+
+        <emta-table [(pagination)]="pager">
+          <thead>
+            <tr>
+              <th sortable="date" [(sort)]="sort">Kuupäev</th>
+              <th>Kellaaeg</th>
+              <th sortable="duration" [(sort)]="sort">Kestus</th>
+              <th sortable="location" [(sort)]="sort">Asukoht</th>
+              <th sortable="login" [(sort)]="sort">Isiku tuvastamine</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let row of data | sort: sort | paginate: pager">
+              <td>{{row.date | date: 'dd.MM.yyyy'}}</td>
+              <td>{{row.date | date: 'HH:mm'}}</td>
+              <td>{{row.duration + 'min'}}</td>
+              <td>{{row.location}}</td>
+              <td>
+                {{row.login}}
+                <i class="icon-info" tooltip="Tingimus on täidetud, kui olete olnud Eesti resident kogu kalendrikuu jooksul." tabindex="0"></i>
+              </td>
+            </tr>
+          </tbody>
+        </emta-table>
+
+      </div>
+    </div>
+
+
+  </div>
+</div>

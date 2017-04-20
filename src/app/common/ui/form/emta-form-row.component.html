@@ -1,6 +1,6 @@
 <div class="form-group row {{ child && !child.isValid() ? 'has-danger' : ''}}">
   <label [for]="name" class="col-xs-20 col-md-5 col-form-label">
-    {{label}}
+    {{label | translate}}
     <div class="label-comment" *ngIf="!!comment">{{comment}}</div>
   </label>
   <div class="col-xs-20 col-md-10">
