@@ -1,6 +1,7 @@
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Component, Input, forwardRef } from '@angular/core';
 import { TranslateService } from "ng2-translate";
+import { IMyOptions } from "mydatepicker/index";
 
 @Component({
   selector: 'emta-datepicker',
@@ -22,10 +23,27 @@ export class EmtaDatepickerComponent implements ControlValueAccessor {
   public constructor(public translate: TranslateService) {
   }
 
+  private myDatePickerOptions: IMyOptions = {
+    todayBtnTxt: 'Täna',
+    dayLabels: {su: 'P', mo: 'E', tu: 'T', we: 'K', th: 'N', fr: 'R', sa: 'L'},
+    monthLabels: { 1: 'Jaanuar', 2: 'Veebruar', 3: 'Märts', 4: 'Aprill', 5: 'Mai', 6: 'Juuni', 7: 'Juuli', 8: 'August', 9: 'September', 10: 'Oktoober', 11: 'November', 12: 'Detsember' },
+    showTodayBtn: false,
+    firstDayOfWeek: 'mo',
+    height: '34px',
+    width: '260px',
+    dateFormat: 'dd.mm.yyyy',
+    editableMonthAndYear: false,
+    markWeekends: true,
+//    inline: true
+  };
+
+  private dateValueObject: Object = { date: { year: 2018, month: 10, day: 9 } };
+
   public onSelectionDone(event: any, pop: any) {
-    setTimeout(() => {
+  /*  setTimeout(() => {
       pop.hide();
     }, 10);
+    */
     this.onChange(event);
   }
 

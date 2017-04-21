@@ -1,5 +1,5 @@
-import {EmtaSelectInnerComponent} from "./emta-select-inner.component";
-import {EmtaMultiSelectComponent} from "./emta-multi-select.component";
+import { EmtaSelectInnerComponent } from "./emta-select-inner.component";
+import { EmtaMultiSelectComponent } from "./emta-multi-select.component";
 import { EmtaDatepickerComponent } from './emta-datepicker.component';
 import { EmtaSelectComponent } from './emta-select.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -22,6 +22,7 @@ import { EmtaBadgeComponent } from './emta-badge.component';
 import { EmtaFormRowComponent, EmtaFormSectionComponent, EmtaFormFeedbackComponent } from './form';
 import { TabsComponent } from './layout/tabs.component';
 import { AccordionBlockComponent } from './layout/accordion.component';
+import { MyDatePickerModule } from 'mydatepicker';
 
 @NgModule({
   imports: [
@@ -31,7 +32,8 @@ import { AccordionBlockComponent } from './layout/accordion.component';
     TranslateModule,
     Ng2PaginationModule,
     DatepickerModule.forRoot(),
-    PopoverModule.forRoot()
+    PopoverModule.forRoot(),
+    MyDatePickerModule
   ],
   exports: [
     EmtaInputComponent,

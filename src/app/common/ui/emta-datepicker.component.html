@@ -1,19 +1,13 @@
-<template #popTemplate>
-  <datepicker (selectionDone)="onSelectionDone($event, pop)"
-              [(ngModel)]="value"
-              [minDate]="minDate"
-              [maxDate]="maxDate"
-              [startingDay]="1"
-              [showWeeks]="false"></datepicker>
-</template>
 <div class="input-group date">
-  <span class="input-group-addon">
-    <i class="icon-calendar" aria-hidden></i>
-  </span>
-  <input class="form-control"
-         #pop="bs-popover"
+  <!--input class="form-control"
+          #pop="bs-popover"
          [ngModel]="dateText()"
          [popover]="popTemplate"
          placement="bottom"
-         container="body"/>
+         container="body"/ -->
+  <!--span class="input-group-addon">
+    <i class="icon-calendar" aria-hidden></i>
+  </span-->
+  <my-date-picker name="mydate" [options]="myDatePickerOptions"
+                  [(ngModel)]="dateValueObject" (dateChanged)="onSelectionDone($event, pop)"></my-date-picker>
 </div>
