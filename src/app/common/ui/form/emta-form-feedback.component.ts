@@ -8,7 +8,7 @@ import { Component,Input, OnInit, ElementRef } from '@angular/core';
     'label'
   ]
 })
-export class EmtaFormFeedbackComponent {
+export class EmtaFormFeedbackComponent implements OnInit {
   @Input() public level: string;
   private levels: string[] = ['danger','warning'];
 
