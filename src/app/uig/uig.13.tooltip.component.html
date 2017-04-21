@@ -2,12 +2,104 @@
 <div class="section">
 
   <div class="stylebook-section">
-    <h1 class="stylebook-section-title" id="forms">13.1 Tooltip</h1>
+    <h1 class="stylebook-section-title">13.1 Tooltip</h1>
 
-    <i class="icon-info ml-2" tooltip="Left" tooltip-placement="left"></i>
-    <i class="icon-info ml-2" tooltip="Top" tooltip-placement="top"></i>
+    <i class="icon-info ml-2" tooltip="Left" placement="left"></i>
+    <i class="icon-info ml-2" tooltip="Top" placement="top"></i>
     <i class="icon-info ml-2" tooltip="Top"></i>
-    <i class="icon-info ml-2" tooltip="Bottom" tooltip-placement="bottom"></i>
-    <i class="icon-info ml-2" tooltip="Right" tooltip-placement="right"></i>
+    <i class="icon-info ml-2" tooltip="Bottom" placement="bottom"></i>
+    <i class="icon-info ml-2" tooltip="Right" placement="right"></i>
+  </div>
+
+
+  <div class="stylebook-section">
+    <h1 class="stylebook-section-title">13.2 Flyout</h1>
+    <template #popover1>
+      <h2>Näidis pealkiri</h2>
+      <form>
+        <form-row label="Eesnimi">
+          <emta-input name="forname"></emta-input>
+        </form-row>
+        <form-row label="Perekonnanimi">
+          <emta-input namesurname=""></emta-input>
+        </form-row>
+        <div class="col-xs-20 text-right">
+          <button success type="submit">Salvestan</button>
+        </div>
+      </form>
+    </template>
+    <button info icon="with-plus" [popover]="popover1" container="body">Fly</button>
+
+    <template #popover2>
+      <h4>Kas olete kindel, et soovite selle rea kustutada?</h4>
+      <p>Kustutatud ridu ei ole võimalik hiljem taastada.</p>
+      <div class="col-xs-20 text-right">
+        <button light type="submit">Loobun</button>
+        <button danger type="submit">Kustutan</button>
+      </div>
+    </template>
+    <button danger [popover]="popover2" placement="bottom" container="body">Drop</button>
+     add class popover-confirm
+  </div>
+
+  <div class="stylebook-section">
+    <h1 class="stylebook-section-title">13.3 Trükkimine</h1>
+    <template #maketheworldgreen>
+      <div class="row">
+        <div class="col-md-4">
+          <img src="assets/images/icon-tree.svg" alt="Puu">
+        </div>
+
+        <div class="col-md-16">
+          <h2 class="text-white">Võta üks hetk ja mõtle,<br>kas ikka on vaja trükkida?</h2>
+          <p>Paberi tootmine tarbib olulisel määral puitu, energiat ning vett - kõike seda, mida meil inimkonnana vaikselt
+            nappima hakkab. <span class="font-weight-bold">Palun kaalu mittetrükkimist.</span> Selleks, et mitte trükkimine
+            oleks Sulle
+            eriti mugav, pakume järgmisi võimalusi:</p>
+          <ul>
+            <li>
+              Lae kogu deklaratsioon alla <a class="link-orange" href="javascript:void(0);">PDF</a> või
+              <a class="link-orange" href="javascript:void(0);">DDOC</a> failina
+            </li>
+            <li>
+              Kui vajad dokumentide paberversioone, et esitada need audiitorile, mõnele muule ametnikule või MTA
+              kontrolliosakonnale, siis <a class="link-orange" href="javascript:void(0);">kliki siia</a>
+            </li>
+            <li>
+              Kui soovid lisainfot kuidas paberi ning muude resursside kasutamist vähendada, siis
+              <a class="link-orange" href="javascript:void(0);">kliki siia</a>
+            </li>
+          </ul>
+
+          <div class="controls">
+            <button success>Soovin siiski trükkida</button>
+            <form-row>
+              <emta-input type="checkbox" label="Ei soovi seda manitsust rohkem näha"></emta-input>
+            </form-row>
+          </div>
+        </div>
+      </div>
+    </template>
+    <a gray icon="print" [popover]="maketheworldgreen" href="javascript:void(0)">Trükin</a>
+popover-printing
+  </div>
+
+  <div class="stylebook-section">
+    <h1 class="stylebook-section-title">13.4 Failide üleslaadimine</h1>
+    <template #youropinionmatters>
+      <form>
+        <label>Lohistage failid siia või valige arvutist</label>
+        <input type="file">
+      </form>
+    </template>
+    <button info icon="with-plus" [popover]="youropinionmatters" container="body">Lisa fail</button>
+popover-file-upload
   </div>
 </div>
+
+
+
+
+
+
+

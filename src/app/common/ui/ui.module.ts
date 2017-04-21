@@ -16,8 +16,6 @@ import { SortPipe } from './list/sort-pipe';
 import { EmtaTableComponent } from './list/emta-table.component';
 import { EmtaButtonComponent } from './emta-button.component';
 import { EmtaLinkComponent } from './emta-link.component';
-import { EmtaTooltipComponent } from './tooltip/emta-tooltip.component';
-import { Tooltip } from './tooltip/tooltip.component';
 import { EmtaBadgeComponent } from './emta-badge.component';
 import { EmtaFormRowComponent, EmtaFormSectionComponent, EmtaFormFeedbackComponent } from './form';
 import { TabsComponent } from './layout/tabs.component';
@@ -46,7 +44,6 @@ import { MyDatePickerModule } from 'mydatepicker';
     EmtaTableComponent,
     EmtaButtonComponent,
     EmtaLinkComponent,
-    EmtaTooltipComponent,
     EmtaBadgeComponent,
     EmtaFormFeedbackComponent,
     EmtaFormSectionComponent,
@@ -67,16 +64,14 @@ import { MyDatePickerModule } from 'mydatepicker';
     EmtaTableComponent,
     EmtaButtonComponent,
     EmtaLinkComponent,
-    EmtaTooltipComponent,
     EmtaBadgeComponent,
     EmtaFormFeedbackComponent,
     EmtaFormSectionComponent,
     TabsComponent,
     AccordionBlockComponent,
-    Tooltip,
     SortPipe,
   ],
-  entryComponents: [Tooltip],
+  entryComponents: [],
   providers: [],
 })
 export class UiModule {

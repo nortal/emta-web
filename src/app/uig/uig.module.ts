@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { UigComponent , UigButtonsComponent , UigLinksComponent , UigIconsComponent , UigBadgeComponent } from './uig.component';
+import { PopoverModule } from 'ng2-bootstrap/popover';
+import { TooltipModule } from 'ng2-bootstrap/tooltip';
 import { Uig08FormSelectsComponent } from './uig.08.form.selects.component';
 import { Uig12MessagesComponent } from './uig.12.messages.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -19,7 +21,9 @@ import { Ng2PaginationModule } from 'ng2-pagination';
     UiModule,
     FormsModule,
     ReactiveFormsModule,
-    Ng2PaginationModule
+    Ng2PaginationModule,
+    PopoverModule.forRoot(),
+    TooltipModule.forRoot()
   ],
   exports: [
     UigComponent,
