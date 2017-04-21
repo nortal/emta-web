@@ -33,7 +33,7 @@ export class EmtaDatepickerComponent implements ControlValueAccessor {
     width: '260px',
     dateFormat: 'dd.mm.yyyy',
     editableMonthAndYear: false,
-    markWeekends: true,
+    markWeekends: {marked: true}
 //    inline: true
   };
 
