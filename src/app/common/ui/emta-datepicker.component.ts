@@ -24,7 +24,7 @@ export class EmtaDatepickerComponent implements ControlValueAccessor {
     private localizedDayLabels:{et: IMyDayLabels, en: IMyDayLabels, ru: IMyDayLabels} = {
         et: {su: 'P', mo: 'E', tu: 'T', we: 'K', th: 'N', fr: 'R', sa: 'L'},
         en: {su: 'Su', mo: 'Mo', tu: 'Tu', we: 'We', th: 'Th', fr: 'Fr', sa: 'Sa'},
-        ru: {su: 'ruSu', mo: 'ruMo', tu: 'ruTu', we: 'We', th: 'Th', fr: 'Fr', sa: 'Sa'}
+        ru: {su: 'Вс', mo: 'Пн', tu: 'Вт', we: 'Ср', th: 'Чт', fr: 'Пт', sa: 'Сб'}
     }
 
     private localizedMonthLabels:{et: IMyMonthLabels, en: IMyMonthLabels, ru: IMyMonthLabels} = {
