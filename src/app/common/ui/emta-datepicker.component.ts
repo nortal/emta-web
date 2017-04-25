@@ -57,18 +57,18 @@ export class EmtaDatepickerComponent implements ControlValueAccessor {
             12: 'December'
         },
         ru: {
-            1: 'ruJaanuar',
-            2: 'Veebruar',
-            3: 'Märts',
-            4: 'ruAprill',
-            5: 'Mai',
-            6: 'Juuni',
-            7: 'Juuli',
-            8: 'August',
-            9: 'September',
-            10: 'Oktoober',
-            11: 'November',
-            12: 'Detsember'
+            1: 'Январь',
+            2: 'Февраль',
+            3: 'Март',
+            4: 'Апрель',
+            5: 'Май',
+            6: 'Июнь',
+            7: 'Июль',
+            8: 'Август',
+            9: 'Сентябрь',
+            10: 'Октябрь',
+            11: 'Ноябрь',
+            12: 'Декабрь'
         }
     }
 
