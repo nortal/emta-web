@@ -3,6 +3,7 @@ import { Component, Input, forwardRef } from '@angular/core';
 import { TranslateService, LangChangeEvent } from "ng2-translate";
 import { IMyOptions, IMyDayLabels } from "mydatepicker/index";
 import {IMyMonthLabels} from "mydatepicker/index";
+import {IMyInputFocusBlur} from "mydatepicker/index";
 
 @Component({
     selector: 'emta-datepicker',
@@ -19,12 +20,23 @@ export class EmtaDatepickerComponent implements ControlValueAccessor {
     @Input() public minDate:Date;
     @Input() public maxDate:Date;
     public value:Date;
+    public hasFocus:Boolean;
     public onChange:(event:any) => any = (x) => x;
 
     private localizedDayLabels:{et: IMyDayLabels, en: IMyDayLabels, ru: IMyDayLabels} = {
         et: {su: 'P', mo: 'E', tu: 'T', we: 'K', th: 'N', fr: 'R', sa: 'L'},
         en: {su: 'Su', mo: 'Mo', tu: 'Tu', we: 'We', th: 'Th', fr: 'Fr', sa: 'Sa'},
         ru: {su: 'ruSu', mo: 'ruMo', tu: 'ruTu', we: 'We', th: 'Th', fr: 'Fr', sa: 'Sa'}
+    }
+
+    public onCalendarToggle(event: number): void {
+        console.log('onCalendarClosed(): Reason: ', event);
+        this.hasFocus = event === 1;
+    }
+
+    public setFocus(hasFocus:Boolean) {
+        this.hasFocus = hasFocus;
+        console.log('Has focus: '+hasFocus);
     }
 
     private localizedMonthLabels:{et: IMyMonthLabels, en: IMyMonthLabels, ru: IMyMonthLabels} = {
@@ -79,6 +91,8 @@ export class EmtaDatepickerComponent implements ControlValueAccessor {
             newOptions.monthLabels = this.localizedMonthLabels[params.lang];
             this.myDatePickerOptions = newOptions;
         });
+
+
     }
 
     private myDatePickerOptions:IMyOptions = {
