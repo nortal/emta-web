@@ -332,6 +332,7 @@
   background: #FBEFEF !important
 }
 
+.mydp .markdate + .datevalue,
 .mydp .sunday {
   color: #fd8b8a
 }
@@ -347,8 +348,8 @@
 
 .mydp .markdate {
   position: absolute;
-  width: 4px;
-  height: 4px;
+  width: 0;
+  height: 0;
   border-radius: 4px
 }
 
@@ -393,23 +394,28 @@
 	transition: border-color .2s ease-in-out;
 }
 
-.mydp.open,
-.mydp.open .selector {
+.open .mydp,
+.open .mydp .selector {
 	border-color: #9d9fb4;
 	transition: border-color .2s ease-in-out;
 }
 
-.mydp.open .btnpicker {
+.open .mydp .btnpicker {
 	color: #1f85b6;
 }
 
-.mydp.open {
+.open .mydp {
 	border-bottom-left-radius: 0;
 	border-bottom-right-radius: 0;
+	z-index: 3;
 }
 
 .mydp .btnclear, .mydp .btnpicker, .mydp .headerbtn, .mydp .headermonthtxt, .mydp .headertodaybtn, .mydp .headeryeartxt {
 	color: #5d6071;
+}
+
+.mydp .btnclear:hover, .mydp .btnpicker:hover, .mydp .headerbtn:hover, .mydp .headermonthtxt:hover, .mydp .headertodaybtn:hover, .mydp .headeryeartxt:hover {
+	color: #1f85b6;
 }
 
 .mydp .headertodaybtn {
