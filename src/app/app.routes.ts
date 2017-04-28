@@ -14,6 +14,7 @@ import { TrailComponent } from './trail/trail.component';
 import { UigComponent } from './uig/uig.component';
 import { Uig08FormSelectsComponent } from './uig/uig.08.form.selects.component';
 import { Uig12MessagesComponent } from './uig/uig.12.messages.component';
+import { ItemsListComponent } from './items/items-list.component';
 
 export const ROUTES: Routes = [
   {path: '', component: TrailComponent},
@@ -23,6 +24,7 @@ export const ROUTES: Routes = [
   {path: 'uig08-selects', component: Uig08FormSelectsComponent},
   {path: 'uig12', component: Uig12MessagesComponent},
   {path: 'search', component: SearchComponent},
+  {path: 'items', component: ItemsListComponent},
   {path: 'about', component: AboutComponent},
   {path: 'detail', component: ObjectDetailComponent},
   {

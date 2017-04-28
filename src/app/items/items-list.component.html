@@ -1,0 +1,25 @@
+<div class="section-title">
+  <a class="link-gray section-collapse" data-toggle="collapse" href="#section-100" aria-expanded="true">
+    <h3>Otsingu tulemused</h3>
+  </a>
+</div>
+<div class="section">
+  <div class="section_body">
+
+    <emta-table>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>parampam</th>
+          <th>Nimi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of items">
+          <td><span class="text">{{item.id}}</span></td>
+          <td><span class="text">{{item.identifiers[0].value}}</span></td>
+          <td><span class="text">{{item.names['et']}}</span></td>
+        </tr>
+      </tbody>
+    </emta-table>
+  </div>

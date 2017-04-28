@@ -232,6 +232,12 @@ module.exports = function (options) {
       port: METADATA.port,
       host: METADATA.host,
       historyApiFallback: true,
+      proxy: {
+         "/api": {
+               target: "http://localhost:9000/webapi",
+               pathRewrite: {'^/api' : ''}
+         }
+      },
       watchOptions: {
         aggregateTimeout: 300,
         poll: 1000

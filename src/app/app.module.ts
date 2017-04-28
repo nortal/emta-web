@@ -49,6 +49,7 @@ import { UiModule } from './common/ui/ui.module';
 import { UigModule } from './uig/uig.module';
 import { PaymentComponent, TerminalComponent, PayerComponent, CustomerComponent } from './dollaz';
 import { TrailComponent } from './trail'
+import { ItemsListComponent } from './items/items-list.component'
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -84,7 +85,8 @@ export function createTranslateLoader(http: Http) {
     TerminalComponent,
     PayerComponent,
     CustomerComponent,
-    ObjectDetailComponent
+    ObjectDetailComponent,
+    ItemsListComponent
   ],
   imports: [ // import Angular's modules
     UiModule,
