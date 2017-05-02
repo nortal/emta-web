@@ -16,7 +16,7 @@ export class ItemsListComponent implements OnInit {
   }
 
   public ngOnInit() {
-    return this.http.get('api/item', { 'headers' : this.ct})
+    return this.http.get('api/items', { 'headers' : this.ct})
       .map(r => r.json() as Object[])
       .toPromise().then(i => this.items = i);
   }
