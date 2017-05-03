@@ -19,6 +19,7 @@ import {IMyInputFocusBlur} from "mydatepicker/index";
 export class EmtaDatepickerComponent implements ControlValueAccessor {
     @Input() public minDate:Date;
     @Input() public maxDate:Date;
+    public placeholderText:String;
     public value:Date;
     public hasFocus:Boolean;
     public onChange:(event:any) => any = (x) => x;
@@ -28,6 +29,13 @@ export class EmtaDatepickerComponent implements ControlValueAccessor {
         en: {su: 'Su', mo: 'Mo', tu: 'Tu', we: 'We', th: 'Th', fr: 'Fr', sa: 'Sa'},
         ru: {su: 'Вс', mo: 'Пн', tu: 'Вт', we: 'Ср', th: 'Чт', fr: 'Пт', sa: 'Сб'}
     }
+
+    private localizedPlaceholder:{et: String, en: String, ru: String} = {
+        et: 'pp.kk.aaaa',
+        en: 'dd.mm.yyyy',
+        ru: 'дд.мм.гггг'
+    }
+
 
     public onCalendarToggle(event: number): void {
         console.log('onCalendarClosed(): Reason: ', event);
@@ -90,6 +98,7 @@ export class EmtaDatepickerComponent implements ControlValueAccessor {
             newOptions.dayLabels = this.localizedDayLabels[params.lang];
             newOptions.monthLabels = this.localizedMonthLabels[params.lang];
             this.myDatePickerOptions = newOptions;
+            this.placeholderText = this.localizedPlaceholder[params.lang];
         });
 
 

@@ -8,6 +8,6 @@
   <!--span class="input-group-addon">
     <i class="icon-calendar" aria-hidden></i>
   </span-->
-  <my-date-picker name="mydate" [options]="myDatePickerOptions" [ngClass]="{'open': hasFocus === true}"
+  <my-date-picker name="mydate" [options]="myDatePickerOptions" [ngClass]="{'open': hasFocus === true}" [placeholder]="placeholderText"
                   [(ngModel)]="dateValueObject" (dateChanged)="onSelectionDone($event, pop)" (calendarToggle)="onCalendarToggle($event)"></my-date-picker>
 </div>
