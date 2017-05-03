@@ -45,6 +45,12 @@
       <form-row label="ngModel pattern">
         <emta-input name="ttest8" [(ngModel)]="pallet.ttest8" required pattern="a*"></emta-input>
       </form-row>
+      <form-row label="ngModel email">
+        <emta-input name="ttest9" [(ngModel)]="pallet.ttest9" required [pattern]="emailPattern"></emta-input>
+      </form-row>
+      <form-row label="ngModel phone">
+        <emta-input name="ttestA" [(ngModel)]="pallet.ttestA" required [pattern]="phonePattern"></emta-input>
+      </form-row>
 
       <button success type="submit" (click)="markAsDirty(modelform.control)">Save</button>
       <badge style="small" level="{{ modelform.valid ? 'success' : 'danger' }}"></badge>

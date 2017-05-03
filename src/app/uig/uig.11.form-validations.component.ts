@@ -7,6 +7,8 @@ import { NgForm, FormArray, FormGroup, FormBuilder, Validators } from '@angular/
   templateUrl: './uig.11.form-validations.component.html'
 })
 export class UigFormValidationsComponent implements OnInit {
+  public emailPattern = '(([^<>()\\[\\]\\\\.,;:?\\s@\"]+(\\.[^<>()\\[\\]\\\\.,;:?\\s@\"]+)*)|(\".+\"))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))';
+  public phonePattern = '\\+\\d{1,3}\\s\\d+(\\-\\d+)*((\\s)?/(\\s)?(\\+\\d{1,3}\\s)?\\d+(\\-\\d+)*)*';
   public form: FormGroup;
   public brick: any = {};
   public pallet: any = {};
