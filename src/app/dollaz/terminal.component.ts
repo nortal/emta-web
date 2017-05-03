@@ -34,7 +34,7 @@ export class TerminalComponent implements OnInit {
     this.payment.state = 'PENDING';
     setTimeout(() => {
       this.payment.state = 'ACCEPTED';
-      window.location.href = 'http://localhost/tkt/success.html';
+      window.location.href = 'http://emta.nortal.com/tkt/success.html';
     }, timeout*1000);
   }
 }
