@@ -1,7 +1,6 @@
 import { LoginComponent } from './auth/login.component';
 import { AuthGuard } from './auth/auth-guard.service';
 import { Routes } from '@angular/router';
-import { AboutComponent } from './about';
 import { NoContentComponent } from './no-content';
 
 import { DataResolver } from './app.resolver';
@@ -25,7 +24,6 @@ export const ROUTES: Routes = [
   {path: 'uig12', component: Uig12MessagesComponent},
   {path: 'search', component: SearchComponent},
   {path: 'items', component: ItemsListComponent},
-  {path: 'about', component: AboutComponent},
   {path: 'detail', component: ObjectDetailComponent},
   {
     path: 'payment',

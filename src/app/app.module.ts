@@ -41,7 +41,6 @@ import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 import { SearchComponent, SearchResultComponent } from './search';
 import { ObjectDetailComponent } from './object-detail';
-import { AboutComponent } from './about';
 import { NoContentComponent } from './no-content';
 import { XLargeDirective } from './home/x-large';
 import { LayoutModule } from './layout/layout.module';
@@ -74,7 +73,6 @@ export function createTranslateLoader(http: Http) {
   bootstrap: [AppComponent],
   declarations: [
     AppComponent,
-    AboutComponent,
     LoginComponent,
     SearchComponent,
     SearchResultComponent,
