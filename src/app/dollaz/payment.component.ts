@@ -36,7 +36,7 @@ export class PaymentComponent implements OnInit {
         type: 'TD',
         number: '(-1)^0.5',
         deklNumber: '21753',
-        date: '1917.11.15',
+        date: new Date(),
         state: 'A',
         dateCreated: '1918',
         aaa: 111,
