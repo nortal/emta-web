@@ -8,6 +8,12 @@
   display: inline-block;
   position: relative;
 	width: 100% !important;
+	font-size: 20px !important;
+}
+@media (min-width: 600px) {
+	.mydp {
+		font-size: 14px !important;
+	}
 }
 
 .mydp * {
@@ -50,14 +56,13 @@
 
 .mydp .selector {
   margin-top: 2px;
-  margin-left: -2px;
+	right: -2px;
   position: absolute;
-  min-width: 252px;
+  width: 252px;
   padding: 0;
 	border: 2px solid #9d9fb4;
   z-index: 100;
   animation: selectorfadein .1s;
-	width: calc(100% + 4px);
 	padding: 5px;
 }
 
@@ -142,11 +147,33 @@
   padding-left: 6px;
   border: none;
 	color: #34394c;
+	font-size: inherit !important;
 	line-height: 1.2;
 	padding: 0.375rem 0.75rem;
 	height: auto !important;
 	z-index: 2;
 }
+
+
+
+.mydp .selection::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+	color: #9d9fb4;
+}
+.mydp .selection:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	color: #9d9fb4;
+	opacity:  1;
+}
+.mydp .selection::-moz-placeholder { /* Mozilla Firefox 19+ */
+	color: #9d9fb4;
+	opacity:  1;
+}
+.mydp .selection:-ms-input-placeholder { /* Internet Explorer 10-11 */
+	color: #9d9fb4;
+}
+.mydp .selection::placeholder {
+	color: #9d9fb4;
+}
+
 
 /* Focus hax */
 .mydp .selection + *:before {
@@ -167,7 +194,8 @@
 }
 
 .mydp .invaliddate, .mydp .invalidmonth, .mydp .invalidyear {
-  background-color: #F1DEDE
+  background-color: #F1DEDE;
+	background-color: #fff;
 }
 
 .mydp ::-ms-clear {
@@ -252,7 +280,7 @@
   table-layout: fixed;
   width: 100%;
   background-color: #FFF;
-  font-size: 14px
+  font-size: inherit;
 }
 
 .mydp .caltable, .mydp .daycell, .mydp .weekdaytitle {
@@ -285,7 +313,7 @@
 
 .mydp .weekdaytitle {
   background-color: transparent;
-  font-size: 11px;
+  font-size: .7857em;
   font-weight: 400;
   vertical-align: middle;
   max-width: 36px
@@ -363,10 +391,15 @@
 	font-weight: bold;
 }
 
+.mydp .tablesingleday.selectedday:hover {
+	background-color: #1f85b6;
+}
+
 .mydp .selectedday .datevalue {
   border: 0;
   background-color: transparent !important;
-  border-radius: 2px
+  border-radius: 2px;
+	color: #fff;
 }
 
 .mydp .headerbtncell {
@@ -384,7 +417,7 @@
 }
 
 .mydp .headerlabelbtn {
-  font-size: 14px;
+  font-size: inherit;
 	color: #5d6071;
 }
 
@@ -434,7 +467,7 @@
   text-align: center;
   display: table-cell;
   vertical-align: middle;
-  font-size: 14px;
+  font-size: inherit;
   height: 26px;
   width: 40px;
   max-width: 80px;
@@ -488,7 +521,7 @@
 }
 
 .mydp .tablesingleday:hover {
-  background-color: #DDD
+  background-color: #dbdfe2;
 }
 
 .mydp .inputnoteditable, .mydp .monthlabel, .mydp .yearlabel {
