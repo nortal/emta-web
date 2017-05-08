@@ -1,4 +1,4 @@
-import { Component, OnInit,Input} from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'form-section',
@@ -9,9 +9,10 @@ import { Component, OnInit,Input} from '@angular/core';
 })
 export class EmtaFormSectionComponent implements OnInit {
   @Input() public expanded: boolean;
+  public title: string;
 
   public ngOnInit() {
-    if (this.expanded === undefined){
+    if (this.expanded === undefined) {
       this.expanded = true;
     }
   }

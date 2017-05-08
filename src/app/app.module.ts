@@ -49,6 +49,7 @@ import { UigModule } from './uig/uig.module';
 import { PaymentComponent, TerminalComponent, PayerComponent, CustomerComponent } from './dollaz';
 import { TrailComponent } from './trail'
 import { ItemsListComponent } from './items/items-list.component'
+import { LjsModule } from './ljs/ljs.module';
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -86,7 +87,7 @@ export function createTranslateLoader(http: Http) {
     ObjectDetailComponent,
     ItemsListComponent
   ],
-  imports: [ // import Angular's modules
+  imports: [
     UiModule,
     LayoutModule,
     UigModule,
@@ -102,7 +103,8 @@ export function createTranslateLoader(http: Http) {
       provide: TranslateLoader,
       useFactory: (createTranslateLoader),
       deps: [Http]
-    })
+    }),
+    LjsModule
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,

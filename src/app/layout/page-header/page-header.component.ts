@@ -1,23 +1,24 @@
 import {
-  Component,
-  OnInit
+  Component
 } from '@angular/core';
+
+import { Router, ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'page-header',
   templateUrl: './page-header.component.html'
 })
 
-export class PageHeaderComponent implements OnInit {
-  // Set our default values
-  public localState = {value: ''};
+export class PageHeaderComponent  {
+  public pageHeaderCode : String = 'FIDEK';
 
-  public ngOnInit() {
-    console.log('näidisvormike');
-    // this.title.getData().subscribe(data => this.data = data);
+  constructor(private router: Router, private activatedRoute:ActivatedRoute) {
   }
 
-  public submitState(value: string) {
-    console.log('submitState', value);
+  ngOnInit() {
+    this.pageHeaderCode = "pageHeader." + "ljs";
+    // vaja kätte saadat current path element
+    //this.activatedRoute.pathFromRoot.switchMap((url: ActivatedRoute[]) => console.log(url)).subscribe();
   }
+
 }

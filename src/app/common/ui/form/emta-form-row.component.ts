@@ -1,4 +1,4 @@
-import { Component, OnInit, ContentChild, Input} from '@angular/core';
+import { Component, OnInit, ContentChild, Input } from '@angular/core';
 import { EmtaInputComponent } from '../emta-input.component';
 
 @Component({
@@ -6,18 +6,23 @@ import { EmtaInputComponent } from '../emta-input.component';
   templateUrl: './emta-form-row.component.html',
   inputs: [
     'label',
-    'comment'
+    'comment',
+    'name'
   ]
 })
 export class EmtaFormRowComponent implements OnInit {
-  @Input() private name: string;
-  @ContentChild(EmtaInputComponent) public child;
+  @ContentChild(EmtaInputComponent)
+  public child;
+
+  public name: string;
+  public comment: string;
+  public label: string;
 
   public ngOnInit() {
     //
   }
 
-  public  ngAfterContentInit() {
+  public ngAfterContentInit() {
     if (!this.name && !!this.child && !!this.child.name) {
       this.name = this.child.name;
     }

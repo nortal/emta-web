@@ -7,5 +7,7 @@
   "EMPLOYEE":"Ametnik",
   "BIRTHDATE": "Sünniaeg",
   "navbar.login": "Sisene",
-  "navbar.logout": "Väljun"
+  "navbar.logout": "Väljun",
+
+  "pageHeader.ljs": "Lao järelvalve süsteem"
 }

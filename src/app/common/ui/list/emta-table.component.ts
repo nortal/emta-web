@@ -9,7 +9,7 @@ import { PaginationInstance } from 'ng2-pagination';
   ]
 })
 export class EmtaTableComponent implements OnInit {
-  @Input('pagination') pager: PaginationInstance;
+  @Input('pagination') public pager: PaginationInstance;
 
   public ngOnInit() {
     //

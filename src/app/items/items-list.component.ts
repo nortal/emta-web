@@ -12,8 +12,8 @@ export class ItemsListComponent implements OnInit {
   public ct = new Headers({'Accept': 'application/vnd.api+json'});
 
   constructor(private http: Http) {
- 
-  }
+
+}
 
   public ngOnInit() {
     return this.http.get('api/items', { 'headers' : this.ct})

@@ -1,4 +1,4 @@
-import { Component,Input, OnInit, ElementRef } from '@angular/core';
+import { Component, Input, OnInit, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'form-feedback',
@@ -9,8 +9,10 @@ import { Component,Input, OnInit, ElementRef } from '@angular/core';
   ]
 })
 export class EmtaFormFeedbackComponent implements OnInit {
-  @Input() public level: string;
-  private levels: string[] = ['danger','warning'];
+  @Input()
+  public level: string;
+  public expanded: boolean = true;
+  private levels: string[] = ['danger', 'warning'];
 
   constructor(private elem: ElementRef) {
     //
@@ -20,18 +22,18 @@ export class EmtaFormFeedbackComponent implements OnInit {
     if (!this.level) {
       this.level = this.searchAttributes(this.levels);
     }
+
     if (!this.level) {
       this.level = 'danger';
     }
   }
 
-
   private searchAttributes(allowedKeys: string[]): string {
-    for(let key in allowedKeys) {
-      if(this.elem.nativeElement.attributes[allowedKeys[key]]){
+    for (let key in allowedKeys) {
+      if (this.elem.nativeElement.attributes[allowedKeys[key]]) {
         return allowedKeys[key];
       }
-    };
+    }
     return '';
   }
 }

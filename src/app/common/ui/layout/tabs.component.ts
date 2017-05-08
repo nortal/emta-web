@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter, OnInit, HostBinding } from '@angular/core';
-import { Tab } from './tab'
+import { Tab } from './tab';
 
 @Component({
   selector: 'tabs',
@@ -10,7 +10,7 @@ export class TabsComponent implements OnInit {
   @Input() public tabs: Tab[];
   @Input() public layout: string;
   @Input() public showBreadcrumb: boolean;
-  @HostBinding('class') clazz: string;
+  @HostBinding('class') public clazz: string;
 
   @Output() public tabSwitch: EventEmitter<Tab> = new EventEmitter<Tab>();
 
@@ -28,14 +28,12 @@ export class TabsComponent implements OnInit {
   }
 
   public getTabNames() {
-    return this.tabs.map(t=>t.name);
+    return this.tabs.map((t) => t.name);
   }
 
-  public onTabSelect(tab: Tab,$event) {
-    this.tabs.forEach(t => t.selected = false);
+  public onTabSelect(tab: Tab, $event) {
+    this.tabs.forEach((t) => t.selected = false);
     tab.selected = true;
     this.tabSwitch.emit(tab);
   }
 }
-
-
