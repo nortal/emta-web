@@ -1,4 +1,4 @@
-import { MenuItem } from "./menu-item";
+import { MenuItem } from './menu-item';
 
 export let menuBase: MenuItem[] = [
   {

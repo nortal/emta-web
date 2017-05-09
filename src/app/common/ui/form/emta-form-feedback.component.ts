@@ -12,6 +12,8 @@ export class EmtaFormFeedbackComponent implements OnInit {
   @Input()
   public level: string;
   public expanded: boolean = true;
+  public label: string;
+  
   private levels: string[] = ['danger', 'warning'];
 
   constructor(private elem: ElementRef) {

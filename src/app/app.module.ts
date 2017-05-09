@@ -47,8 +47,8 @@ import { LayoutModule } from './layout/layout.module';
 import { UiModule } from './common/ui/ui.module';
 import { UigModule } from './uig/uig.module';
 import { PaymentComponent, TerminalComponent, PayerComponent, CustomerComponent } from './dollaz';
-import { TrailComponent } from './trail'
-import { ItemsListComponent } from './items/items-list.component'
+import { TrailComponent } from './trail';
+import { ItemsListComponent } from './items/items-list.component';
 import { LjsModule } from './ljs/ljs.module';
 
 // Application wide providers

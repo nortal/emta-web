@@ -2,8 +2,8 @@ import {
   Component,
   OnInit
 } from '@angular/core';
-import { NavigationCtx } from "../navigation/navigation.ctx";
-import { MenuService } from "./menu.service";
+import { NavigationCtx } from '../navigation/navigation.ctx';
+import { MenuService } from './menu.service';
 
 @Component({
   selector: 'global-menu',
@@ -19,7 +19,7 @@ export class GlobalMenuComponent implements OnInit {
     {code: 'en', name: 'In English'}
   ]
 
-  public menuItems:Object[] = [];
+  public menuItems: Object[] = [];
 
   constructor(public navigationCtx: NavigationCtx,
               public menuService: MenuService) {
@@ -29,7 +29,7 @@ export class GlobalMenuComponent implements OnInit {
     this.menuItems = this.menuService.search(this.isDashboard);
   }
 
-  setLanguage(languageCode) {
+  public setLanguage(languageCode) {
     console.log('set language ' + languageCode);
   }
 }

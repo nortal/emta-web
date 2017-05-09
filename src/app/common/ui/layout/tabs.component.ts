@@ -14,17 +14,16 @@ export class TabsComponent implements OnInit {
 
   @Output() public tabSwitch: EventEmitter<Tab> = new EventEmitter<Tab>();
 
-
   public ngOnInit() {
-   if (!this.layout) {
-     this.layout = this.layouts[0];
-   }
-   if (this.showBreadcrumb === undefined) {
-     this.showBreadcrumb = this.layout === 'horizontal';
-   }
-   if (this.layout === 'vertical') {
-     this.clazz = 'nav-vertical-wrapper';
-   }
+    if (!this.layout) {
+      this.layout = this.layouts[0];
+    }
+    if (this.showBreadcrumb === undefined) {
+      this.showBreadcrumb = this.layout === 'horizontal';
+    }
+    if (this.layout === 'vertical') {
+      this.clazz = 'nav-vertical-wrapper';
+    }
   }
 
   public getTabNames() {

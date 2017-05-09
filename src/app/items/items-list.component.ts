@@ -1,7 +1,7 @@
 import { Component, OnInit, Input} from '@angular/core';
-import { SortInstance, SortType } from "../common/ui/list/sort-instance";
-import {Http, Headers} from '@angular/http';
-import 'rxjs/add/operator/toPromise';  
+import { SortInstance, SortType } from '../common/ui/list/sort-instance';
+import { Http, Headers } from '@angular/http';
+import 'rxjs/add/operator/toPromise';
 
 @Component({
   selector: 'items-list',
@@ -13,11 +13,11 @@ export class ItemsListComponent implements OnInit {
 
   constructor(private http: Http) {
 
-}
+  }
 
   public ngOnInit() {
-    return this.http.get('api/items', { 'headers' : this.ct})
-      .map(r => r.json() as Object[])
-      .toPromise().then(i => this.items = i);
+    return this.http.get('api/items', {'headers': this.ct})
+      .map((r) => r.json() as Object[])
+      .toPromise().then((i) => this.items = i);
   }
 }

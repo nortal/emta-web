@@ -6,7 +6,6 @@ import { SortInstance , SortType } from '../common/ui/list/sort-instance';
   templateUrl: './uig.09.complxtables.component.html'
 })
 export class UigComplexTablesComponent implements OnInit {
-  private data: any[];
   public sort = new SortInstance('date', SortType.DESC);
   public pager = {
     id: 'some-table-id',
@@ -14,10 +13,12 @@ export class UigComplexTablesComponent implements OnInit {
     currentPage: 1
   };
 
-  public ngOnInit(){
+  private data: any[];
+
+  public ngOnInit() {
     this.data = [];
     let i = 32;
-    while(i--){
+    while (i--) {
       this.data.push(this.makeSandwich());
     }
   }
@@ -28,9 +29,7 @@ export class UigComplexTablesComponent implements OnInit {
       duration: Math.floor(Math.random() * 100),
       location: ['Tallinn', 'Crapstone', 'Gotham', 'Coruscant', 'Tron city', 'Babylon'][Math.floor(Math.random() * 6)],
       login: ['ID-kaart', 'Mobiil-Id', 'Smart-Id', 'Pangalink', 'Honesty'][Math.floor(Math.random() * 5)]
-    }
+    };
   }
 
 }
-
-

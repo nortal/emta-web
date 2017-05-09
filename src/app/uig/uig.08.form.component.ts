@@ -10,5 +10,3 @@ export class UigFormComponent {
     switch2: true
   };
 }
-
-

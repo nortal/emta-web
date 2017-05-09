@@ -1,4 +1,4 @@
-import {EmtaSelectInnerComponent} from "./emta-select-inner.component";
+import { EmtaSelectInnerComponent } from './emta-select-inner.component';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 import { Component, Input, Output, EventEmitter, OnInit, ViewChild, forwardRef } from '@angular/core';
@@ -60,7 +60,7 @@ export class EmtaSelectComponent implements ControlValueAccessor, OnInit {
 
   public defaultFoundData() {
     let searched = this.searchTerms
-    // .debounceTime(300)        // wait for 300ms pause in events
+      // .debounceTime(300)        // wait for 300ms pause in events
       .distinctUntilChanged()   // ignore if next search term is same as previous
       .switchMap((term) => term   // switch to new observable each time
         ? this.search(term)

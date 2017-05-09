@@ -16,13 +16,12 @@ export class EmtaThComponent implements OnInit {
 
   public ngOnInit() {
     if (!this.sort) {
-      this.sort = new SortInstance(null,null);
+      this.sort = new SortInstance(null, null);
     }
   }
 
-  public setSort(field: any){
+  public setSort(field: any) {
     this.sort.field = field;
     this.sort.direction = (this.sort.isAscending() ? SortType.DESC : SortType.ASC);
   }
 }
-

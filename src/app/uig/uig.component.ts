@@ -7,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
 export class UigComponent {
 }
 
-
 @Component({
   selector: 'app-uig-04',
   templateUrl: './uig.04.buttons.component.html'
@@ -31,7 +30,6 @@ export class UigLinksComponent {
 })
 export class UigIconsComponent {
 }
-
 
 @Component({
   selector: 'app-uig-10',

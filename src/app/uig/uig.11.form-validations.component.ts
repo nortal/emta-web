@@ -15,25 +15,25 @@ export class UigFormValidationsComponent implements OnInit {
 
   constructor(fb: FormBuilder) {
     this.form = fb.group({
-      'ttest1':[this.brick.test1],
-      'ttest2':['', Validators.required],
-      'ttest3':['', Validators.compose([Validators.required, Validators.pattern('[a]*')])],
-      'ttest4':[''],
-      'ttest5':['']
+      'ttest1': [this.brick.test1],
+      'ttest2': ['', Validators.required],
+      'ttest3': ['', Validators.compose([Validators.required, Validators.pattern('[a]*')])],
+      'ttest4': [''],
+      'ttest5': ['']
     });
   }
 
-
   public ngOnInit() {
+    //
   }
 
-  public submitForm () {
+  public submitForm() {
     console.log(this.form);
     this.brick = this.form.value;
   }
 
   public markAsDirty(group: FormGroup | FormArray) {
-    group.markAsDirty()
+    group.markAsDirty();
     for (let i in group.controls) {
       if (group.controls[i] instanceof FormControl) {
         group.controls[i].markAsDirty();
@@ -43,4 +43,3 @@ export class UigFormValidationsComponent implements OnInit {
     }
   }
 }
-

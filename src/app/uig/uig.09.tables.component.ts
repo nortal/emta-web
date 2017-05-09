@@ -9,11 +9,11 @@ export class UigTablesComponent implements OnInit {
   private loremipsums: any[];
   public sort = new SortInstance('i1', SortType.DESC);
 
-  public ngOnInit(){
+  public ngOnInit() {
     this.loremipsums = [
-      {i1: 'lorem ipsum1', i2: (Math.random()*100000), i3: new Date(), i4: Math.random()*1000},
-      {i1: 'lorem ipsum2', i2: (Math.random()*100000), i3: new Date(), i4: Math.random()*1000},
-      {i1: 'lorem ipsum3', i2: (Math.random()*100000), i3: new Date(), i4: Math.random()*1000},
+      {i1: 'lorem ipsum1', i2: (Math.random() * 100000), i3: new Date(), i4: Math.random() * 1000},
+      {i1: 'lorem ipsum2', i2: (Math.random() * 100000), i3: new Date(), i4: Math.random() * 1000},
+      {i1: 'lorem ipsum3', i2: (Math.random() * 100000), i3: new Date(), i4: Math.random() * 1000},
     ];
 
   }

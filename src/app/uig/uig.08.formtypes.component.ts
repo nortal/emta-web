@@ -8,11 +8,11 @@ import { Tab } from '../common/ui/layout/tab';
 export class UigFormTypesComponent {
   public tabcontent: string = 'tab: Samm 3';
   public tabs: Tab[] = <Tab[]>[
-    {name:'Samm 1', icon:'complete'},
-    {name:'Samm 2', icon:'warning' },
-    {name:'Samm 3', selected: true },
-    {name:'Samm 4', icon:'error'},
-    {name:'Samm 5', icon:'locked'}
+    {name: 'Samm 1', icon: 'complete'},
+    {name: 'Samm 2', icon: 'warning'},
+    {name: 'Samm 3', selected: true},
+    {name: 'Samm 4', icon: 'error'},
+    {name: 'Samm 5', icon: 'locked'}
   ];
 
   public switchTab(tab: Tab) {

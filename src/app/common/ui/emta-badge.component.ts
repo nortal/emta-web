@@ -8,7 +8,7 @@ export class EmtaBadgeComponent implements OnInit {
   @Input() public level: string;
   @Input() public style: string;
 
-  private levels: string[] = ['success','danger','info','warning','default'];
+  private levels: string[] = ['success', 'danger', 'info', 'warning', 'default'];
 
   constructor(private elem: ElementRef) {
     //
@@ -23,13 +23,12 @@ export class EmtaBadgeComponent implements OnInit {
     }
   }
 
-
   private searchAttributes(allowedKeys: string[]): string {
-    for(let key in allowedKeys) {
-      if(this.elem.nativeElement.attributes[allowedKeys[key]]){
+    for (let key in allowedKeys) {
+      if (this.elem.nativeElement.attributes[allowedKeys[key]]) {
         return allowedKeys[key];
       }
-    };
+    }
     return '';
   }
 }

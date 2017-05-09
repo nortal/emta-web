@@ -2,7 +2,7 @@ import { Directive, Input, Output, HostBinding, OnInit, ElementRef } from '@angu
 
 @Directive({
   selector: 'button[success],button[danger],button[info],button[dark],button[light],button[emta-type]',
-  //templateUrl: './emta-button.component.html',
+  // templateUrl: './emta-button.component.html',
 })
 export class EmtaButtonComponent implements OnInit {
   @Input('emta-type') public emtaType: string;
@@ -10,9 +10,9 @@ export class EmtaButtonComponent implements OnInit {
   @Input() public style: string;
   @Input() public icon: string;
 
-  private types: string[] = ['success','danger','info','dark','light'];
-  private icons: string[] = ['with-plus','multiple-options', 'save', 'cancel', 'logout'];
-  private styles: string[] = ['round','square', 'small'];
+  private types: string[] = ['success', 'danger', 'info', 'dark', 'light'];
+  private icons: string[] = ['with-plus', 'multiple-options', 'save', 'cancel', 'logout'];
+  private styles: string[] = ['round', 'square', 'small'];
   @HostBinding('class') public class: string = 'btn';
 
   constructor(private elem: ElementRef) {
@@ -39,18 +39,17 @@ export class EmtaButtonComponent implements OnInit {
       this.class += ' btn-' + this.icon;
     }
 
-    if(this.disabled === 'disabled' || typeof this.disabled !== 'undefined' && !this.disabled) {
+    if (this.disabled === 'disabled' || typeof this.disabled !== 'undefined' && !this.disabled) {
       this.class += ' disabled';
     }
-
   }
 
   private searchAttributes(allowedKeys: string[]): string {
-    for(let key in allowedKeys) {
-      if(this.elem.nativeElement.attributes[allowedKeys[key]]){
+    for (let key in allowedKeys) {
+      if (this.elem.nativeElement.attributes[allowedKeys[key]]) {
         return allowedKeys[key];
       }
-    };
+    }
     return '';
   }
 

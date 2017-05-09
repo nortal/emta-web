@@ -6,7 +6,7 @@ import {
 
 import { AppState } from '../app.service';
 import { Title } from '../common/ui/title';
-import { SortInstance, SortType } from "../common/ui/list/sort-instance";
+import { SortInstance, SortType } from '../common/ui/list/sort-instance';
 
 @Component({
   selector: 'search-result',
