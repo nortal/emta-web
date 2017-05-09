@@ -4,15 +4,15 @@ export enum SortType {
 }
 
 export class SortInstance {
-  field: string;
-  direction: SortType = SortType.ASC;
+  public field: string;
+  public direction: SortType = SortType.ASC;
 
   constructor(field: string, direction: SortType) {
     this.field = field;
     this.direction = direction;
   }
 
-  isAscending() {
+  public isAscending() {
     return SortType.ASC === this.direction;
   }
 }

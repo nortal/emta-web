@@ -6,7 +6,7 @@ import { Tab } from './tab';
   templateUrl: './tabs.component.html'
 })
 export class TabsComponent implements OnInit {
-  public layouts: string[] = ['horizontal', 'vertical', 'steps']
+  public layouts: string[] = ['horizontal', 'vertical', 'steps'];
   @Input() public tabs: Tab[];
   @Input() public layout: string;
   @Input() public showBreadcrumb: boolean;

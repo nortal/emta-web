@@ -6,8 +6,8 @@ import { SortInstance , SortType } from '../common/ui/list/sort-instance';
   templateUrl: './uig.09.tables.component.html'
 })
 export class UigTablesComponent implements OnInit {
-  private loremipsums: any[];
   public sort = new SortInstance('i1', SortType.DESC);
+  private loremipsums: any[];
 
   public ngOnInit() {
     this.loremipsums = [
@@ -17,7 +17,4 @@ export class UigTablesComponent implements OnInit {
     ];
 
   }
-
 }
-
-

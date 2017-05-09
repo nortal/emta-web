@@ -7,7 +7,7 @@ import { Tab } from '../common/ui/layout/tab';
 })
 export class UigFormTypesComponent {
   public tabcontent: string = 'tab: Samm 3';
-  public tabs: Tab[] = <Tab[]>[
+  public tabs: Tab[] = <Tab[]> [
     {name: 'Samm 1', icon: 'complete'},
     {name: 'Samm 2', icon: 'warning'},
     {name: 'Samm 3', selected: true},
@@ -19,5 +19,3 @@ export class UigFormTypesComponent {
     this.tabcontent = 'tab: ' + tab.name;
   }
 }
-
-

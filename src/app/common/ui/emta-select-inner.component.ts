@@ -1,4 +1,4 @@
-import {Subject} from "rxjs/Subject";
+import { Subject } from 'rxjs/Subject';
 import { Component, OnInit, Input, Output, ViewChild } from '@angular/core';
 
 @Component({
@@ -7,27 +7,31 @@ import { Component, OnInit, Input, Output, ViewChild } from '@angular/core';
 })
 export class EmtaSelectInnerComponent implements OnInit {
 
-  @Input() searchable = false;
-  @Input() items: {
+  @Input() public searchable = false;
+  @Input() public items: {
     value: any,
     text: string
   }[] = [];
 
-  @Input() selected: any[] = [];
-  @Input() currentIndex = 0;
+  @Input() public selected: any[] = [];
+  @Input() public currentIndex = 0;
   @Input() public notFoundText = 'Puudub valik';
   @Input() public error = null;
 
-  @Output() onInput = new Subject();
-  @Output() onSelect = new Subject();
-  @Output() onCancel = new Subject();
+  @Output() public onInput = new Subject();
+  @Output() public onSelect = new Subject();
+  @Output() public onCancel = new Subject();
 
   @ViewChild('searchInput') public searchInput: any;
   @ViewChild('dropdownMenu') public dropdownMenu: any;
 
-  constructor() {  }
+  constructor() {
+    //
+  }
 
-  ngOnInit() {}
+  public ngOnInit() {
+    //
+  }
 
   public clearInput() {
     this.searchInput.nativeElement.value = '';
@@ -60,7 +64,7 @@ export class EmtaSelectInnerComponent implements OnInit {
   }
 
   public onKey(event) {
-    console.log("onkey", event);
+    console.log('onkey', event);
     if (event.key === 'ArrowUp') {
       this.navigate(-1);
     } else if (event.key === 'ArrowDown') {
@@ -73,17 +77,6 @@ export class EmtaSelectInnerComponent implements OnInit {
       this.cancel();
     } else if (!this.searchable) {
       this.navigateByFirstChar(event.key);
-    }
-  }
-
-  private navigateByFirstChar(key: string) {
-    if (/^(\w|\d)$/.test(key)) {
-      const i = findOrCycleIndex(this.items,
-                                 this.currentIndex,
-                                 x => (x.text + '').indexOf(key) === 0);
-      if (i >= 0) {
-        this.currentIndex = i;
-      }
     }
   }
 
@@ -109,6 +102,18 @@ export class EmtaSelectInnerComponent implements OnInit {
   public isSelected(v: any) {
     return this.selected.indexOf(v) > -1;
   }
+
+  private navigateByFirstChar(key: string) {
+    if (/^(\w|\d)$/.test(key)) {
+      const i = findOrCycleIndex(this.items,
+        this.currentIndex,
+        (x) => (x.text + '').indexOf(key) === 0);
+      if (i >= 0) {
+        this.currentIndex = i;
+      }
+    }
+  }
+
 }
 
 function mod(x, y) {
@@ -118,9 +123,9 @@ function mod(x, y) {
 function findOrCycleIndex(a: any[],
                           currentIndex: number,
                           predicate: (value: any, index: number) => boolean): number {
-  const i = a.findIndex((x, index)=> index > currentIndex && predicate(x, index));
+  const i = a.findIndex((x, index) => index > currentIndex && predicate(x, index));
   if (i < 0) {
-    return a.findIndex((x, index)=> index <= currentIndex && predicate(x, index));
+    return a.findIndex((x, index) => index <= currentIndex && predicate(x, index));
   } else {
     return i;
   }

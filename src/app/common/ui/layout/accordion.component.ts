@@ -8,8 +8,7 @@ export class AccordionBlockComponent implements OnInit {
   @Input() public expanded: boolean = false;
 
   public ngOnInit() {
+    //
   }
 
 }
-
-

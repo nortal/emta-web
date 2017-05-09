@@ -1,4 +1,4 @@
-import {EmtaSelectInnerComponent} from "./emta-select-inner.component";
+import { EmtaSelectInnerComponent } from './emta-select-inner.component';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 import { Component, Input, Output, EventEmitter, OnInit, ViewChild, forwardRef } from '@angular/core';
@@ -19,7 +19,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 export class EmtaMultiSelectComponent implements ControlValueAccessor, OnInit {
   public show = false;
 
-  public selected: any[] =  null;
+  public selected: any[] = null;
 
   public currentIndex = 0;
 
@@ -52,7 +52,7 @@ export class EmtaMultiSelectComponent implements ControlValueAccessor, OnInit {
 
   public getSelectedText() {
     if (this.selected) {
-      return this.selected.map(x => this.displayFunc(x)).join(',');
+      return this.selected.map((x) => this.displayFunc(x)).join(',');
     } else {
       return '';
     }
@@ -92,7 +92,7 @@ export class EmtaMultiSelectComponent implements ControlValueAccessor, OnInit {
     if (i === -1) {
       a.push(item);
     } else {
-      a.splice(i,1);
+      a.splice(i, 1);
     }
     if (this.selectionChecker) {
       const error = this.selectionChecker(a);
@@ -107,11 +107,6 @@ export class EmtaMultiSelectComponent implements ControlValueAccessor, OnInit {
     this.selected = a;
     this.onChange(this.selected);
     this.focus();
-  }
-
-  private showError(error: string) {
-    this.inner.error = error;
-    setTimeout(()=>this.inner.error = null, 1000);
   }
 
   public clear() {
@@ -138,11 +133,17 @@ export class EmtaMultiSelectComponent implements ControlValueAccessor, OnInit {
    */
   public registerOnTouched(fn: any) {
     // console.log('registerOnTouched');
-  };
+  }
+
+  private showError(error: string) {
+    this.inner.error = error;
+    setTimeout(() => this.inner.error = null, 1000);
+  }
+
 }
 
 function maxSelectionChecker(x: number) {
-  return selection => {
+  return (selection) => {
     if (selection && selection.length > x) {
       return `Maksimaalselt ${x} valikut`;
     }

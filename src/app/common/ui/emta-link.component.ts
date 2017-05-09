@@ -4,13 +4,13 @@ import { Directive, Input, OnInit, ElementRef, HostBinding } from '@angular/core
   selector: 'a[gray], a[blue], a[orange]'
 })
 export class EmtaLinkComponent implements OnInit {
+  @Input() public icon: string;
+  @HostBinding('class') public class: string = '';
+  @Input() @HostBinding('target') public target: string = '';
+  @Input() @HostBinding('href') public href: string = '';
+
   private colors: string[] = ['gray', 'blue', 'orange'];
   private sizes: string[] = ['small'];
-
-  @Input() public icon: string;
-  @HostBinding('class') class: string = '';
-  @Input() @HostBinding('target') target: string = '';
-  @Input() @HostBinding('href') href: string = '';
 
   constructor(private elem: ElementRef) {
     //
@@ -32,11 +32,12 @@ export class EmtaLinkComponent implements OnInit {
   }
 
   private searchAttributes(allowedKeys: string[]): string {
-    for(let key in allowedKeys) {
-      if(this.elem.nativeElement.attributes[allowedKeys[key]]){
+    for (let key in allowedKeys) {
+      if (this.elem.nativeElement.attributes[allowedKeys[key]]) {
         return allowedKeys[key];
       }
-    };
+    }
+    ;
     return '';
   }
 
