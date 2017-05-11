@@ -3,23 +3,26 @@
     <h3>Otsingu tulemused</h3>
   </a>
 </div>
+<a (click)="addInvalidItem()">add invalid item</a><br/>
+<a (click)="addSuccessItem()">add success item</a><br/>
+<a (click)="addWarningItem()">add warning item</a><br/><br/>
 <div class="section">
   <div class="section_body">
 
     <emta-table>
       <thead>
-        <tr>
-          <th>Id</th>
-          <th>parampam</th>
-          <th>Nimi</th>
-        </tr>
+      <tr>
+        <th>Id</th>
+        <th>parampam</th>
+        <th>Nimi</th>
+      </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of items">
-          <td><span class="text">{{item.id}}</span></td>
-          <td><span class="text">{{item.identifiers[0].value}}</span></td>
-          <td><span class="text">{{item.names['et']}}</span></td>
-        </tr>
+      <tr *ngFor="let item of items">
+        <td><span class="text">{{item.id}}</span></td>
+        <td><span class="text">{{item.identifiers[0].value}}</span></td>
+        <td><span class="text">{{item.names['et']}}</span></td>
+      </tr>
       </tbody>
     </emta-table>
   </div>

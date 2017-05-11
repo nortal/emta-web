@@ -234,7 +234,7 @@ module.exports = function (options) {
       historyApiFallback: true,
       proxy: {
          "/api": {
-               target: "http://localhost:9000/webapi",
+               target: "http://localhost:8080/webapi",
                pathRewrite: {'^/api' : ''}
          }
       },

@@ -1,0 +1,8 @@
+<div *ngFor="let message of messageCtx.messages" class="alert alert-global" style="border-top-style: solid;"
+     [ngClass]="{'alert-danger': message.isError(), 'alert-warning': message.isWarning(), 'alert-success': message.isSuccess()}">
+  <div class="alert-global-inner">
+    <a (click)="messageCtx.removeByMessage(message)" class="close icon-close" tabindex="0"></a>
+    <p *ngFor="let text of message.getTexts()">{{text}}</p>
+    <a *ngIf="message.detailsLink" class="link-gray" [href]="message.detailsLink">Lugege siit lähemalt</a>
+  </div>
+</div>
