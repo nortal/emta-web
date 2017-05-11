@@ -8,19 +8,19 @@ export class MessageCtxService {
 
   public messages: Array<Message> = [];
 
-  public addError(messageText: string): void {
+  public addError(messageText: String): void {
     this.addMessage(messageText, MessageCtxService.TYPE__ERROR);
   }
 
-  public addWarning(messageText: string): void {
+  public addWarning(messageText: String): void {
     this.addMessage(messageText, MessageCtxService.TYPE__WARNING);
   }
 
-  public addSuccess(messageText: string): void {
+  public addSuccess(messageText: String): void {
     this.addMessage(messageText, MessageCtxService.TYPE__SUCCESS);
   }
 
-  public addMessage(messageText: string, type: string): void {
+  public addMessage(messageText: String, type: String): void {
     let msg = new Message();
     msg.type = type;
     msg.message = messageText;
