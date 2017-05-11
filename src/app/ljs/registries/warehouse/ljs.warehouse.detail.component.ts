@@ -34,7 +34,7 @@ export class LjsWarehouseDetailComponent implements OnInit {
   public saveData() {
     console.log(this.data);
     this.warehouseService.saveWarehouse(this.data).
-    then(this.displayOk()).catch((error) => this.displayError(error));
+    then((result) => this.displayOk()).catch((error) => this.displayError(error));
   }
 
   private displayOk() {

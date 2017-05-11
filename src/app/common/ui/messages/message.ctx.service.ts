@@ -2,25 +2,25 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class MessageCtxService {
-  public static readonly TYPE__ERROR:String = 'error';
-  public static readonly TYPE__WARNING:String = 'warning';
-  public static readonly TYPE__SUCCESS:String = 'success';
+  public static TYPE__ERROR: String = 'error';
+  public static TYPE__WARNING: String = 'warning';
+  public static TYPE__SUCCESS: String = 'success';
 
   public messages: Array<Message> = [];
 
-  public addError(messageText:string):void {
+  public addError(messageText: string): void {
     this.addMessage(messageText, MessageCtxService.TYPE__ERROR);
   }
 
-  public addWarning(messageText:string):void {
+  public addWarning(messageText: string): void {
     this.addMessage(messageText, MessageCtxService.TYPE__WARNING);
   }
 
-  public addSuccess(messageText:string):void {
+  public addSuccess(messageText: string): void {
     this.addMessage(messageText, MessageCtxService.TYPE__SUCCESS);
   }
 
-  public addMessage(messageText:String, type:String):void {
+  public addMessage(messageText: string, type: string): void {
     let msg = new Message();
     msg.type = type;
     msg.message = messageText;
@@ -45,26 +45,26 @@ export class MessageCtxService {
 }
 
 export class Message {
-  public type:String; // error, warning, success
-  public message:String;
-  public status:number;
-  public statusText:String;
-  public url:String;
-  public ok:boolean;
-  public errors:Array<JsonApiError>;
+  public type: String; // error, warning, success
+  public message: String;
+  public status: number;
+  public statusText: String;
+  public url: String;
+  public ok: boolean;
+  public errors: Array<JsonApiError>;
 
-  public getTexts():Array<String> {
+  public getTexts(): Array<String> {
     if (!this.errors || this.errors.length === 0) {
       return [this.message];
     }
     let result = [];
-    this.errors.forEach((error:JsonApiError) => {
+    this.errors.forEach((error: JsonApiError) => {
       result.push(error.code + ': ' + error.detail);
     });
     return result;
   }
 
-  public getType():String {
+  public getType(): String {
     if (this.type) {
       return this.type;
     }
@@ -77,24 +77,24 @@ export class Message {
     return MessageCtxService.TYPE__WARNING;
   }
 
-  public isError():boolean {
+  public isError(): boolean {
     return this.getType() === MessageCtxService.TYPE__ERROR;
   }
 
-  public isWarning():boolean {
+  public isWarning(): boolean {
     return this.getType() === MessageCtxService.TYPE__WARNING;
   }
 
-  public isSuccess():boolean {
+  public isSuccess(): boolean {
     return this.getType() === MessageCtxService.TYPE__SUCCESS;
   }
 }
 
 export class JsonApiError {
-  public id:String;
-  public status:String;
-  public code:String;
-  public title:String;
-  public detail:String;
-  public meta:any;
+  public id: String;
+  public status: String;
+  public code: String;
+  public title: String;
+  public detail: String;
+  public meta: any;
 }

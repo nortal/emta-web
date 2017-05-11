@@ -42,7 +42,7 @@ export class WarehouseService {
      */
   }
 
-  public saveWarehouse(data: any): Promis<any> {
+  public saveWarehouse(data: any): Promise<any> {
     return Promise.reject('errorcode 55');
   }
 

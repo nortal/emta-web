@@ -1,5 +1,5 @@
-import { ErrorHandler, Injectable } from '@angular/core'
-import { MessageCtxService, Message } from "./common/ui/messages/message.ctx.service";
+import { ErrorHandler, Injectable } from '@angular/core';
+import { MessageCtxService, Message } from './common/ui/messages/message.ctx.service';
 
 @Injectable()
 export class AppErrorHandler implements ErrorHandler {
@@ -7,7 +7,7 @@ export class AppErrorHandler implements ErrorHandler {
     //
   }
 
-  handleError(error) {
+  public handleError(error) {
     this.messageCtx.add(this.getMessage(error));
   }
 
