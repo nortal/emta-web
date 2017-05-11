@@ -30,6 +30,22 @@ export class WarehouseService {
      */
   }
 
+  public loadWarehouse(id: Number): Promise<any> {
+    return Promise.resolve(this.makeSandwich());
+    /*
+     return this.http
+     .get("api/warehouse/find", {})
+     .map(response => {
+     console.log(response);
+     response.json() as Object[];
+     });
+     */
+  }
+
+  public saveWarehouse(data: any): Promis<any> {
+    return Promise.reject('errorcode 55');
+  }
+
   private makeSandwich() {
     return {
       id: Math.floor(Math.random() * 20000),
