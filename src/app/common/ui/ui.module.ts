@@ -21,6 +21,8 @@ import { EmtaFormRowComponent, EmtaFormSectionComponent, EmtaFormFeedbackCompone
 import { TabsComponent } from './layout/tabs.component';
 import { AccordionBlockComponent } from './layout/accordion.component';
 import { MyDatePickerModule } from 'mydatepicker';
+import { MessageCtxService } from "./messages/message.ctx.service";
+import { MessageCtxComponent } from "./messages/message-ctx.component";
 
 @NgModule({
   imports: [
@@ -34,6 +36,7 @@ import { MyDatePickerModule } from 'mydatepicker';
     MyDatePickerModule
   ],
   exports: [
+    MessageCtxComponent,
     EmtaInputComponent,
     EmtaFormRowComponent,
     EmtaSelectComponent,
@@ -53,6 +56,7 @@ import { MyDatePickerModule } from 'mydatepicker';
     TranslateModule
   ],
   declarations: [
+    MessageCtxComponent,
     EmtaInputComponent,
     EmtaFormRowComponent,
     EmtaSelectComponent,
@@ -69,10 +73,12 @@ import { MyDatePickerModule } from 'mydatepicker';
     EmtaFormSectionComponent,
     TabsComponent,
     AccordionBlockComponent,
-    SortPipe,
+    SortPipe
   ],
   entryComponents: [],
-  providers: [],
+  providers: [
+    MessageCtxService
+  ],
 })
 export class UiModule {
 }

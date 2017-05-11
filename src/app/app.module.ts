@@ -18,7 +18,8 @@ import {
 
 import {
   NgModule,
-  ApplicationRef
+  ApplicationRef,
+  ErrorHandler
 } from '@angular/core';
 import {
   removeNgStyles,
@@ -50,6 +51,8 @@ import { PaymentComponent, TerminalComponent, PayerComponent, CustomerComponent 
 import { TrailComponent } from './trail';
 import { ItemsListComponent } from './items/items-list.component';
 import { LjsModule } from './ljs/ljs.module';
+import { MessageCtxService } from "./common/ui/messages/message.ctx.service";
+import { AppErrorHandler } from "./app.error.handler";
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -110,7 +113,9 @@ export function createTranslateLoader(http: Http) {
     ENV_PROVIDERS,
     APP_PROVIDERS,
     AuthGuard,
-    AuthService
+    AuthService,
+    MessageCtxService,
+    {provide: ErrorHandler, useClass: AppErrorHandler}
   ]
 })
 export class AppModule {
