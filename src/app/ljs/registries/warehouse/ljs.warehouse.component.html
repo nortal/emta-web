@@ -3,10 +3,10 @@
   Salvestamine õnnestus
 </div>
 
-<h2>Ladude teatmik</h2>
+<h2>{{ "ljs.warehouse.title" | translate }}</h2>
 
 <div class="section">
-  <form name="object-of-interest-search">
+  <form name="warehouse-search">
     <div class="container-fluid">
 
       <div class="row">
@@ -15,23 +15,27 @@
           <emta-table [(pagination)]="pager">
             <thead>
             <tr>
-              <th sortable="date" [(sort)]="sort">Kuupäev</th>
-              <th>Kellaaeg</th>
-              <th sortable="duration" [(sort)]="sort">Kestus</th>
-              <th sortable="location" [(sort)]="sort">Asukoht</th>
-              <th sortable="login" [(sort)]="sort">Isiku tuvastamine</th>
+              <th sortable="permitNumber" [(sort)]="sort">Loa number</th>
+              <th sortable="permitType" [(sort)]="sort">Loa liik</th>
+              <th sortable="personName" [(sort)]="sort">Laopidaja</th>
+              <th sortable="validFrom" [(sort)]="sort">Kehtivuse algus</th>
+              <th sortable="validUntil" [(sort)]="sort">Kehtivuse lõpp</th>
+              <th sortable="storableGoods" [(sort)]="sort">Ladustatav kaup</th>
+              <th sortable="status" [(sort)]="sort">Staatus</th>
             </tr>
             </thead>
 
             <tbody>
             <tr *ngFor="let row of data | sort: sort | paginate: pager">
-              <td>{{row.date | date: 'dd.MM.yyyy'}}</td>
-              <td>{{row.date | date: 'HH:mm'}}</td>
-              <td>{{row.duration + 'min'}}</td>
-              <td>{{row.location}}</td>
+              <td><a class="link-blue" href="javascript:void(0);" (click)="selectRow(row.id)">{{row.permitNumber}}</a></td>
+              <td>{{row.permitType}}</td>
+              <td>{{row.personName}}<br>{{row.personRegNr}}</td>
+              <td>{{row.validFrom | date:'dd.MM.yyyy'}}</td>
+              <td>{{row.validUntil | date:'dd.MM.yyyy'}}</td>
+              <td>{{row.storableGoods}}</td>
               <td>
-                {{row.login}}
-                <i class="icon-info" tooltip="Tingimus on täidetud, kui olete olnud Eesti resident kogu kalendrikuu jooksul." tabindex="0"></i>
+                <badge *ngIf="row.status !== 'VALID'" level="danger">{{ "ljs.warehouse.invalid" | translate}}</badge>
+                <badge *ngIf="row.status === 'VALID'" success>{{ "ljs.warehouse.valid" | translate}}</badge>
               </td>
             </tr>
             </tbody>
@@ -43,7 +47,7 @@
     </div>
     <br/>
     <div class="form-footer">
-      <button class="btn btn-info btn-with-plus float-right" label="Button" type="button" (click)="addNew()"
+      <button class="btn btn-info btn-with-plus float-right" label="Button" type="button"
         id="add-new-object-of-interest-btn">Uus objekt
       </button>
     </div>

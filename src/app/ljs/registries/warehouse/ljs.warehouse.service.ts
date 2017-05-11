@@ -1,3 +1,4 @@
+import * as _ from 'lodash';
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
@@ -9,7 +10,6 @@ export class WarehouseService {
   private data: Object[];
 
   constructor(private http: Http) {
-
   }
 
   public findWarehouses(): Promise<Object[]> {
@@ -32,11 +32,15 @@ export class WarehouseService {
 
   private makeSandwich() {
     return {
-      date: new Date(new Date().getTime() * Math.random()),
-      duration: Math.floor(Math.random() * 100),
-      location: ['Tallinn', 'Crapstone', 'Gotham', 'Coruscant', 'Tron city', 'Babylon']
-        [Math.floor(Math.random() * 6)],
-      login: ['ID-kaart', 'Mobiil-Id', 'Smart-Id', 'Pangalink', 'Honesty'][Math.floor(Math.random() * 5)]
+      id: Math.floor(Math.random() * 20000),
+      permitNumber: 'AD02933',
+      permitType: ['Aktsiisilao luba', 'Maksulao luba'][Math.floor(Math.random() * 2)],
+      personName: ['Vopak AS', 'Prike'][Math.floor(Math.random() * 2)] as string,
+      personRegNr: ['10182828', '12340097'][Math.floor(Math.random() * 2)],
+      validFrom: new Date(new Date().getTime() * Math.random()),
+      validUntil: new Date(new Date().getTime() * Math.random()),
+      storableGoods: ['Kütus', 'Kütus, Muu', 'Muu'][Math.floor(Math.random() * 3)],
+      status: ['VALID', 'INVALID'][Math.floor(Math.random() * 2)]
     };
   }
 }

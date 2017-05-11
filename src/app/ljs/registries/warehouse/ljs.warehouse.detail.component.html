@@ -1,0 +1,86 @@
+<h2 class="text-left px-2 mb-4">Uue objekti lisamine</h2>
+<section class="section">
+  <form action="">
+    <div class="form-section">
+      <div class="section-title">
+        <a class="section-collapse" data-toggle="collapse" href="#form-section-1" aria-expanded="true">
+          <h3>Objekti põhiandmed</h3>
+        </a>
+        <div class="title-line"></div>
+      </div>
+      <div class="collapse show" id="form-section-1" aria-expanded="true">
+        <div class="form-section-body">
+
+          <div class="form-group row">
+            <label for="example-form-1" class="col-xs-20 col-md-5 col-form-label">
+              Objekti tüüp
+              <div class="label-comment">Mingi kommentaar selle välja kohta</div>
+            </label>
+            <div class="col-xs-12 col-md-12 col-lg-12 col-xl-12">
+              <input type="text" class="form-control" id="example-form-1">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="example-form-1" class="col-xs-20 col-md-5 col-form-label">
+              Kood
+            </label>
+            <div class="col-xs-12 col-md-12 col-lg-12 col-xl-12">
+              <input type="text" class="form-control" id="example-form-2">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="example-form-1" class="col-xs-20 col-md-5 col-form-label">
+              Eesnimi
+            </label>
+            <div class="col-xs-12 col-md-12 col-lg-12 col-xl-12">
+              <input type="text" class="form-control" id="example-form-3">
+            </div>
+          </div>
+
+          <!-- sama asi komponendina -->
+          <!--emta-textinput labelText="FIRSTNAME" [(value)]="firstNameValue" placeHolder="kui on vaja pleisshõulderit" name="firstName" maxLength="6"></emta-textinput-->
+
+          <div class="form-group row">
+            <label for="example-form-1" class="col-xs-20 col-md-5 col-form-label">
+              Perenimi
+            </label>
+            <div class="col-xs-12 col-md-12 col-lg-12 col-xl-12">
+              <input type="text" class="form-control" id="example-form-4">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <div class="section-title">
+        <a class="section-collapse" data-toggle="collapse" href="#form-section-2" aria-expanded="true">
+          <h3>Objekti lisaandmed</h3>
+        </a>
+        <div class="title-line"></div>
+      </div>
+      <div class="collapse show" id="form-section-2" aria-expanded="true">
+        <div class="form-section-body">
+          <div class="form-group row">
+            <label for="example-form-2" class="col-xs-20 col-md-5 col-form-label">
+              Märksõna
+              <div class="label-comment">Mitme märksõna puhul eralde need komadega</div>
+            </label>
+            <div class="col-xs-12 col-md-12 col-lg-12 col-xl-12">
+              <input type="text" class="form-control" id="example-form-5">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-footer">
+      <button class="btn btn-mobile-big btn-success" type="submit" (click)="goBack()">Registreeri</button>
+      <button class="btn btn-mobile-big btn-light" type="reset" (click)="goBack()">Loobun</button>
+    </div>
+
+  </form>
+</section>

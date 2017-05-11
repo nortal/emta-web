@@ -7,5 +7,9 @@
   "EMPLOYEE":"Ametnik",
   "BIRTHDATE": "Birthdate",
   "navbar.login": "Log In",
-  "navbar.logout": "Log Out"
+  "navbar.logout": "Log Out",
+
+  "ljs.warehouse.title" : "Warehouse registry",
+  "ljs.warehouse.invalid" : "Invalid",
+  "ljs.warehouse.valid" : "Valid"
 }

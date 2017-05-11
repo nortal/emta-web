@@ -16,7 +16,7 @@ import { FormControl } from '@angular/forms';
       provide: NG_VALIDATORS,
       useExisting: forwardRef(() => EmtaInputComponent),
         multi: true,
-    } 
+    }
   ],
   inputs: [
     'placeholder',
@@ -36,7 +36,7 @@ import { FormControl } from '@angular/forms';
 export class EmtaInputComponent implements ControlValueAccessor, OnInit, Validator {
   @Input() public disabled: boolean;
   @Input() public type: string = 'text';
-  @Input() @HostBinding('class') class: string;
+  @Input() @HostBinding('class') public class: string;
   @Input() public name: string;
 
   public val: string;

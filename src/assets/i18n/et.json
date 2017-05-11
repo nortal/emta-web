@@ -9,5 +9,8 @@
   "navbar.login": "Sisene",
   "navbar.logout": "Väljun",
 
-  "pageHeader.ljs": "Lao järelvalve süsteem"
+  "pageHeader.ljs": "Lao järelvalve süsteem",
+  "ljs.warehouse.title" : "Ladude teatmik",
+  "ljs.warehouse.invalid" : "Kehtetu",
+  "ljs.warehouse.valid" : "Kehtiv"
 }

@@ -29,7 +29,7 @@ export class SortPipe implements PipeTransform {
     return input.sort((a: any, b: any) => {
       return conf.direction === SortType.ASC
         ? SortPipe._orderByComparator(a[conf.field], b[conf.field])
-        : -SortPipe._orderByComparator(a[conf.field], b[conf.field]);
+        : -1 * SortPipe._orderByComparator(a[conf.field], b[conf.field]);
     });
 
   }

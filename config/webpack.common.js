@@ -28,7 +28,7 @@ const HMR = helpers.hasProcessFlag('hot');
 const AOT = helpers.hasNpmFlag('aot');
 const METADATA = {
   title: 'LJS KKS',
-  baseUrl: './',
+  baseUrl: '/',
   isDevServer: helpers.isWebpackDevServer()
 };
 
